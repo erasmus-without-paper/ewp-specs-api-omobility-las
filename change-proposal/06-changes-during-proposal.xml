@@ -1,0 +1,76 @@
+<components-studied>
+    <before-mobility>
+        <component-studied>
+            <title>Advanced Logics for Computer Scientists</title>
+        </component-studied>
+        <component-studied>
+            <title>Big Data Mining and Processing</title>
+        </component-studied>
+        <component-studied>
+            <title>Advanced Functional Programming</title>
+        </component-studied>
+        <approval>
+            <by-party>student</by-party>
+        </approval>
+        <approval>
+            <by-party>sending-hei</by-party>
+            <timestamp>2019-01-19T12:43:15+02:00</timestamp>
+        </approval>
+        <approval>
+            <by-party>receiving-hei</by-party>
+            <timestamp>2019-01-22T11:12:08+02:00</timestamp>
+        </approval>
+    </before-mobility>
+    <latest-approved>
+        <component-studied>
+            <title>Advanced Logics for Computer Scientists</title>
+        </component-studied>
+        <component-studied>
+            <title>Big Data Mining and Processing</title>
+        </component-studied>
+        <component-studied>
+            <title>Advanced Functional Programming</title>
+        </component-studied>
+        <approval>
+            <by-party>student</by-party>
+        </approval>
+        <approval>
+            <by-party>sending-hei</by-party>
+            <timestamp>2019-01-19T12:43:15+02:00</timestamp>
+        </approval>
+        <approval>
+            <by-party>receiving-hei</by-party>
+            <timestamp>2019-01-22T11:12:08+02:00</timestamp>
+        </approval>
+    </latest-approved>
+    <latest-changes>
+        <component-studied status="removed" reason="language-mismatch">
+            <title>Advanced Functional Programming</title>
+        </component-studied>
+        <component-studied status="inserted" reason="substituting-deleted">
+            <title>Advanced Databases</title>
+        </component-studied>
+    </latest-changes>
+    <latest-proposal>
+        <component-studied>
+            <title>Advanced Logics for Computer Scientists</title>
+        </component-studied>
+        <component-studied>
+            <title>Big Data Mining and Processing</title>
+        </component-studied>
+        <component-studied status="removed" reason="language-mismatch">
+            <title>Advanced Functional Programming</title>
+        </component-studied>
+        <component-studied status="inserted" reason="substituting-deleted">
+            <title>Advanced Databases</title>
+        </component-studied>
+        <approval>
+            <by-party>student</by-party>
+        </approval>
+        <approval>
+            <by-party>sending-hei</by-party>
+            <timestamp>2019-03-02T12:43:15+02:00</timestamp>
+        </approval>
+        <should-now-be-approved-by>receiving-hei</should-now-be-approved-by>
+    </latest-proposal>
+</components-studied>

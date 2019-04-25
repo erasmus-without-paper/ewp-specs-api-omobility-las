@@ -1,0 +1,21 @@
+<components-studied>
+    <latest-proposal>
+        <component-studied>
+            <title>Advanced Logics for Computer Scientists</title>
+        </component-studied>
+        <component-studied>
+            <title>Big Data Mining and Processing</title>
+        </component-studied>
+        <component-studied>
+            <title>Advanced Functional Programming</title>
+        </component-studied>
+        <approval>
+            <by-party>student</by-party>
+        </approval>
+        <approval>
+            <by-party>sending-hei</by-party>
+            <timestamp>2019-01-19T12:43:15+02:00</timestamp>
+        </approval>
+        <should-now-be-approved-by>receiving-hei</should-now-be-approved-by>
+    </latest-proposal>
+</components-studied>

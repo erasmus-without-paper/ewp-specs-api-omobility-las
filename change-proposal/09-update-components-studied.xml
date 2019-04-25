@@ -1,0 +1,22 @@
+<update-components-studied-v1>
+    <latest-proposal>
+        <component-studied status="removed" reason="timetable-conflict">
+            <title>Advanced Logics for Computer Scientists</title>
+        </component-studied>
+        <component-studied status="inserted" reason="substituting-deleted">
+            <title>Distributed Systems</title>
+        </component-studied>
+        <component-studied>
+            <title>Big Data Mining and Processing</title>
+        </component-studied>
+        <component-studied status="removed" reason="language-mismatch">
+            <title>Advanced Functional Programming</title>
+        </component-studied>
+        <component-studied status="inserted" reason="substituting-deleted">
+            <title>Artificial Intelligence and Expert Systems</title>
+        </component-studied>
+    </latest-proposal>
+    <comment>The course 'Distributed Systems' is not conducted in English. I suggest choosing the Data Mining,
+        Computational Social Choice Theory or Deep neural networks.
+    </comment>
+</update-components-studied-v1>

@@ -1,0 +1,27 @@
+<update-components-studied-v1>
+    <latest-proposal>
+        <component-studied>
+            <title>Advanced Logics for Computer Scientists</title>
+        </component-studied>
+        <component-studied>
+            <title>Big data processing and cluster computing</title>
+        </component-studied>
+        <component-studied>
+            <title>Advanced Functional Programming</title>
+        </component-studied>
+    </latest-proposal>
+    <suggestion>
+        <component-studied>
+            <title>Advanced Logics for Computer Scientists</title>
+        </component-studied>
+        <component-studied status="removed" reason="not-available">
+            <title>Big data processing and cluster computing</title>
+        </component-studied>
+        <component-studied status="inserted" reason="substituting-deleted">
+            <title>Big Data Mining and Processing</title>
+        </component-studied>
+        <component-studied>
+            <title>Advanced Functional Programming</title>
+        </component-studied>
+    </suggestion>
+</update-components-studied-v1>

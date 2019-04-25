@@ -1,0 +1,14 @@
+<approve-components-studied-draft-v1>
+    <approving-party>receiving-hei</approving-party>
+    <latest-proposal>
+        <component-studied>
+            <title>Advanced Logics for Computer Scientists</title>
+        </component-studied>
+        <component-studied>
+            <title>Big Data Mining and Processing</title>
+        </component-studied>
+        <component-studied>
+            <title>Advanced Functional Programming</title>
+        </component-studied>
+    </latest-proposal>
+</approve-components-studied-draft-v1>

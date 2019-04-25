@@ -1,0 +1,46 @@
+<components-studied>
+    <before-mobility>
+        <component-studied>
+            <title>Advanced Logics for Computer Scientists</title>
+        </component-studied>
+        <component-studied>
+            <title>Big Data Mining and Processing</title>
+        </component-studied>
+        <component-studied>
+            <title>Advanced Functional Programming</title>
+        </component-studied>
+        <approval>
+            <by-party>student</by-party>
+        </approval>
+        <approval>
+            <by-party>sending-hei</by-party>
+            <timestamp>2019-01-19T12:43:15+02:00</timestamp>
+        </approval>
+        <approval>
+            <by-party>receiving-hei</by-party>
+            <timestamp>2019-01-22T11:12:08+02:00</timestamp>
+        </approval>
+    </before-mobility>
+    <latest-approved>
+        <component-studied>
+            <title>Advanced Logics for Computer Scientists</title>
+        </component-studied>
+        <component-studied>
+            <title>Big Data Mining and Processing</title>
+        </component-studied>
+        <component-studied>
+            <title>Advanced Functional Programming</title>
+        </component-studied>
+        <approval>
+            <by-party>student</by-party>
+        </approval>
+        <approval>
+            <by-party>sending-hei</by-party>
+            <timestamp>2019-01-19T12:43:15+02:00</timestamp>
+        </approval>
+        <approval>
+            <by-party>receiving-hei</by-party>
+            <timestamp>2019-01-22T11:12:08+02:00</timestamp>
+        </approval>
+    </latest-approved>
+</components-studied>
