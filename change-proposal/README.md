@@ -36,7 +36,7 @@ Why we want to get rid of the `changes` parts?
   Or the client systems, even using poor algorithms, can calculate these changes if needed.
 
 
-What we would like to change in get response
+What we would like to change in `get` response
 --------------------------------------------
 
 * Remove `before-mobility-changes` and `latest-approved-changes`.
@@ -56,7 +56,7 @@ What we would like to change in get response
 * In the `latest-changes` part we will use course names instead of indexes.
 
 
-What we get after this changes in get response
+What we get after this changes in `get` response
 ----------------------------------------------
 
 After these changes we will have four parts: `before-mobility`, `latest-approved`, `latest-changes` and `latest-proposal`.
@@ -76,7 +76,7 @@ After these changes we will have four parts: `before-mobility`, `latest-approved
   When the proposal is signed by all three parties, the `latest-proposal` is copied to `latest-approved`.
 
 
-What we would like to change in update request
+What we would like to change in `update` request
 ----------------------------------------------
 
 If we change the `get` response scheme, we should also change the update request similarly. We propose to:
