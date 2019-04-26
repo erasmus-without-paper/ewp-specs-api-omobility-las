@@ -59,8 +59,8 @@ The details on each of these endpoints are described on separate pages of this
 API specification (use the links above).
 
 
-Outgoing Mobility Learning Agreement API vs. Outgoing Mobilities API
---------------------------------------------------------------------
+Outgoing Mobility Learning Agreements API vs. Outgoing Mobilities API
+---------------------------------------------------------------------
 
 The Learning Agreement, which was initially part of the Outgoing Mobilities API,
 has been separated into the Outgoing Mobility Learning Agreements API.
