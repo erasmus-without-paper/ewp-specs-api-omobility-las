@@ -1,8 +1,13 @@
+<!-- For clarity, the examples contain only information about courses that the student wants to attend at the receiving HEI (`components-studied`). -->
+<!-- Attached file *is not* a valid update request. -->
 <approve-components-studied-draft-v1>
     <approving-party>receiving-hei</approving-party>
     <latest-proposal>
-        <component-studied>
+        <component-studied status="removed" reason="timetable-conflict">
             <title>Advanced Logics for Computer Scientists</title>
+        </component-studied>
+        <component-studied status="inserted" reason="substituting-deleted">
+            <title>Computational Social Choice Theory</title>
         </component-studied>
         <component-studied>
             <title>Big Data Mining and Processing</title>
@@ -11,7 +16,7 @@
             <title>Advanced Functional Programming</title>
         </component-studied>
         <component-studied status="inserted" reason="substituting-deleted">
-            <title>Advanced Databases</title>
+            <title>Artificial Intelligence and Expert Systems</title>
         </component-studied>
     </latest-proposal>
 </approve-components-studied-draft-v1>

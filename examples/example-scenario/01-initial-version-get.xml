@@ -1,3 +1,5 @@
+<!-- For clarity, the examples contain only information about courses that the student wants to attend at the receiving HEI (`components-studied`). -->
+<!-- Attached file *is not* a valid get response. -->
 <components-studied>
     <latest-proposal>
         <component-studied>
