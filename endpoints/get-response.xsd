@@ -223,30 +223,12 @@
                         <xs:sequence minOccurs="0" maxOccurs="1">
                             <xs:annotation>
                                 <xs:documentation>
-                                    The "before mobility" and "latest approved" sections are optional. It is allowed
-                                    to have only the "latest draft" section (this indicates that no LA has yet been
-                                    approved).
-
-                                    However, if "before mobility" section exists, then we also require "latest
-                                    approved" section to exist. In many cases, `latest-approved-changes` will be
-                                    empty, and `latest-approved-snapshot` will contain the exact contents as the
-                                    `before-mobility-snapshot` does. It might seem redundant, but we require it for
-                                    completeness (to make sure all partners understand what "latest approved"
-                                    means).
+                                    The "before mobility" and "latest approved" sections are optional - this indicates
+                                    that no LA has yet been approved. However, if "before mobility" section exists,
+                                    then we also require "latest approved" section to exist.
                                 </xs:documentation>
                             </xs:annotation>
-                            <xs:element name="before-mobility-changes" type="ListOfChangesTo_ComponentsStudied">
-                                <xs:annotation>
-                                    <xs:documentation>
-                                        This element is not used when PDF LA is generated, but it is still required.
-                                        It allows server implementers to include a history of changes to the "before
-                                        mobility" section, before it has been approved. If the server doesn't keep such
-                                        history, then an appropriately formatted copy of the `before-mobility-snapshot`
-                                        is returned here.
-                                    </xs:documentation>
-                                </xs:annotation>
-                            </xs:element>
-                            <xs:element name="before-mobility-snapshot" type="SnapshotOf_ComponentsStudied">
+                            <xs:element name="before-mobility" type="ListOf_ComponentsStudied">
                                 <xs:annotation>
                                     <xs:documentation>
                                         The snapshot of courses *planned* to be studied when the first version of the LA
@@ -257,57 +239,50 @@
                                     </xs:documentation>
                                 </xs:annotation>
                             </xs:element>
-                            <xs:element name="latest-approved-changes" type="ListOfChangesTo_ComponentsStudied">
+                            <xs:element name="latest-approved" type="ListOf_ComponentsStudied">
                                 <xs:annotation>
                                     <xs:documentation>
-                                        The list of changes made to the LA components after it has been first signed.
-                                        When LA is signed for the first time this element is empty, but it is often
-                                        filled later on.
-
-                                        Note: This element corresponds to "Table A2" on the EUC LA template (attached
-                                        in this XSD's repository).
-                                    </xs:documentation>
-                                </xs:annotation>
-                            </xs:element>
-                            <xs:element name="latest-approved-snapshot" type="SnapshotOf_ComponentsStudied">
-                                <xs:annotation>
-                                    <xs:documentation>
-                                        The latest approved snapshot of courses studied (or planned to the studedied). When
-                                        LA is signed for the first time this element contains the same courses as the
-                                        `before-mobility-snapshot` does, but this may change later in time.
+                                        The latest approved list of courses studied (or planned to be studied)
+                                        with changes compared to the "before-mobility". When LA is signed for the first time
+                                        this element contains the same courses as the `before-mobility` does,
+                                        but this may change later in time.
 
                                         Note: If you want to compare this to the tables in the EUC LA PDF template
                                         (attached in this XSD's repository), then this element describes what "Table A"
-                                        would look like if all changes from "Table A2" were applied to it. It often
-                                        *resambles* "Table C", but it's NOT its equivalent (EWP ToRs API serves an
-                                        equivalent of "Table C"). You can discuss it here:
-                                        https://github.com/erasmus-without-paper/ewp-specs-api-omobilities/issues/17
+                                        would look like if all changes from "Table A2" were added (not applied) to it.
                                     </xs:documentation>
                                 </xs:annotation>
                             </xs:element>
                         </xs:sequence>
-                        <xs:element name="latest-draft-changes" type="ListOfChangesTo_ComponentsStudied">
-                            <xs:annotation>
-                                <xs:documentation>
-                                    This element is not used when PDF LA is generated, but it is still required. It
-                                    allows server implementers to publish proposed changes to the LA, before they
-                                    are approved. If the server doesn't store such proposals (or if it doesn't want
-                                    to publish them), then this element will be empty.
-                                </xs:documentation>
-                            </xs:annotation>
-                        </xs:element>
-                        <xs:element name="latest-draft-snapshot" type="SnapshotOf_ComponentsStudied">
-                            <xs:annotation>
-                                <xs:documentation>
-                                    This element is not used when PDF LA is generated, but it is still required.
-                                    Similar to the `latest-draft-changes` element, but the proposed changes are
-                                    presented in a unified form. If the server doesn't store proposals (or if it
-                                    doesn't want to publish them), then this element will contain a copy of the
-                                    `latest-approved-snapshot` (or, if no `latest-approved-snapshot` exists, then
-                                    it will be empty).
-                                </xs:documentation>
-                            </xs:annotation>
-                        </xs:element>
+                        <xs:sequence minOccurs="0" maxOccurs="1">
+                            <xs:element name="latest-changes" type="ListOf_ComponentsStudied" minOccurs="0">
+                                <xs:annotation>
+                                    <xs:documentation>
+                                        This element is not used when PDF LA is generated.
+                                        It allows server implementers to publish proposed changes to the latest
+                                        approved version of LA. If the server doesn't store such proposals (or if it doesn't want
+                                        to publish them), then this element will be empty. It is also empty when no LA
+                                        has yet been approved or there are no proposals of change to the latest approved version.
+                                        Although this element is not required by the template, it may be helpful to see
+                                        the actual change proposal, especially if there are many changes during the mobility.
+                                        Note, that the "latest-proposal" section contains changes compared to the "before-mobility",
+                                        and here we can see changes compared to the "last-approved".
+                                    </xs:documentation>
+                                </xs:annotation>
+                            </xs:element>
+                            <xs:element name="latest-proposal" type="ListOf_ComponentsStudied">
+                                <xs:annotation>
+                                    <xs:documentation>
+                                        This element is not used when PDF LA is generated, but it is required
+                                        to propose new version of the LA to be accepted by the partner.
+                                        It contains courses planned to be studied with changes compared to the "before-mobility".
+                                        After acceptance it will be copied to the "latest-approved" section.
+                                        If there are no proposals of change to the latest approved version,
+                                        this element will not be present.
+                                    </xs:documentation>
+                                </xs:annotation>
+                            </xs:element>
+                        </xs:sequence>
                     </xs:sequence>
                 </xs:complexType>
             </xs:element>
@@ -335,13 +310,13 @@
                 <xs:complexType>
                     <xs:sequence>
                         <xs:sequence minOccurs="0" maxOccurs="1">
-                            <xs:element name="before-mobility-changes" type="ListOfChangesTo_ComponentsRecognized"/>
-                            <xs:element name="before-mobility-snapshot" type="SnapshotOf_ComponentsRecognized"/>
-                            <xs:element name="latest-approved-changes" type="ListOfChangesTo_ComponentsRecognized"/>
-                            <xs:element name="latest-approved-snapshot" type="SnapshotOf_ComponentsRecognized"/>
+                            <xs:element name="before-mobility" type="ListOf_ComponentsRecognized"/>
+                            <xs:element name="latest-approved" type="ListOf_ComponentsRecognized"/>
                         </xs:sequence>
-                        <xs:element name="latest-draft-changes" type="ListOfChangesTo_ComponentsRecognized"/>
-                        <xs:element name="latest-draft-snapshot" type="SnapshotOf_ComponentsRecognized"/>
+                        <xs:sequence minOccurs="0" maxOccurs="1">
+                            <xs:element name="latest-changes" type="ListOf_ComponentsRecognized" minOccurs="0" />
+                            <xs:element name="latest-proposal" type="ListOf_ComponentsRecognized"/>
+                        </xs:sequence>
                     </xs:sequence>
                 </xs:complexType>
             </xs:element>
@@ -503,6 +478,153 @@
                     </xs:complexType>
                 </xs:element>
             </xs:sequence>
+            <xs:attribute name="status">
+                <xs:annotation>
+                    <xs:documentation>
+                        Status of the component. Should be used if the component represents a change.
+                    </xs:documentation>
+                </xs:annotation>
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:enumeration value="inserted">
+                            <xs:annotation>
+                                <xs:documentation>
+                                    This status means that the component has been inserted. Read description
+                                    of the "before-mobility" and "latest-approved" to see in reference to which list
+                                    it has been inserted.
+                                </xs:documentation>
+                            </xs:annotation>
+                        </xs:enumeration>
+                        <xs:enumeration value="deleted">
+                            <xs:annotation>
+                                <xs:documentation>
+                                    This status means that the component has been deleted, so actually
+                                    it is no longer present in the LA. Read description of the "before-mobility"
+                                    and "latest-approved" to see in reference to which list it has been deleted.
+                                </xs:documentation>
+                            </xs:annotation>
+                        </xs:enumeration>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="reason-code">
+                <xs:annotation>
+                    <xs:documentation>
+                        An optional reason for the change. If the element represents the change
+                        (the "status" attribute is not empty), than the reason of the change (code or text, or both)
+                        SHOULD be provided.
+
+                        If the reason matches one of the reasons provided in the enumeration below,
+                        than it is RECOMMENDED to provide the code. Otherwise the code MUST NOT be provided
+                        and the text description of the reason (`reason-text`) SHOULD be provided.
+                        
+                        UI designers are advised to supply a number of suggested reasons for their
+                        users (so that they can pick one when making the change). Users SHOULD be
+                        allowed to specify their own custom reason for the change too (`reason-text`).
+
+                        Currently, the enumeration supports viable reasons for changing
+                        `components-studied` list only. This element MUST NOT be provided for
+                        changes in `components-recognized`.
+
+                        Attached EUC LA template defines seven "Reasons for exceptional changes to
+                        study programme abroad", and assigns them numbers from 1 to 7. EUC does say
+                        whether this assignment is backward-compatible or not, so we must assume it
+                        isn't. Therefore, we introduce an enumeration of our own, which is intended to
+                        stay backward-compatible.
+
+                        IMPORTANT: New values MAY be added to this enumeration in future releases of
+                        this API, and such expansion is considered backward-compatible. Clients MUST be
+                        aware of this fact - if you find an unknown value here, you MUST treat it the
+                        same way as if no `ewp-reason-code` was given at all. Server MUST NOT expand
+                        their set of used reason codes without consulting EWP Partners - new reason
+                        codes MUST be added to the enumeration before they can be used.
+                    </xs:documentation>
+                </xs:annotation>
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:enumeration value="not-available">
+                            <xs:annotation>
+                                <xs:documentation>
+                                    Defined by EUC with the following description: Previously selected educational
+                                    component is not available at the Receiving Institution.
+
+                                    This reason MUST be used ONLY for "delete" changes.
+                                </xs:documentation>
+                            </xs:annotation>
+                        </xs:enumeration>
+                        <xs:enumeration value="language-mismatch">
+                            <xs:annotation>
+                                <xs:documentation>
+                                    Defined by EUC with the following description: Component is in a different
+                                    language than previously specified in the course catalogue.
+
+                                    This reason MUST be used ONLY for "delete" changes.
+                                </xs:documentation>
+                            </xs:annotation>
+                        </xs:enumeration>
+                        <xs:enumeration value="timetable-conflict">
+                            <xs:annotation>
+                                <xs:documentation>
+                                    Defined by EUC with the following description: Timetable conflict.
+
+                                    This reason MUST be used ONLY for "delete" changes.
+                                </xs:documentation>
+                            </xs:annotation>
+                        </xs:enumeration>
+                        <xs:enumeration value="substituting-deleted">
+                            <xs:annotation>
+                                <xs:documentation>
+                                    Defined by EUC with the following description: Substituting a deleted component.
+
+                                    This reason MUST be used ONLY for "insert" changes.
+                                </xs:documentation>
+                            </xs:annotation>
+                        </xs:enumeration>
+                        <xs:enumeration value="extending-mobility">
+                            <xs:annotation>
+                                <xs:documentation>
+                                    Defined by EUC with the following description: Extending the mobility period.
+
+                                    This reason MUST be used ONLY for "insert" changes.
+                                </xs:documentation>
+                            </xs:annotation>
+                        </xs:enumeration>
+                        <xs:enumeration value="properties-update">
+                            <xs:annotation>
+                                <xs:documentation>
+                                    This one is NOT defined by EUC, but it seemed reasonable to add it here. It can
+                                    be used with both "delete" and "insert" changes, and it indicates an update in
+                                    the component properties - like a change in the component's name (e.g. a
+                                    spelling error), or the number of awarded ECTS points. The exact reason for the
+                                    change SHOULD be specified in the `display-text` element.
+
+                                    This reason MUST NOT be provided if the component is *actually* being removed
+                                    or added. It is used *only* when an *existing* component is *updated* (which is
+                                    represented as two changes - a "delete" and an "insert" - preferably in this
+                                    order, next to each other).
+
+                                    It's worth noting that some servers MAY also choose to "rewrite history"
+                                    in case of unimportant mistakes, like obvious spelling errors in component name.
+                                    Such "rewrite" will cause a component to instantly change its name in all
+                                    snapshots (even those snapshots which have been approved a long time ago).
+
+                                    You can discuss this code here:
+                                    https://github.com/erasmus-without-paper/ewp-specs-api-omobilities/issues/15#issuecomment-283988998
+                                </xs:documentation>
+                            </xs:annotation>
+                        </xs:enumeration>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="reason-text" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>
+                        A human-readable description of the reason - preferrably in English. It will
+                        often be printed in PDF LA document (e.g. in the "Reason for change" column of
+                        A2 or B2 table - see attached EUC LA template).
+                    </xs:documentation>
+                </xs:annotation>
+                </xs:attribute>
         </xs:complexType>
     </xs:element>
 
@@ -544,139 +666,28 @@
         </xs:complexType>
     </xs:element>
 
-    <xs:complexType name="ListOfChangesTo_ComponentsStudied">
+    <xs:complexType name="ListOf_ComponentsStudied">
         <xs:annotation>
             <xs:documentation>
-                Describes a list of changes applied to the list of studied components. The
-                order of elements matters (see the `index` element).
+                Describes a list of studied components.
 
                 This is global, because it is used in external XSDs. It MUST stay this way, for
-                backward compatibility.
-            </xs:documentation>
-        </xs:annotation>
-        <xs:choice minOccurs="0" maxOccurs="unbounded">
-            <xs:element name="insert-component-studied">
-                <xs:annotation>
-                    <xs:documentation>
-                        This represents the action of adding a new `component-studied` element to the
-                        list of components (to be) studied.
-                    </xs:documentation>
-                </xs:annotation>
-                <xs:complexType>
-                    <xs:complexContent>
-                        <xs:extension base="_SingleChangeToAList_INSERT">
-                            <xs:sequence>
-                                <xs:element ref="component-studied">
-                                    <xs:annotation>
-                                        <xs:documentation>
-                                            This describes the component to be inserted.
-                                        </xs:documentation>
-                                    </xs:annotation>
-                                </xs:element>
-                            </xs:sequence>
-                        </xs:extension>
-                    </xs:complexContent>
-                </xs:complexType>
-            </xs:element>
-            <xs:element name="remove-component-studied">
-                <xs:annotation>
-                    <xs:documentation>
-                        This represents the action of removing one of the `component-studied` elements.
-                    </xs:documentation>
-                </xs:annotation>
-                <xs:complexType>
-                    <xs:complexContent>
-                        <xs:extension base="_SingleChangeToAList_DELETE">
-                            <xs:sequence>
-                            </xs:sequence>
-                        </xs:extension>
-                    </xs:complexContent>
-                </xs:complexType>
-            </xs:element>
-        </xs:choice>
-    </xs:complexType>
-
-    <xs:complexType name="ListOfChangesTo_ComponentsRecognized">
-        <xs:annotation>
-            <xs:documentation>
-                Describes a list of changes applied to the list of components recognized. The
-                order of elements matters (see the `index` element).
-
-                This is global, because it is used in external XSDs. It MUST stay this way, for
-                backward compatibility.
-            </xs:documentation>
-        </xs:annotation>
-        <xs:choice minOccurs="0" maxOccurs="unbounded">
-            <xs:element name="insert-component-recognized">
-                <xs:annotation>
-                    <xs:documentation>
-                        This represents the action of adding a new `component-recognized` element.
-                    </xs:documentation>
-                </xs:annotation>
-                <xs:complexType>
-                    <xs:complexContent>
-                        <xs:extension base="_SingleChangeToAList_INSERT">
-                            <xs:sequence>
-                                <xs:element ref="component-recognized">
-                                    <xs:annotation>
-                                        <xs:documentation>
-                                            This describes the component to be inserted.
-                                        </xs:documentation>
-                                    </xs:annotation>
-                                </xs:element>
-                            </xs:sequence>
-                        </xs:extension>
-                    </xs:complexContent>
-                </xs:complexType>
-            </xs:element>
-            <xs:element name="remove-component-recognized">
-                <xs:annotation>
-                    <xs:documentation>
-                        This represents the action of removing one of the `component-recognized` elements.
-                    </xs:documentation>
-                </xs:annotation>
-                <xs:complexType>
-                    <xs:complexContent>
-                        <xs:extension base="_SingleChangeToAList_DELETE">
-                            <xs:sequence>
-                            </xs:sequence>
-                        </xs:extension>
-                    </xs:complexContent>
-                </xs:complexType>
-            </xs:element>
-        </xs:choice>
-    </xs:complexType>
-
-    <xs:complexType name="SnapshotOf_ComponentsStudied">
-        <xs:annotation>
-            <xs:documentation>
-                Describes a snapshot of the list of studied components.
-
-                This is global, because it is used in other XSDs. It MUST stay this way, for
                 backward compatibility.
             </xs:documentation>
         </xs:annotation>
         <xs:sequence>
-            <xs:element ref="component-studied" minOccurs="0" maxOccurs="unbounded">
-                <xs:annotation>
-                    <xs:documentation>
-                        An ordered list of components present in this snapshot.
-
-                        The order matters (search for `index` elements in this XSD to understand why).
-                    </xs:documentation>
-                </xs:annotation>
-            </xs:element>
+            <xs:element ref="component-studied" minOccurs="0" maxOccurs="unbounded" />
             <xs:element name="approval" minOccurs="0" maxOccurs="3">
                 <xs:annotation>
                     <xs:documentation>
                         Indicates which of the three approving parties (student, and two coordinators)
                         have already approved this snapshot.
 
-                        All approved snapshots (such as `before-mobility-snapshot` and
-                        `latest-approved-snapshot`) MUST contain three `approval` elements. On the
-                        other hand, the `latest-draft-snapshot` MUST be approved by zero, one or two
+                        Both approved versions (`before-mobility` and `latest-approved`)
+                        MUST contain three `approval` elements. On the
+                        other hand, the `latest-proposal` MUST be approved by zero, one or two
                         parties, it MUST NOT be approved by all three parties (because it wouldn't be
-                        a draft anymore).
+                        a proposal anymore).
                     </xs:documentation>
                 </xs:annotation>
                 <xs:complexType>
@@ -691,7 +702,7 @@
                         <xs:element name="timestamp" minOccurs="0" maxOccurs="1" type="xs:dateTime">
                             <xs:annotation>
                                 <xs:documentation>
-                                    The time when the snapshot has been approved by this party (if known).
+                                    The time when the LA has been approved by this party (if known).
 
                                     Servers are NOT REQUIRED to store this information. For example, some HEIs
                                     might get their student approvals on paper (instead of allowing the students to
@@ -709,7 +720,7 @@
             <xs:element name="should-now-be-approved-by" minOccurs="0" maxOccurs="3" type="ApprovingParty">
                 <xs:annotation>
                     <xs:documentation>
-                        An optional indicator that the server is now waiting for this snapshot to be
+                        An optional indicator that the server is now waiting for this version to be
                         approved by the parties provided here.
 
                         There are numerous ways in which the sending HEIs might want the process of
@@ -724,9 +735,8 @@
                         the user might even receive an email notification.
 
                         This element MUST NOT refer to parties which have already approved this
-                        snapshot (so, in effect, it can only be used in the `latest-draft-snapshot`
-                        element). It also MUST NOT be used if the snapshot doesn't contain any changes
-                        (i.e. when `latest-draft-changes` is empty).
+                        snapshot (so, in effect, it can only be used in the `latest-proposal`
+                        element).
                     </xs:documentation>
                 </xs:annotation>
             </xs:element>
@@ -734,21 +744,19 @@
         <xs:attribute name="in-effect-since" type="xs:dateTime" use="optional">
             <xs:annotation>
                 <xs:documentation>
-                    Indicates the date since which the snapshot is (or was) considered "in effect"
+                    Indicates the date since which this version of LA is (or was) considered "in effect"
                     by the sending HEI. In theory, this should match the latest of the three
                     approval dates, but it doesn't have to. Servers are not required to provide
-                    this date, but it's RECOMMENDED to do so. It MAY be an approximate date. If
-                    these dates are provided, then their order MUST be consistent with the order of
-                    the snapshots on the list.
+                    this date, but it's RECOMMENDED to do so. It MAY be an approximate date.
                 </xs:documentation>
             </xs:annotation>
         </xs:attribute>
     </xs:complexType>
 
-    <xs:complexType name="SnapshotOf_ComponentsRecognized">
+    <xs:complexType name="ListOf_ComponentsRecognized">
         <xs:annotation>
             <xs:documentation>
-                Describes a snapshot of the list of components recognized.
+                Describes a list of components recognized.
 
                 This is global, because it is used in external XSDs. It MUST stay this way, for
                 backward compatibility.
@@ -757,194 +765,6 @@
         <xs:sequence>
             <xs:element ref="component-recognized" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
-    </xs:complexType>
-
-    <xs:complexType name="_SingleChangeToAList" abstract="true">
-        <xs:annotation>
-            <xs:documentation>
-                An abstract parent class which represents a single change occuring on some list
-                of elements.
-            </xs:documentation>
-        </xs:annotation>
-        <xs:sequence>
-            <xs:element name="reason" minOccurs="0" maxOccurs="1">
-                <xs:annotation>
-                    <xs:documentation>
-                        An optional reason for the change.
-
-                        UI designers are advised to supply a number of suggested reasons for their
-                        users (so that they can pick one when making the change). Users SHOULD be
-                        allowed to specify their own custom reason for the change too.
-                    </xs:documentation>
-                </xs:annotation>
-                <xs:complexType>
-                    <xs:sequence>
-                        <xs:element name="display-text" type="ewp:MultilineString">
-                            <xs:annotation>
-                                <xs:documentation>
-                                    A human-readable description of the reason - preferrably in English. It will
-                                    often be printed in PDF LA document (e.g. in the "Reason for change" column of
-                                    A2 or B2 table - see attached EUC LA template).
-
-                                    The value of this element can sometimes be inferred from `ewp-reason-code`, but
-                                    for forward-compatibility reasons, this element is required regardless of this
-                                    fact.
-
-                                    If the reason cannot be provided, server implementers MAY provide an empty
-                                    string here. This is NOT RECOMMENDED though. Users SHOULD give some reason for
-                                    each of their changes, and the server SHOULD store these reasons.
-                                </xs:documentation>
-                            </xs:annotation>
-                        </xs:element>
-                        <xs:element name="ewp-reason-code" minOccurs="0" maxOccurs="1">
-                            <xs:annotation>
-                                <xs:documentation>
-                                    An optional reason code. It is RECOMMENDED to provide it, if the reason for
-                                    change matches one of the reasons provided in the enumeration below. If no
-                                    match can be found, then this element MUST NOT be provided.
-
-                                    Currently, the enumeration supports viable reasons for changing
-                                    `components-studied` list only. This element MUST NOT be provided for
-                                    changes in `components-recognized`.
-
-                                    Attached EUC LA template defines seven "Reasons for exceptional changes to
-                                    study programme abroad", and assigns them numbers from 1 to 7. EUC does say
-                                    whether this assignment is backward-compatible or not, so we must assume it
-                                    isn't. Therefore, we introduce an enumeration of our own, which is intended to
-                                    stay backward-compatible.
-
-                                    IMPORTANT: New values MAY be added to this enumeration in future releases of
-                                    this API, and such expansion is considered backward-compatible. Clients MUST be
-                                    aware of this fact - if you find an unknown value here, you MUST treat it the
-                                    same way as if no `ewp-reason-code` was given at all. Server MUST NOT expand
-                                    their set of used reason codes without consulting EWP Partners - new reason
-                                    codes MUST be added to the enumeration before they can be used.
-                                </xs:documentation>
-                            </xs:annotation>
-                            <xs:simpleType>
-                                <xs:restriction base="xs:string">
-                                    <xs:enumeration value="not-available">
-                                        <xs:annotation>
-                                            <xs:documentation>
-                                                Defined by EUC with the following description: Previously selected educational
-                                                component is not available at the Receiving Institution.
-
-                                                This reason MUST be used ONLY for "delete" changes.
-                                            </xs:documentation>
-                                        </xs:annotation>
-                                    </xs:enumeration>
-                                    <xs:enumeration value="language-mismatch">
-                                        <xs:annotation>
-                                            <xs:documentation>
-                                                Defined by EUC with the following description: Component is in a different
-                                                language than previously specified in the course catalogue.
-
-                                                This reason MUST be used ONLY for "delete" changes.
-                                            </xs:documentation>
-                                        </xs:annotation>
-                                    </xs:enumeration>
-                                    <xs:enumeration value="timetable-conflict">
-                                        <xs:annotation>
-                                            <xs:documentation>
-                                                Defined by EUC with the following description: Timetable conflict.
-
-                                                This reason MUST be used ONLY for "delete" changes.
-                                            </xs:documentation>
-                                        </xs:annotation>
-                                    </xs:enumeration>
-                                    <xs:enumeration value="substituting-deleted">
-                                        <xs:annotation>
-                                            <xs:documentation>
-                                                Defined by EUC with the following description: Substituting a deleted component.
-
-                                                This reason MUST be used ONLY for "insert" changes.
-                                            </xs:documentation>
-                                        </xs:annotation>
-                                    </xs:enumeration>
-                                    <xs:enumeration value="extending-mobility">
-                                        <xs:annotation>
-                                            <xs:documentation>
-                                                Defined by EUC with the following description: Extending the mobility period.
-
-                                                This reason MUST be used ONLY for "insert" changes.
-                                            </xs:documentation>
-                                        </xs:annotation>
-                                    </xs:enumeration>
-                                    <xs:enumeration value="properties-update">
-                                        <xs:annotation>
-                                            <xs:documentation>
-                                                This one is NOT defined by EUC, but it seemed reasonable to add it here. It can
-                                                be used with both "delete" and "insert" changes, and it indicates an update in
-                                                the component properties - like a change in the component's name (e.g. a
-                                                spelling error), or the number of awarded ECTS points. The exact reason for the
-                                                change SHOULD be specified in the `display-text` element.
-
-                                                This reason MUST NOT be provided if the component is *actually* being removed
-                                                or added. It is used *only* when an *existing* component is *updated* (which is
-                                                represented as two changes - a "delete" and an "insert" - preferably in this
-                                                order, next to each other).
-
-                                                It's worth noting that some servers MAY also choose to "rewrite history"
-                                                in case of unimportant mistakes, like obvious spelling errors in component name.
-                                                Such "rewrite" will cause a component to instantly change its name in all
-                                                snapshots (even those snapshots which have been approved a long time ago).
-
-                                                You can discuss this code here:
-                                                https://github.com/erasmus-without-paper/ewp-specs-api-omobilities/issues/15#issuecomment-283988998
-                                            </xs:documentation>
-                                        </xs:annotation>
-                                    </xs:enumeration>
-                                </xs:restriction>
-                            </xs:simpleType>
-                        </xs:element>
-                    </xs:sequence>
-                </xs:complexType>
-            </xs:element>
-        </xs:sequence>
-    </xs:complexType>
-
-    <xs:complexType name="_SingleChangeToAList_INSERT" abstract="true">
-        <xs:annotation>
-            <xs:documentation>
-                An abstract parent class which represents a single INSERT occurring on some list
-                of elements.
-            </xs:documentation>
-        </xs:annotation>
-        <xs:complexContent>
-            <xs:extension base="_SingleChangeToAList">
-                <xs:sequence>
-                     <xs:element name="index" type="xs:nonNegativeInteger">
-                         <xs:annotation>
-                             <xs:documentation>
-                                 Zero-based index of the element before which to insert.
-                             </xs:documentation>
-                         </xs:annotation>
-                     </xs:element>
-                </xs:sequence>
-            </xs:extension>
-        </xs:complexContent>
-    </xs:complexType>
-
-    <xs:complexType name="_SingleChangeToAList_DELETE" abstract="true">
-        <xs:annotation>
-            <xs:documentation>
-                An abstract parent class which represents a single DELETE occurring on some list
-                of elements.
-            </xs:documentation>
-        </xs:annotation>
-        <xs:complexContent>
-            <xs:extension base="_SingleChangeToAList">
-                <xs:sequence>
-                     <xs:element name="index" type="xs:nonNegativeInteger">
-                         <xs:annotation>
-                             <xs:documentation>
-                                 Zero-based index of the element to be removed.
-                             </xs:documentation>
-                         </xs:annotation>
-                     </xs:element>
-                </xs:sequence>
-            </xs:extension>
-        </xs:complexContent>
     </xs:complexType>
 
     <xs:simpleType name="ApprovingParty">
