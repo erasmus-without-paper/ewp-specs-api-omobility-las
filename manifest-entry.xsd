@@ -114,7 +114,7 @@
                             </xs:annotation>
                             <xs:complexType>
                                 <xs:sequence>
-                                    <xs:element name="approve-components-studied-draft-v1" minOccurs="0" maxOccurs="1" type="ewp:Empty"/>
+                                    <xs:element name="approve-components-studied-proposal-v1" minOccurs="0" maxOccurs="1" type="ewp:Empty"/>
                                     <xs:element name="update-components-studied-v1" minOccurs="0" maxOccurs="1" type="ewp:Empty"/>
                                 </xs:sequence>
                             </xs:complexType>

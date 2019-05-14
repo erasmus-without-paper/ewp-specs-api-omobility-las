@@ -8,10 +8,10 @@
     "
 >
     <req:sending-hei-id>uw.edu.pl</req:sending-hei-id>
-    <req:approve-components-studied-draft-v1>
+    <req:approve-components-studied-proposal-v1>
         <req:omobility-id>c442c289-5541-4cae-9edb-8ad83e133613</req:omobility-id>
         <req:approving-party>receiving-hei</req:approving-party>
-        <req:current-latest-draft-snapshot>
+        <req:latest-proposal>
             <component-studied>
                 <title>Introductory calculus</title>
                 <academic-term-display-name>Spring</academic-term-display-name>
@@ -31,6 +31,6 @@
                     <value>6</value>
                 </credit>
             </component-studied>
-        </req:current-latest-draft-snapshot>
-    </req:approve-components-studied-draft-v1>
+        </req:latest-proposal>
+    </req:approve-components-studied-proposal-v1>
 </req:omobility-las-update-request>
