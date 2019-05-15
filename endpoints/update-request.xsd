@@ -141,7 +141,7 @@
                         </xs:documentation>
                     </xs:annotation>
                 </xs:element>
-                <xs:element name="latest-proposal" minOccurs="1" maxOccurs="1" type="la:ListOf_ComponentsStudied">
+                <xs:element name="latest-proposal" type="la:ListOf_ComponentsStudied">
                     <xs:annotation>
                         <xs:documentation>
                             The current state of the `latest-proposal`, which is the *base for the
@@ -169,11 +169,24 @@
                         </xs:documentation>
                     </xs:annotation>
                 </xs:element>
-                <xs:element name="suggestion" minOccurs="1" maxOccurs="1" type="la:ListOf_ComponentsStudied">
+                <xs:element name="suggestion" minOccurs="0" type="la:ListOf_ComponentsStudied">
                     <xs:annotation>
                         <xs:documentation>
                             This is the "target" version which the requester is aiming for.
                             It is RECOMMENDED to provide reasons for changes.
+                            
+                            You MUST provide a suggestion or a comment (or both).
+                        </xs:documentation>
+                    </xs:annotation>
+                </xs:element>
+                <xs:element name="comment" minOccurs="0" type="xs:string">
+                    <xs:annotation>
+                        <xs:documentation>
+                            In the comment you can describe why LA has not been accepted and what are
+                            the suggestions for changes. If the suggestion is possible to be expressed
+                            in a structured way, it is RECOMMENDED to send the "suggestion" element.
+                            
+                            You MUST provide a suggestion or a comment (or both).
                         </xs:documentation>
                     </xs:annotation>
                 </xs:element>
