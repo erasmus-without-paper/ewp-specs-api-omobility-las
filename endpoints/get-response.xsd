@@ -301,10 +301,6 @@
                         here again**. The only difference is that other types of entities are described
                         by it - in EUC LA template, these entities are described by tables "B" and
                         "B2" (while `components-studied` describe tables "A" and "A2").
-
-                        Note, that very few servers are planning to provide this feature at the initial
-                        stages of EWP adoption:
-                        https://github.com/erasmus-without-paper/ewp-specs-api-omobilities/issues/11
                     </xs:documentation>
                 </xs:annotation>
                 <xs:complexType>
@@ -323,11 +319,13 @@
         </xs:sequence>
     </xs:complexType>
 
-    <xs:element name="component-studied">
+    <xs:element name="component">
         <xs:annotation>
             <xs:documentation>
-                This describes a single entry on the list of components studied (or planned to
-                be studied) at the Receiving HEI.
+                This describes a single entry on the list of components (studied or recognized).
+
+                In the descriptions of subelements we will use the term "component owner", which means
+                receiving HEI for the component studied and sending HEI for the component recognized.
             </xs:documentation>
         </xs:annotation>
         <xs:complexType>
@@ -335,18 +333,18 @@
                 <xs:element name="los-id" type="course:LosID" minOccurs="0" maxOccurs="1">
                     <xs:annotation>
                         <xs:documentation>
-                            The EWP's LOS ID of the component, exactly as exposed via the receiving HEI's
-                            Courses API. Please note, that it is USUALLY NOT the same as the "Component
-                            Code" present on the EUC template (compare with `los-code` element).
+                            The EWP's LOS ID of the component, exactly as exposed via the component owner's
+                            Courses API. Please note, that it is USUALLY NOT the same as the "Component Code"
+                            present on the EUC template (compare with `los-code` element).
                             https://github.com/erasmus-without-paper/ewp-specs-api-courses#unique-identifiers
 
                             Notes for sending HEI implementers
                             ----------------------------------
-                            This field is optional, but you are still REQUIRED to have a place for it in
-                            your database.
+                            This field is optional, but you SHOULD send it for components recognized
+                            and for the components studied you SHOULD have a place for it in your database.
 
-                            You do not need to fill it out. In fact, in most cases it will be very
-                            difficult or even impossible for you to fill it out, because quite probably
+                            For the studied components you do not need to fill it out. In fact, in most cases
+                            it will be very difficult or even impossible for you to fill it out, because quite probably
                             neither you nor your student has access to the correct LOS ID nor LOI ID. This
                             is due to the fact that, at the time of the nomination, many courses won't have
                             a proper LOI created in the receiving HEI's system yet (and so, you won't see
@@ -364,7 +362,7 @@
                             this can be hard (see Course Replication API for details).
 
                             You might wonder - if it's optional, and the receiving HEI is not even required
-                            to fill it out - why do we require sending HEIs to support it? We agree that
+                            to fill it out - why do we want sending HEIs to support it? We agree that
                             all this might seem a bit vague, but the problem is that we (EWP designers) are
                             actually not yet sure *who should* be responsible for filling out this field.
                             We are however quite certain that both parties would benefit from having it
@@ -372,7 +370,7 @@
 
                             If the field *is* given (either by you, or by the receiving HEI), then the
                             values of *many other* fields can be derived from (copied from) the matching
-                            values served by receiving HEI's Courses API. In other words, if you bind your
+                            values served by the Courses API. In other words, if you bind your
                             components to specific LOI, then - most probably - you don't want to allow your
                             users to directly edit this component's properties anymore.
                         </xs:documentation>
@@ -402,7 +400,7 @@
                 <xs:element name="title" type="xs:string">
                     <xs:annotation>
                         <xs:documentation>
-                            Component title at the receiving institution. This field MAY be entered "by
+                            Component title. This field MAY be entered "by
                             hand" (for example by the student), especially if no `los-id` is given. It
                             might assist other users (and/or computer systems) when they're trying to
                             identify the component, but it does not necessarilly match the name exactly.
@@ -411,19 +409,17 @@
                             provided only once (preferably in English). If clients want to retrieve titles
                             in other languages, then they can do this via the Courses API.
 
-                            If it so happens that a component changes its name (on the receiving HEI's
-                            servers), then it is the *receiving HEI* that SHOULD update all the titles of
-                            the matching LOSes in all remote mobilities (of course, the *sending* HEI MAY
-                            fix such inconsistencies too, if it somehow notices that a title has been
-                            changed).
+                            If it so happens that a component changes its name, then it is the component owner
+                            that SHOULD update all the titles of the matching LOSes in all remote mobilities
+                            (of course, the partner HEI MAY fix such inconsistencies too, if it somehow notices
+                            that a title has been changed).
                         </xs:documentation>
                     </xs:annotation>
                 </xs:element>
                 <xs:element name="loi-id" type="course:LoiID" minOccurs="0" maxOccurs="1">
                     <xs:annotation>
                         <xs:documentation>
-                            The EWP's LOI ID of the component, exactly as exposed via the receiving HEI's
-                            Courses API.
+                            The EWP's LOI ID of the component, exactly as exposed via the Courses API.
                             https://github.com/erasmus-without-paper/ewp-specs-api-courses#unique-identifiers
 
                             Also, please see "Notes for sending HEI implementers" in the `los-id` element!
@@ -433,10 +429,10 @@
                 <xs:element name="academic-term-display-name" type="xs:string" minOccurs="0" maxOccurs="1">
                     <xs:annotation>
                         <xs:documentation>
-                            The *name* of the academic term of the LOI at the receiving institution. This
-                            field MAY be entered "by hand" (for example by the student), especially if no
-                            `loi-id` is given. It might assist other users (and/or computer systems) when
-                            they're trying to identify the LOI, but it does not necessarilly need to match
+                            The *name* of the academic term of the LOI at the component owner institution.
+                            For components studied this field MAY be entered "by hand" (for example by the student),
+                            especially if no `loi-id` is given. It might assist other users (and/or computer systems)
+                            when they're trying to identify the LOI, but it does not necessarilly need to match
                             the name of academic term exactly.
 
                             Note, that we do not require a full-fledged academic-term element here
@@ -510,14 +506,15 @@
             <xs:attribute name="reason-code">
                 <xs:annotation>
                     <xs:documentation>
-                        An optional reason for the change. If the element represents the change
-                        (the "status" attribute is not empty), than the reason of the change (code or text, or both)
-                        SHOULD be provided.
+                        An optional reason for the change. Applies only to components studied.
+
+                        If the element represents the change (the "status" attribute is not empty),
+                        than the reason of the change (code or text, or both) SHOULD be provided.
 
                         If the reason matches one of the reasons provided in the enumeration below,
                         than it is RECOMMENDED to provide the code. Otherwise the code MUST NOT be provided
                         and the text description of the reason (`reason-text`) SHOULD be provided.
-                        
+
                         UI designers are advised to supply a number of suggested reasons for their
                         users (so that they can pick one when making the change). Users SHOULD be
                         allowed to specify their own custom reason for the change too (`reason-text`).
@@ -628,44 +625,6 @@
         </xs:complexType>
     </xs:element>
 
-    <xs:element name="component-recognized">
-        <xs:annotation>
-            <xs:documentation>
-                This describes a single entry on the list of components recognized (or planned
-                to be recognized) at the Sending HEI.
-
-                As opposed to the `component-studied` element, both `los-id` and `loi-id` element
-                are REQUIRED in `component-recognized`. This means that *if* the sending HEI
-                wants to fill out the recognition section of the LA (it is recommended to do
-                so), then it SHOULD also implement the Courses API (so that all the clients can
-                access the LOIs properties, such as credits awarded for it).
-            </xs:documentation>
-        </xs:annotation>
-        <xs:complexType>
-            <xs:sequence>
-                <xs:element name="los-id" type="course:LosID">
-                    <xs:annotation>
-                        <xs:documentation>
-                            The EWP's LOS ID of the component, exactly as exposed via the sending HEI's
-                            Courses API. Please note, that is NOT necessarilly the same as the "Component
-                            Code" present on the EUC template.
-                            https://github.com/erasmus-without-paper/ewp-specs-api-courses#unique-identifiers
-                        </xs:documentation>
-                    </xs:annotation>
-                </xs:element>
-                <xs:element name="loi-id" type="course:LoiID">
-                    <xs:annotation>
-                        <xs:documentation>
-                            The EWP's LOI ID of the component, exactly as exposed via the sending HEI's
-                            Courses API.
-                            https://github.com/erasmus-without-paper/ewp-specs-api-courses#unique-identifiers
-                        </xs:documentation>
-                    </xs:annotation>
-                </xs:element>
-            </xs:sequence>
-        </xs:complexType>
-    </xs:element>
-
     <xs:complexType name="ListOf_ComponentsStudied">
         <xs:annotation>
             <xs:documentation>
@@ -676,7 +635,7 @@
             </xs:documentation>
         </xs:annotation>
         <xs:sequence>
-            <xs:element ref="component-studied" minOccurs="0" maxOccurs="unbounded" />
+            <xs:element ref="component" minOccurs="0" maxOccurs="unbounded" />
             <xs:element name="approval" minOccurs="0" maxOccurs="3">
                 <xs:annotation>
                     <xs:documentation>
@@ -763,7 +722,7 @@
             </xs:documentation>
         </xs:annotation>
         <xs:sequence>
-            <xs:element ref="component-recognized" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element ref="component" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
     </xs:complexType>
 

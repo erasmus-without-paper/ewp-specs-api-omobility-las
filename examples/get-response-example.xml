@@ -53,14 +53,14 @@
         </student-language-skill>
         <components-studied>
             <before-mobility in-effect-since="2018-11-14T08:18:19+02:00">
-                <component-studied>
+                <component>
                     <title>Introductory calculus</title>
                     <academic-term-display-name>Spring</academic-term-display-name>
                     <credit>
                         <scheme>ects</scheme>
                         <value>6</value>
                     </credit>
-                </component-studied>
+                </component>
                 <approval>
                     <by-party>student</by-party>
                 </approval>
@@ -79,15 +79,15 @@
             the "During Mobility exceptional changes" tables in the PDF LA.)
             -->
             <latest-approved in-effect-since="2019-03-03T12:54:00+02:00">
-                <component-studied>
+                <component>
                     <title>Introductory calculus</title>
                     <academic-term-display-name>Spring</academic-term-display-name>
                     <credit>
                         <scheme>ects</scheme>
                         <value>6</value>
                     </credit>
-                </component-studied>
-                <component-studied status="inserted" reason-code="extending-mobility">
+                </component>
+                <component status="inserted" reason-code="extending-mobility">
                     <los-id>CR/f9c7677f-e3e3-4106-a865-1d1e8867830e</los-id>
                     <los-code>KR502B</los-code>
                     <title>Algebra</title>
@@ -97,7 +97,7 @@
                         <scheme>ects</scheme>
                         <value>6</value>
                     </credit>
-                </component-studied>
+                </component>
                 <approval>
                     <by-party>student</by-party>
                 </approval>
@@ -117,7 +117,7 @@
             is copied into the "latest-approved" section.
             -->
             <latest-changes>
-                <component-studied status="deleted" reason-code="language-mismatch">
+                <component status="deleted" reason-code="language-mismatch">
                     <los-id>CR/f9c7677f-e3e3-4106-a865-1d1e8867830e</los-id>
                     <los-code>KR502B</los-code>
                     <title>Algebra</title>
@@ -127,8 +127,8 @@
                         <scheme>ects</scheme>
                         <value>6</value>
                     </credit>
-                </component-studied>
-                <component-studied status="inserted" reason-code="substituting-deleted">
+                </component>
+                <component status="inserted" reason-code="substituting-deleted">
                     <los-id>CR/dd5fa0b7-f036-4915-9898-8d683ded5738</los-id>
                     <los-code>KR630</los-code>
                     <title>Elementary Set Theory</title>
@@ -138,18 +138,18 @@
                         <scheme>ects</scheme>
                         <value>6</value>
                     </credit>
-                </component-studied>
+                </component>
             </latest-changes>
             <latest-proposal>
-                <component-studied>
+                <component>
                     <title>Introductory calculus</title>
                     <academic-term-display-name>Spring</academic-term-display-name>
                     <credit>
                         <scheme>ects</scheme>
                         <value>6</value>
                     </credit>
-                </component-studied>
-                <component-studied status="inserted" reason-code="substituting-deleted">
+                </component>
+                <component status="inserted" reason-code="substituting-deleted">
                     <los-id>CR/dd5fa0b7-f036-4915-9898-8d683ded5738</los-id>
                     <los-code>KR630</los-code>
                     <title>Elementary Set Theory</title>
@@ -159,25 +159,28 @@
                         <scheme>ects</scheme>
                         <value>6</value>
                     </credit>
-                </component-studied>
+                </component>
             </latest-proposal>
         </components-studied>
         <components-recognized>
             <before-mobility>
-                <component-recognized>
+                <component>
                     <los-id>CR/8f0d7dad-2bb6-d401-48c3-c7e0baf03efb</los-id>
+                    <title>Calculus</title>
                     <loi-id>CRI/212419af-4326-3e21-30ba-c0b5041d89e2</loi-id>
-                </component-recognized>
+                </component>
             </before-mobility>
             <latest-approved>
-                <component-recognized>
+                <component>
                     <los-id>CR/8f0d7dad-2bb6-d401-48c3-c7e0baf03efb</los-id>
+                    <title>Calculus</title>
                     <loi-id>CRI/212419af-4326-3e21-30ba-c0b5041d89e2</loi-id>
-                </component-recognized>
-                <component-recognized>
+                </component>
+                <component>
                     <los-id>CR/7fdg347d-h45g-h445-02md-mdkd02kch2h5</los-id>
+                    <title>Algebra with Geometry</title>
                     <loi-id>CRI/mnj763c-83mf-7723-nvdp-03bdb64ja2mf3</loi-id>
-                </component-recognized>
+                </component>
             </latest-approved>
         </components-recognized>
     </la>
