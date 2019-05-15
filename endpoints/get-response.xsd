@@ -408,11 +408,6 @@
                             Note, that this field does not contain an `xml:lang` attribute, and it can be
                             provided only once (preferably in English). If clients want to retrieve titles
                             in other languages, then they can do this via the Courses API.
-
-                            If it so happens that a component changes its name, then it is the component owner
-                            that SHOULD update all the titles of the matching LOSes in all remote mobilities
-                            (of course, the partner HEI MAY fix such inconsistencies too, if it somehow notices
-                            that a title has been changed).
                         </xs:documentation>
                     </xs:annotation>
                 </xs:element>
