@@ -270,17 +270,38 @@
                                     </xs:documentation>
                                 </xs:annotation>
                             </xs:element>
-                            <xs:element name="latest-proposal" type="ListOf_ComponentsStudied">
+                            <xs:element name="latest-proposal">
                                 <xs:annotation>
                                     <xs:documentation>
                                         This element is not used when PDF LA is generated, but it is required
                                         to propose new version of the LA to be accepted by the partner.
-                                        It contains courses planned to be studied with changes compared to the "before-mobility".
-                                        After acceptance it will be copied to the "latest-approved" section.
                                         If there are no proposals of change to the latest approved version,
                                         this element will not be present.
                                     </xs:documentation>
                                 </xs:annotation>
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="content" type="ListOf_ComponentsStudied">
+                                            <xs:annotation>
+                                                <xs:documentation>
+                                                    Proposal of courses planned to be studied with changes compared to the "before-mobility".
+                                                    After acceptance it will be copied to the "latest-approved" section.
+                                                </xs:documentation>
+                                            </xs:annotation>
+                                        </xs:element>
+                                        <xs:element name="id" type="xs:string">
+                                            <xs:annotation>
+                                                <xs:documentation>
+                                                    Identifier of this version of the `content` element. It MUST change if and only if
+                                                    the latest proposal content changes. You can eg. normalize the `content` element
+                                                    using Exclusive XML Canonicalization and than calculate a hash.
+
+                                                    It will be used in update request to identify the version being approved/commented.
+                                                </xs:documentation>
+                                            </xs:annotation>
+                                        </xs:element>
+                                    </xs:sequence>
+                                </xs:complexType>
                             </xs:element>
                         </xs:sequence>
                     </xs:sequence>

@@ -11,26 +11,6 @@
     <req:approve-components-studied-proposal-v1>
         <req:omobility-id>c442c289-5541-4cae-9edb-8ad83e133613</req:omobility-id>
         <req:approving-party>receiving-hei</req:approving-party>
-        <req:latest-proposal>
-            <component-studied>
-                <title>Introductory calculus</title>
-                <academic-term-display-name>Spring</academic-term-display-name>
-                <credit>
-                    <scheme>ects</scheme>
-                    <value>6</value>
-                </credit>
-            </component-studied>
-            <component-studied>
-                <los-id>CR/dd5fa0b7-f036-4915-9898-8d683ded5738</los-id>
-                <los-code>KR630</los-code>
-                <title>Elementary Set Theory</title>
-                <loi-id>CRI/76c42226-e89c-401f-ad1b-8ebffd909b50</loi-id>
-                <academic-term-display-name>Autumn 2019/2020</academic-term-display-name>
-                <credit>
-                    <scheme>ects</scheme>
-                    <value>6</value>
-                </credit>
-            </component-studied>
-        </req:latest-proposal>
+        <req:latest-proposal-id>AE61266750D019063512516C7EE01968012C81F25A89</req:latest-proposal-id>
     </req:approve-components-studied-proposal-v1>
 </req:omobility-las-update-request>

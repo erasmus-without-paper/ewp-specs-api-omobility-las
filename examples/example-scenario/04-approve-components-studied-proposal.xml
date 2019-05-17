@@ -2,15 +2,5 @@
 <!-- Attached file *is not* a valid update request. -->
 <approve-components-studied-proposal-v1>
     <approving-party>receiving-hei</approving-party>
-    <latest-proposal>
-        <component-studied>
-            <title>Advanced Logics for Computer Scientists</title>
-        </component-studied>
-        <component-studied>
-            <title>Big Data Mining and Processing</title>
-        </component-studied>
-        <component-studied>
-            <title>Advanced Functional Programming</title>
-        </component-studied>
-    </latest-proposal>
+    <latest-proposal-id>4C159B15BAF222F868493C167125FA32452</latest-proposal-id>
 </approve-components-studied-proposal-v1>

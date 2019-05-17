@@ -1,17 +1,7 @@
 <!-- For clarity, the examples contain only information about courses that the student wants to attend at the receiving HEI (`components-studied`). -->
 <!-- Attached file *is not* a valid update request. -->
 <update-components-studied-v1>
-    <latest-proposal>
-        <component-studied>
-            <title>Advanced Logics for Computer Scientists</title>
-        </component-studied>
-        <component-studied>
-            <title>Big data processing and cluster computing</title>
-        </component-studied>
-        <component-studied>
-            <title>Advanced Functional Programming</title>
-        </component-studied>
-    </latest-proposal>
+    <latest-proposal-id>BAF222F868493C167125FA32452E9460731C575</latest-proposal-id>
     <suggestion>
         <component-studied>
             <title>Advanced Logics for Computer Scientists</title>
