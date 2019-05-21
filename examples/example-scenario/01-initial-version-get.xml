@@ -1,26 +1,23 @@
 <!-- For clarity, the examples contain only information about courses that the student wants to attend at the receiving HEI (`components-studied`). -->
 <!-- Attached file *is not* a valid get response. -->
 <components-studied>
-    <latest-proposal>
-        <content>
-            <component-studied>
-                <title>Advanced Logics for Computer Scientists</title>
-            </component-studied>
-            <component-studied>
-                <title>Big data processing and cluster computing</title>
-            </component-studied>
-            <component-studied>
-                <title>Advanced Functional Programming</title>
-            </component-studied>
-            <approval>
-                <by-party>student</by-party>
-            </approval>
-            <approval>
-                <by-party>sending-hei</by-party>
-                <timestamp>2019-01-13T14:03:23+02:00</timestamp>
-            </approval>
-            <should-now-be-approved-by>receiving-hei</should-now-be-approved-by>
-        </content>
-        <id>BAF222F868493C167125FA32452E9460731C575</id>
+    <latest-proposal id="BAF222F868493C167125FA32452E9460731C575">
+        <component-studied>
+            <title>Advanced Logics for Computer Scientists</title>
+        </component-studied>
+        <component-studied>
+            <title>Big data processing and cluster computing</title>
+        </component-studied>
+        <component-studied>
+            <title>Advanced Functional Programming</title>
+        </component-studied>
+        <approval>
+            <by-party>student</by-party>
+        </approval>
+        <approval>
+            <by-party>sending-hei</by-party>
+            <timestamp>2019-01-13T14:03:23+02:00</timestamp>
+        </approval>
+        <should-now-be-approved-by>receiving-hei</should-now-be-approved-by>
     </latest-proposal>
 </components-studied>

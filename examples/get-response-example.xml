@@ -140,29 +140,26 @@
                     </credit>
                 </component>
             </latest-changes>
-            <latest-proposal>
-                <content>
-                    <component>
-                        <title>Introductory calculus</title>
-                        <academic-term-display-name>Spring</academic-term-display-name>
-                        <credit>
-                            <scheme>ects</scheme>
-                            <value>6</value>
-                        </credit>
-                    </component>
-                    <component status="inserted" reason-code="substituting-deleted">
-                        <los-id>CR/dd5fa0b7-f036-4915-9898-8d683ded5738</los-id>
-                        <los-code>KR630</los-code>
-                        <title>Elementary Set Theory</title>
-                        <loi-id>CRI/76c42226-e89c-401f-ad1b-8ebffd909b50</loi-id>
-                        <academic-term-display-name>Autumn 2019/2020</academic-term-display-name>
-                        <credit>
-                            <scheme>ects</scheme>
-                            <value>6</value>
-                        </credit>
-                    </component>
-                </content>
-                <id>59B15BAF222F868493C167125FA32452E946</id>
+            <latest-proposal id="59B15BAF222F868493C167125FA32452E946">
+                <component>
+                    <title>Introductory calculus</title>
+                    <academic-term-display-name>Spring</academic-term-display-name>
+                    <credit>
+                        <scheme>ects</scheme>
+                        <value>6</value>
+                    </credit>
+                </component>
+                <component status="inserted" reason-code="substituting-deleted">
+                    <los-id>CR/dd5fa0b7-f036-4915-9898-8d683ded5738</los-id>
+                    <los-code>KR630</los-code>
+                    <title>Elementary Set Theory</title>
+                    <loi-id>CRI/76c42226-e89c-401f-ad1b-8ebffd909b50</loi-id>
+                    <academic-term-display-name>Autumn 2019/2020</academic-term-display-name>
+                    <credit>
+                        <scheme>ects</scheme>
+                        <value>6</value>
+                    </credit>
+                </component>
             </latest-proposal>
         </components-studied>
         <components-recognized>
