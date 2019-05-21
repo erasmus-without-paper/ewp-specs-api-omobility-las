@@ -8,13 +8,25 @@
     "
 >
     <req:sending-hei-id>uw.edu.pl</req:sending-hei-id>
-    <req:approve-components-studied-draft-v1>
+    <req:update-components-studied-v1>
         <req:omobility-id>c442c289-5541-4cae-9edb-8ad83e133613</req:omobility-id>
-        <req:approving-party>receiving-hei</req:approving-party>
-        <req:current-latest-draft-snapshot>
-            <component-studied>
+        <req:latest-proposal-id>93C167125FA32452E9460731C57515E76B603EB1</req:latest-proposal-id>
+        <req:suggestion>
+            <component-studied status="deleted" reason-code="not-available"
+                reason-text="This component is no longer conducted.">
                 <title>Introductory calculus</title>
                 <academic-term-display-name>Spring</academic-term-display-name>
+                <credit>
+                    <scheme>ects</scheme>
+                    <value>6</value>
+                </credit>
+            </component-studied>
+            <component-studied status="inserted" reason-code="substituting-deleted">
+                <los-id>CR/1f373519-5c93-4974-a998-221b692c42ff</los-id>
+                <los-code>AA103</los-code>
+                <title>Calculus I</title>
+                <loi-id>CRI/a976153e-3183-48bf-a209-6b4c55fbf3da</loi-id>
+                <academic-term-display-name>Autumn 2019/2020</academic-term-display-name>
                 <credit>
                     <scheme>ects</scheme>
                     <value>6</value>
@@ -31,6 +43,6 @@
                     <value>6</value>
                 </credit>
             </component-studied>
-        </req:current-latest-draft-snapshot>
-    </req:approve-components-studied-draft-v1>
+        </req:suggestion>
+    </req:update-components-studied-v1>
 </req:omobility-las-update-request>
