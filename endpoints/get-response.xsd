@@ -284,7 +284,7 @@
                                 <xs:complexType>
                                     <xs:complexContent>
                                         <xs:extension base="ListOf_ComponentsStudied">
-                                            <xs:attribute name="id" type="xs:string">
+                                            <xs:attribute name="id" type="xs:string" use="required">
                                                 <xs:annotation>
                                                     <xs:documentation>
                                                         Identifier of this version of `latest-proposal`. It MUST change if and only if
