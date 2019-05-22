@@ -287,9 +287,9 @@
                                             <xs:attribute name="id" type="xs:string">
                                                 <xs:annotation>
                                                     <xs:documentation>
-                                                        Identifier of this version of the `content` element. It MUST change if and only if
-                                                        the latest proposal content changes. You can eg. normalize the `content` element
-                                                        using Exclusive XML Canonicalization and than calculate a hash.
+                                                        Identifier of this version of `latest-proposal`. It MUST change if and only if
+                                                        the latest proposal content changes. You can eg. normalize the latest-proposal
+                                                        element using Exclusive XML Canonicalization and than calculate a hash.
 
                                                         It will be used in update request to identify the version being approved/commented.
                                                     </xs:documentation>
