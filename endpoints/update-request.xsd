@@ -138,7 +138,7 @@
                         </xs:documentation>
                     </xs:annotation>
                 </xs:element>
-                <xs:element name="latest-proposal-id" type="xs:string">
+                <xs:element name="latest-proposal-id" type="xs:string" minOccurs="1" maxOccurs="1">
                     <xs:annotation>
                         <xs:documentation>
                             Identifier of the current state of the `latest-proposal`, which is
@@ -161,7 +161,7 @@
                         </xs:documentation>
                     </xs:annotation>
                 </xs:element>
-                <xs:element name="suggestion" minOccurs="0" type="la:ListOf_ComponentsStudied">
+                <xs:element name="suggestion" minOccurs="0" maxOccurs="1" type="la:ListOf_ComponentsStudied">
                     <xs:annotation>
                         <xs:documentation>
                             This is the "target" version which the requester is aiming for.
@@ -171,7 +171,7 @@
                         </xs:documentation>
                     </xs:annotation>
                 </xs:element>
-                <xs:element name="comment" minOccurs="0" type="xs:string">
+                <xs:element name="comment" minOccurs="0" maxOccurs="1" type="xs:string">
                     <xs:annotation>
                         <xs:documentation>
                             In the comment you can describe why LA has not been accepted and what are
