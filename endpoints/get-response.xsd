@@ -74,7 +74,7 @@
                     
     <xs:complexType name="LearningAgreement">
         <xs:sequence>
-            <xs:element name="omobility-id" type="ewp:AsciiPrintableIdentifier">
+            <xs:element name="omobility-id" type="ewp:AsciiPrintableIdentifier" minOccurs="1" maxOccurs="1">
                 <xs:annotation>
                     <xs:documentation>
                         Identifier of the mobility (as assigned by the sending HEI). Immutable.
@@ -83,21 +83,21 @@
                     </xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element name="sending-hei" type="MobilityInstitution">
+            <xs:element name="sending-hei" type="MobilityInstitution" minOccurs="1" maxOccurs="1">
                 <xs:annotation>
                     <xs:documentation>
                         This describes the sending HEI - the home institution of the student being sent.
                     </xs:documentation>
                 </xs:annotation>
              </xs:element>
-            <xs:element name="receiving-hei" type="MobilityInstitution">
+            <xs:element name="receiving-hei" type="MobilityInstitution" minOccurs="1" maxOccurs="1">
                 <xs:annotation>
                     <xs:documentation>
                         This describes the receiving HEI - the institution which will be hosting the student.
                     </xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element name="receiving-academic-year-id" type="trm:AcademicYearId">
+            <xs:element name="receiving-academic-year-id" type="trm:AcademicYearId" minOccurs="1" maxOccurs="1">
                 <xs:annotation>
                     <xs:documentation>
                         Academic year during which this mobility takes place (or is supposed to take
@@ -114,7 +114,7 @@
                     </xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element name="student">
+            <xs:element name="student" minOccurs="1" maxOccurs="1">
                 <xs:annotation>
                     <xs:documentation>
                         The section describes the student who is being sent for this mobility.
@@ -122,10 +122,10 @@
                 </xs:annotation>
                 <xs:complexType>
                     <xs:sequence>
-                        <xs:element name="given-names" type="xs:string" />
-                        <xs:element name="family-name" type="xs:string" />
-                        <xs:element name="birth-date" type="xs:date" />
-                        <xs:element name="citizenship" type="ewp:CountryCode">
+                        <xs:element name="given-names" type="xs:string" minOccurs="1" maxOccurs="1"/>
+                        <xs:element name="family-name" type="xs:string" minOccurs="1" maxOccurs="1"/>
+                        <xs:element name="birth-date" type="xs:date" minOccurs="1" maxOccurs="1"/>
+                        <xs:element name="citizenship" type="ewp:CountryCode" minOccurs="1" maxOccurs="1">
                             <xs:annotation>
                                 <xs:documentation>
                                     Code of the country to which the person belongs administratively and that
@@ -133,8 +133,8 @@
                                 </xs:documentation>
                             </xs:annotation>
                         </xs:element>
-                        <xs:element name="gender" type="ewp:Gender" />
-                        <xs:element name="email" type="ewp:Email" />
+                        <xs:element name="gender" type="ewp:Gender" minOccurs="1" maxOccurs="1"/>
+                        <xs:element name="email" type="ewp:Email" minOccurs="1" maxOccurs="1"/>
                         <xs:element ref="p:phone-number" minOccurs="0" maxOccurs="unbounded">
                             <xs:annotation>
                                 <xs:documentation>
@@ -146,7 +146,7 @@
                     </xs:sequence>
                 </xs:complexType>
             </xs:element>
-            <xs:element name="planned-mobility-start" type="xs:gYearMonth">
+            <xs:element name="planned-mobility-start" type="xs:gYearMonth" minOccurs="1" maxOccurs="1">
                 <xs:annotation>
                     <xs:documentation>
                         Planned start date of the mobility (when the student is supposed to arrive).
@@ -154,7 +154,7 @@
                     </xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element name="planned-mobility-end" type="xs:gYearMonth">
+            <xs:element name="planned-mobility-end" type="xs:gYearMonth" minOccurs="1" maxOccurs="1">
                 <xs:annotation>
                     <xs:documentation>
                         Planned end date of the mobility (when the student is supposed to leave).
@@ -162,7 +162,7 @@
                     </xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element name="eqf-level-studied-at-departure" type="ewp:EqfLevel">
+            <xs:element name="eqf-level-studied-at-departure" type="ewp:EqfLevel" minOccurs="1" maxOccurs="1">
                 <xs:annotation>
                     <xs:documentation>
                         The student is sent for the mobility as part of one of his study programmes. 
@@ -171,7 +171,7 @@
                     </xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element name="student-isced-f-code" type="xs:string">
+            <xs:element name="student-isced-f-code" type="xs:string" minOccurs="1" maxOccurs="1">
                 <xs:annotation>
                     <xs:documentation>
                         The student is sent to the mobility as part of one of his study programmes.
@@ -181,7 +181,7 @@
                     </xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element name="student-language-skill">
+            <xs:element name="student-language-skill" minOccurs="1" maxOccurs="1">
                 <xs:annotation>
                     <xs:documentation>
                         The level of language competence in the main language of instruction
@@ -190,14 +190,14 @@
                 </xs:annotation>
                 <xs:complexType>
                     <xs:sequence>
-                        <xs:element name="language" type="xs:language">
+                        <xs:element name="language" type="xs:language" minOccurs="1" maxOccurs="1">
                             <xs:annotation>
                                 <xs:documentation>
                                     The BCP 47 code of the language.
                                 </xs:documentation>
                             </xs:annotation>
                         </xs:element>
-                        <xs:element name="cefr-level" type="ewp:CefrLevel">
+                        <xs:element name="cefr-level" type="ewp:CefrLevel" minOccurs="1" maxOccurs="1">
                             <xs:annotation>
                                 <xs:documentation>
                                     The level of language skill.
@@ -207,7 +207,7 @@
                     </xs:sequence>
                 </xs:complexType>
             </xs:element>
-            <xs:element name="components-studied">
+            <xs:element name="components-studied" minOccurs="1" maxOccurs="1">
                 <xs:annotation>
                     <xs:documentation>
                         Different versions of the list of components studied (or planned to be studied)
@@ -228,7 +228,7 @@
                                     then we also require "latest approved" section to exist.
                                 </xs:documentation>
                             </xs:annotation>
-                            <xs:element name="before-mobility" type="ListOf_ComponentsStudied">
+                            <xs:element name="before-mobility" type="ListOf_ComponentsStudied" minOccurs="1" maxOccurs="1">
                                 <xs:annotation>
                                     <xs:documentation>
                                         The snapshot of courses *planned* to be studied when the first version of the LA
@@ -239,7 +239,7 @@
                                     </xs:documentation>
                                 </xs:annotation>
                             </xs:element>
-                            <xs:element name="latest-approved" type="ListOf_ComponentsStudied">
+                            <xs:element name="latest-approved" type="ListOf_ComponentsStudied" minOccurs="1" maxOccurs="1">
                                 <xs:annotation>
                                     <xs:documentation>
                                         The latest approved list of courses studied (or planned to be studied)
@@ -255,7 +255,7 @@
                             </xs:element>
                         </xs:sequence>
                         <xs:sequence minOccurs="0" maxOccurs="1">
-                            <xs:element name="latest-changes" type="ListOf_ComponentsStudied" minOccurs="0">
+                            <xs:element name="latest-changes" type="ListOf_ComponentsStudied" minOccurs="0" maxOccurs="1">
                                 <xs:annotation>
                                     <xs:documentation>
                                         This element is not used when PDF LA is generated.
@@ -270,7 +270,7 @@
                                     </xs:documentation>
                                 </xs:annotation>
                             </xs:element>
-                            <xs:element name="latest-proposal">
+                            <xs:element name="latest-proposal" minOccurs="1" maxOccurs="1">
                                 <xs:annotation>
                                     <xs:documentation>
                                         This element is not used when PDF LA is generated, but it is required
@@ -284,12 +284,12 @@
                                 <xs:complexType>
                                     <xs:complexContent>
                                         <xs:extension base="ListOf_ComponentsStudied">
-                                            <xs:attribute name="id" type="xs:string">
+                                            <xs:attribute name="id" type="xs:string" use="required">
                                                 <xs:annotation>
                                                     <xs:documentation>
-                                                        Identifier of this version of the `content` element. It MUST change if and only if
-                                                        the latest proposal content changes. You can eg. normalize the `content` element
-                                                        using Exclusive XML Canonicalization and than calculate a hash.
+                                                        Identifier of this version of `latest-proposal`. It MUST change if and only if
+                                                        the latest proposal content changes. You can eg. normalize the latest-proposal
+                                                        element using Exclusive XML Canonicalization and than calculate a hash.
 
                                                         It will be used in update request to identify the version being approved/commented.
                                                     </xs:documentation>
@@ -323,12 +323,12 @@
                 <xs:complexType>
                     <xs:sequence>
                         <xs:sequence minOccurs="0" maxOccurs="1">
-                            <xs:element name="before-mobility" type="ListOf_ComponentsRecognized"/>
-                            <xs:element name="latest-approved" type="ListOf_ComponentsRecognized"/>
+                            <xs:element name="before-mobility" type="ListOf_ComponentsRecognized" minOccurs="1" maxOccurs="1"/>
+                            <xs:element name="latest-approved" type="ListOf_ComponentsRecognized" minOccurs="1" maxOccurs="1"/>
                         </xs:sequence>
                         <xs:sequence minOccurs="0" maxOccurs="1">
-                            <xs:element name="latest-changes" type="ListOf_ComponentsRecognized" minOccurs="0" />
-                            <xs:element name="latest-proposal" type="ListOf_ComponentsRecognized"/>
+                            <xs:element name="latest-changes" type="ListOf_ComponentsRecognized" minOccurs="0" maxOccurs="1"/>
+                            <xs:element name="latest-proposal" type="ListOf_ComponentsRecognized" minOccurs="1" maxOccurs="1"/>
                         </xs:sequence>
                     </xs:sequence>
                 </xs:complexType>
@@ -382,7 +382,7 @@
                         </xs:documentation>
                     </xs:annotation>
                 </xs:element>
-                <xs:element name="title" type="xs:string">
+                <xs:element name="title" type="xs:string" minOccurs="1" maxOccurs="1">
                     <xs:annotation>
                         <xs:documentation>
                             Component title. This field MAY be entered "by
@@ -431,7 +431,7 @@
                     </xs:annotation>
                     <xs:complexType>
                         <xs:sequence>
-                            <xs:element name="scheme" type="xs:string">
+                            <xs:element name="scheme" type="xs:string" minOccurs="1" maxOccurs="1">
                                 <xs:annotation>
                                     <xs:documentation>
                                         Currently there is only one predefined scheme you can have here - "ects"
@@ -441,7 +441,7 @@
                                     </xs:documentation>
                                 </xs:annotation>
                             </xs:element>
-                            <xs:element name="value" type="xs:decimal">
+                            <xs:element name="value" type="xs:decimal" minOccurs="1" maxOccurs="1">
                                 <xs:annotation>
                                     <xs:documentation>
                                         The number of credits being awarded.
@@ -452,7 +452,7 @@
                     </xs:complexType>
                 </xs:element>
             </xs:sequence>
-            <xs:attribute name="status">
+            <xs:attribute name="status" use="optional">
                 <xs:annotation>
                     <xs:documentation>
                         Status of the component. Should be used if the component represents a change.
@@ -481,7 +481,7 @@
                     </xs:restriction>
                 </xs:simpleType>
             </xs:attribute>
-            <xs:attribute name="reason-code">
+            <xs:attribute name="reason-code" use="optional">
                 <xs:annotation>
                     <xs:documentation>
                         An optional reason for the change. Applies only to components studied.
@@ -591,7 +591,7 @@
                     </xs:restriction>
                 </xs:simpleType>
             </xs:attribute>
-            <xs:attribute name="reason-text" type="xs:string">
+            <xs:attribute name="reason-text" type="xs:string" use="optional">
                 <xs:annotation>
                     <xs:documentation>
                         A human-readable description of the reason - preferrably in English. It will
@@ -629,7 +629,7 @@
                 </xs:annotation>
                 <xs:complexType>
                     <xs:sequence>
-                        <xs:element name="by-party" type="ApprovingParty">
+                        <xs:element name="by-party" type="ApprovingParty" minOccurs="1" maxOccurs="1">
                             <xs:annotation>
                                 <xs:documentation>
                                     The approving party.
@@ -739,7 +739,7 @@
 
     <xs:complexType name="MobilityInstitution">
         <xs:sequence>
-            <xs:element name="hei-id" type="xs:string">
+            <xs:element name="hei-id" type="xs:string" minOccurs="1" maxOccurs="1">
                 <xs:annotation>
                     <xs:documentation>
                         SCHAC ID of the institution. Immutable.
@@ -750,7 +750,7 @@
                     </xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element name="ounit-name" type="xs:string">
+            <xs:element name="ounit-name" type="xs:string" minOccurs="1" maxOccurs="1">
                 <xs:annotation>
                     <xs:documentation>
                         Organizational unit name. It refers to the unit, which is responsible for this student.
@@ -766,7 +766,7 @@
                     </xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element name="contact-person">
+            <xs:element name="contact-person" minOccurs="1" maxOccurs="1">
                 <xs:annotation>
                     <xs:documentation>
                         Person who provides a link for administrative information and who,
@@ -776,9 +776,9 @@
                 </xs:annotation>
                 <xs:complexType>
                     <xs:sequence>
-                        <xs:element name="given-names" type="xs:string" />
-                        <xs:element name="family-name" type="xs:string" />
-                        <xs:element name="email" type="ewp:Email" />
+                        <xs:element name="given-names" type="xs:string" minOccurs="1" maxOccurs="1" />
+                        <xs:element name="family-name" type="xs:string" minOccurs="1" maxOccurs="1" />
+                        <xs:element name="email" type="ewp:Email" minOccurs="1" maxOccurs="1" />
                         <xs:element ref="p:phone-number" minOccurs="0" maxOccurs="1" />
                     </xs:sequence>
                 </xs:complexType>
