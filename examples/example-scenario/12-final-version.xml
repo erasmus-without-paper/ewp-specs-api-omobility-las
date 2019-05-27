@@ -2,15 +2,15 @@
 <!-- Attached file *is not* a valid get response. -->
 <components-studied>
     <before-mobility>
-        <component-studied>
+        <component>
             <title>Advanced Logics for Computer Scientists</title>
-        </component-studied>
-        <component-studied>
+        </component>
+        <component>
             <title>Big Data Mining and Processing</title>
-        </component-studied>
-        <component-studied>
+        </component>
+        <component>
             <title>Advanced Functional Programming</title>
-        </component-studied>
+        </component>
         <approval>
             <by-party>student</by-party>
         </approval>
@@ -24,21 +24,21 @@
         </approval>
     </before-mobility>
     <latest-approved>
-        <component-studied status="removed" reason="timetable-conflict">
+        <component status="removed" reason="timetable-conflict">
             <title>Advanced Logics for Computer Scientists</title>
-        </component-studied>
-        <component-studied status="inserted" reason="substituting-deleted">
+        </component>
+        <component status="inserted" reason="substituting-deleted">
             <title>Computational Social Choice Theory</title>
-        </component-studied>
-        <component-studied>
+        </component>
+        <component>
             <title>Big Data Mining and Processing</title>
-        </component-studied>
-        <component-studied status="removed" reason="language-mismatch">
+        </component>
+        <component status="removed" reason="language-mismatch">
             <title>Advanced Functional Programming</title>
-        </component-studied>
-        <component-studied status="inserted" reason="substituting-deleted">
+        </component>
+        <component status="inserted" reason="substituting-deleted">
             <title>Artificial Intelligence and Expert Systems</title>
-        </component-studied>
+        </component>
         <approval>
             <by-party>student</by-party>
         </approval>

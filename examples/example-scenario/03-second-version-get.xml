@@ -2,15 +2,15 @@
 <!-- Attached file *is not* a valid get response. -->
 <components-studied>
     <latest-proposal id="4C159B15BAF222F868493C167125FA32452">
-        <component-studied>
+        <component>
             <title>Advanced Logics for Computer Scientists</title>
-        </component-studied>
-        <component-studied>
+        </component>
+        <component>
             <title>Big Data Mining and Processing</title>
-        </component-studied>
-        <component-studied>
+        </component>
+        <component>
             <title>Advanced Functional Programming</title>
-        </component-studied>
+        </component>
         <approval>
             <by-party>student</by-party>
         </approval>
