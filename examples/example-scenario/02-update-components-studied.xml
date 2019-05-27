@@ -3,17 +3,17 @@
 <update-components-studied-v1>
     <latest-proposal-id>BAF222F868493C167125FA32452E9460731C575</latest-proposal-id>
     <suggestion>
-        <component-studied>
+        <component>
             <title>Advanced Logics for Computer Scientists</title>
-        </component-studied>
-        <component-studied status="removed" reason="not-available">
+        </component>
+        <component status="removed" reason="not-available">
             <title>Big data processing and cluster computing</title>
-        </component-studied>
-        <component-studied status="inserted" reason="substituting-deleted">
+        </component>
+        <component status="inserted" reason="substituting-deleted">
             <title>Big Data Mining and Processing</title>
-        </component-studied>
-        <component-studied>
+        </component>
+        <component>
             <title>Advanced Functional Programming</title>
-        </component-studied>
+        </component>
     </suggestion>
 </update-components-studied-v1>
