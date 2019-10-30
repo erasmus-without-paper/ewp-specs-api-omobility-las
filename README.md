@@ -8,8 +8,8 @@ Outgoing Mobility Learning Agreements API
 Summary
 -------
 
-**Note: This API is being updated in order to ensure compatibility with the OLA.
-Until a stable version is available developers are advised to not implement
+**NOTE: This API is being updated in order to ensure compatibility with the OLA.
+Until a stable version is available, developers are advised to not implement
 the current API version.**
 
 This document describes the **Outgoing Mobility Learning Agreements API**.
