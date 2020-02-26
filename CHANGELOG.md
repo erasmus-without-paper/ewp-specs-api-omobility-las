@@ -5,6 +5,12 @@ This document describes all the changes made to the *Outgoing Mobility Learning 
 starting from its first beta draft version.
 
 
+0.2.0
+-----
+
+European Student Identifier added to the get response.
+
+
 0.1.0
 -----
 
