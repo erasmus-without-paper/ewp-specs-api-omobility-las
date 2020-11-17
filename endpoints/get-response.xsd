@@ -144,14 +144,6 @@
                         </xs:element>
                         <xs:element name="gender" type="ewp:Gender" minOccurs="1" maxOccurs="1"/>
                         <xs:element name="email" type="ewp:Email" minOccurs="1" maxOccurs="1"/>
-                        <xs:element ref="p:phone-number" minOccurs="0" maxOccurs="unbounded">
-                            <xs:annotation>
-                                <xs:documentation>
-                                    A list of phone numbers at which this person can possibly be reached.
-                                    The "best" numbers should be listed first.
-                                </xs:documentation>
-                            </xs:annotation>
-                        </xs:element>
                     </xs:sequence>
                 </xs:complexType>
             </xs:element>
