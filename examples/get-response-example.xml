@@ -1,7 +1,5 @@
 <omobility-las-get-response
     xmlns="https://github.com/erasmus-without-paper/ewp-specs-api-omobility-las/blob/stable-v1/endpoints/get-response.xsd"
-    xmlns:p="https://github.com/erasmus-without-paper/ewp-specs-types-phonenumber/tree/stable-v1"
-    xmlns:xml="http://www.w3.org/XML/1998/namespace"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="
         https://github.com/erasmus-without-paper/ewp-specs-api-omobility-las/blob/stable-v1/endpoints/get-response.xsd
@@ -39,9 +37,6 @@
             <citizenship>NO</citizenship>
             <gender>1</gender>
             <email>ivan@example.com</email>
-            <p:phone-number>
-                <p:e164>+4788888888</p:e164>
-            </p:phone-number>
         </student>
         <planned-mobility-start>2019-02</planned-mobility-start>
         <planned-mobility-end>2019-06</planned-mobility-end>
