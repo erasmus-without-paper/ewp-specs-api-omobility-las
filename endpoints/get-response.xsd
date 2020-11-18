@@ -334,6 +334,20 @@
                     </xs:sequence>
                 </xs:complexType>
             </xs:element>
+            <xs:element name="learning-outcomes-url" minOccurs="0" maxOccurs="1" type="ewp:HTTP">
+                <xs:annotation>
+                    <xs:documentation>
+                        URL to the course catalogue at the receiving HEI describing the learning outcomes.
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="provisions-url" minOccurs="0" maxOccurs="1" type="ewp:HTTP">
+                <xs:annotation>
+                    <xs:documentation>
+                        URL to provisions applying if the student does not complete successfully some educational components.
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
         </xs:sequence>
     </xs:complexType>
 
@@ -511,7 +525,7 @@
                         IMPORTANT: New values MAY be added to this enumeration in future releases of
                         this API, and such expansion is considered backward-compatible. Clients MUST be
                         aware of this fact - if you find an unknown value here, you MUST treat it the
-                        same way as if no `ewp-reason-code` was given at all. Server MUST NOT expand
+                        same way as if no `reason-code` was given at all. Server MUST NOT expand
                         their set of used reason codes without consulting EWP Partners - new reason
                         codes MUST be added to the enumeration before they can be used.
                     </xs:documentation>
