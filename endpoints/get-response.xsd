@@ -466,6 +466,18 @@
                         </xs:sequence>
                     </xs:complexType>
                 </xs:element>
+                <xs:element name="recognition-conditions" type="xs:string" minOccurs="0" maxOccurs="1">
+                    <xs:annotation>
+                        <xs:documentation>
+                            The conditions that have to be met to recognize this component by the sending HEI.
+
+                            This field MUST NOT be provided for components other than those in `components-recognized`.
+
+                            If this field is defined then it means that this component will not be automatically
+                            recognized. This field SHOULD NOT be set otherwise.
+                        </xs:documentation>
+                    </xs:annotation>
+                </xs:element>
             </xs:sequence>
             <xs:attribute name="status" use="optional">
                 <xs:annotation>
