@@ -765,10 +765,12 @@
                     </xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element name="ounit-name" type="xs:string" minOccurs="1" maxOccurs="1">
+            <xs:element name="ounit-name" type="xs:string" minOccurs="0" maxOccurs="1">
                 <xs:annotation>
                     <xs:documentation>
                         Organizational unit name. It refers to the unit, which is responsible for this student.
+
+                        It MUST be provided for the sending HEI.
                     </xs:documentation>
                 </xs:annotation>
             </xs:element>
