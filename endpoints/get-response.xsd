@@ -71,7 +71,7 @@
             </xs:sequence>
         </xs:complexType>
     </xs:element>
-                    
+
     <xs:complexType name="LearningAgreement">
         <xs:sequence>
             <xs:element name="omobility-id" type="ewp:AsciiPrintableIdentifier" minOccurs="1" maxOccurs="1">
@@ -89,7 +89,7 @@
                         This describes the sending HEI - the home institution of the student being sent.
                     </xs:documentation>
                 </xs:annotation>
-             </xs:element>
+            </xs:element>
             <xs:element name="receiving-hei" type="MobilityInstitution" minOccurs="1" maxOccurs="1">
                 <xs:annotation>
                     <xs:documentation>
@@ -166,7 +166,7 @@
             <xs:element name="eqf-level-studied-at-departure" type="ewp:EqfLevel" minOccurs="1" maxOccurs="1">
                 <xs:annotation>
                     <xs:documentation>
-                        The student is sent for the mobility as part of one of his study programmes. 
+                        The student is sent for the mobility as part of one of his study programmes.
                         This field contains the student's EQF level on this programme *at the time of
                         the departure*.
                     </xs:documentation>
@@ -614,7 +614,7 @@
                         A2 or B2 table - see attached EUC LA template).
                     </xs:documentation>
                 </xs:annotation>
-                </xs:attribute>
+            </xs:attribute>
         </xs:complexType>
     </xs:element>
 
@@ -628,7 +628,7 @@
             </xs:documentation>
         </xs:annotation>
         <xs:sequence>
-            <xs:element ref="component" minOccurs="0" maxOccurs="unbounded" />
+            <xs:element ref="component" minOccurs="0" maxOccurs="unbounded"/>
             <xs:element name="approval" minOccurs="0" maxOccurs="3">
                 <xs:annotation>
                     <xs:documentation>
@@ -793,10 +793,10 @@
                 </xs:annotation>
                 <xs:complexType>
                     <xs:sequence>
-                        <xs:element name="given-names" type="xs:string" minOccurs="1" maxOccurs="1" />
-                        <xs:element name="family-name" type="xs:string" minOccurs="1" maxOccurs="1" />
-                        <xs:element name="email" type="ewp:Email" minOccurs="1" maxOccurs="1" />
-                        <xs:element ref="p:phone-number" minOccurs="0" maxOccurs="1" />
+                        <xs:element name="given-names" type="xs:string" minOccurs="1" maxOccurs="1"/>
+                        <xs:element name="family-name" type="xs:string" minOccurs="1" maxOccurs="1"/>
+                        <xs:element name="email" type="ewp:Email" minOccurs="1" maxOccurs="1"/>
+                        <xs:element ref="p:phone-number" minOccurs="0" maxOccurs="1"/>
                     </xs:sequence>
                 </xs:complexType>
             </xs:element>
