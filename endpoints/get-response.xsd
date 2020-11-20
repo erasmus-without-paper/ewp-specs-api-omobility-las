@@ -208,130 +208,75 @@
                     </xs:sequence>
                 </xs:complexType>
             </xs:element>
-            <xs:element name="components-studied" minOccurs="1" maxOccurs="1">
+            <xs:element name="first-version" type="ListOf_Components" minOccurs="0" maxOccurs="1">
                 <xs:annotation>
                     <xs:documentation>
-                        Different versions of the list of components studied (or planned to be studied)
-                        at the receiving HEI.
+                        The snapshot of courses *planned* to be studied when the first version of the LA
+                        is signed.
 
-                        We need different versions of this list because the EUC LA template (attached in
-                        this XSD's repository) requires it. As has been reported by WP2, the receiving
-                        HEI might also need all these versions.
+                        Note: This element corresponds to "Table A" on the EUC LA template.
                     </xs:documentation>
                 </xs:annotation>
-                <xs:complexType>
-                    <xs:sequence>
-                        <xs:sequence minOccurs="0" maxOccurs="1">
-                            <xs:annotation>
-                                <xs:documentation>
-                                    The "before mobility" and "latest approved" sections are optional - this indicates
-                                    that no LA has yet been approved. However, if "before mobility" section exists,
-                                    then we also require "latest approved" section to exist.
-                                </xs:documentation>
-                            </xs:annotation>
-                            <xs:element name="before-mobility" type="ListOf_ComponentsStudied" minOccurs="1" maxOccurs="1">
-                                <xs:annotation>
-                                    <xs:documentation>
-                                        The snapshot of courses *planned* to be studied when the first version of the LA
-                                        is signed.
-
-                                        Note: This element corresponds to "Table A" on the EUC LA template (attached
-                                        in this XSD's repository).
-                                    </xs:documentation>
-                                </xs:annotation>
-                            </xs:element>
-                            <xs:element name="latest-approved" type="ListOf_ComponentsStudied" minOccurs="1" maxOccurs="1">
-                                <xs:annotation>
-                                    <xs:documentation>
-                                        The latest approved list of courses studied (or planned to be studied)
-                                        with changes compared to the "before-mobility". When LA is signed for the first time
-                                        this element contains the same courses as the `before-mobility` does,
-                                        but this may change later in time.
-
-                                        Note: If you want to compare this to the tables in the EUC LA PDF template
-                                        (attached in this XSD's repository), then this element describes what "Table A"
-                                        would look like if all changes from "Table A2" were added (not applied) to it.
-                                    </xs:documentation>
-                                </xs:annotation>
-                            </xs:element>
-                        </xs:sequence>
-                        <xs:sequence minOccurs="0" maxOccurs="1">
-                            <xs:element name="latest-changes" type="ListOf_ComponentsStudied" minOccurs="0" maxOccurs="1">
-                                <xs:annotation>
-                                    <xs:documentation>
-                                        This element is not used when PDF LA is generated.
-                                        It allows server implementers to publish proposed changes to the latest
-                                        approved version of LA. If the server doesn't store such proposals (or if it doesn't want
-                                        to publish them), then this element will be empty. It is also empty when no LA
-                                        has yet been approved or there are no proposals of change to the latest approved version.
-                                        Although this element is not required by the template, it may be helpful to see
-                                        the actual change proposal, especially if there are many changes during the mobility.
-                                        Note, that the "latest-proposal" section contains changes compared to the "before-mobility",
-                                        and here we can see changes compared to the "last-approved".
-                                    </xs:documentation>
-                                </xs:annotation>
-                            </xs:element>
-                            <xs:element name="latest-proposal" minOccurs="1" maxOccurs="1">
-                                <xs:annotation>
-                                    <xs:documentation>
-                                        This element is not used when PDF LA is generated, but it is required
-                                        to propose new version of the LA to be accepted by the partner.
-                                        It contains courses planned to be studied with changes compared to the "before-mobility".
-                                        After acceptance it will be copied to the "latest-approved" section.
-                                        If there are no proposals of change to the latest approved version,
-                                        this element will not be present.
-                                    </xs:documentation>
-                                </xs:annotation>
-                                <xs:complexType>
-                                    <xs:complexContent>
-                                        <xs:extension base="ListOf_ComponentsStudied">
-                                            <xs:attribute name="id" type="xs:string" use="required">
-                                                <xs:annotation>
-                                                    <xs:documentation>
-                                                        Identifier of this version of `latest-proposal`. It MUST change if and only if
-                                                        the latest proposal content changes. You can eg. normalize the latest-proposal
-                                                        element using Exclusive XML Canonicalization and than calculate a hash.
-
-                                                        It will be used in update request to identify the version being approved/commented.
-                                                    </xs:documentation>
-                                                </xs:annotation>
-                                            </xs:attribute>
-                                        </xs:extension>
-                                    </xs:complexContent>
-                                </xs:complexType>
-                            </xs:element>
-                        </xs:sequence>
-                    </xs:sequence>
-                </xs:complexType>
             </xs:element>
-            <xs:element name="components-recognized" minOccurs="0" maxOccurs="1">
+            <xs:element name="latest-approved" type="ListOf_Components" minOccurs="0" maxOccurs="1">
                 <xs:annotation>
                     <xs:documentation>
-                        Different versions of the list of components recognized (or planned to be
-                        recognized) at the sending HEI.
+                        The latest approved list of courses studied (or planned to be studied)
+                        with changes compared to the `first-version`. When LA is signed for the first time
+                        this element contains the same courses as the `first-version` does,
+                        but this may change later in time.
 
-                        We need different versions of this list because the EUC LA template (attached in
-                        this XSD's repository) requires it.
+                        Note: If you want to compare this to the tables in the EUC LA PDF template,
+                        then this element describes what "Table A" would look like if all changes from "Table A2"
+                        were added (not applied) to it.
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="latest-changes" type="ListOf_Components" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>
+                        This element allows server implementers to publish proposed changes to the latest
+                        approved version of LA.
 
-                        PLEASE READ THE ANNOTATIONS ON THE `components-studied` ELEMENT. The
-                        `components-recognized` element has the same base format as the
-                        `components-studied` element does, and so, **we are not describing this format
-                        here again**. The only difference is that other types of entities are described
-                        by it - in EUC LA template, these entities are described by tables "B" and
-                        "B2" (while `components-studied` describe tables "A" and "A2").
+                        If the server doesn't store such proposals (or if it doesn't want to publish them),
+                        then this element will be empty. It is also empty when no LA
+                        has yet been approved or there are no proposals of change to the latest approved version.
+
+                        Although this element is not required by the template, it may be helpful to see
+                        the actual change proposal, especially if there are many changes during the mobility.
+
+                        Note, that the `latest-proposal` section contains changes compared to the `first-version`,
+                        and here we can see changes compared to the `last-approved`.
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="latest-proposal" minOccurs="1" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>
+                        This element is required  to propose new version of the LA to be accepted by the partner.
+                        It contains courses planned to be studied with changes compared to the `first-version`.
+
+                        After acceptance it will be copied to the `latest-approved` section.
+                        If there are no proposals of change to the latest approved version,
+                        this element will not be present.
                     </xs:documentation>
                 </xs:annotation>
                 <xs:complexType>
-                    <xs:sequence>
-                        <xs:sequence minOccurs="0" maxOccurs="1">
-                            <xs:element name="before-mobility" type="ListOf_ComponentsRecognized" minOccurs="1" maxOccurs="1"/>
-                            <xs:element name="latest-approved" type="ListOf_ComponentsRecognized" minOccurs="1" maxOccurs="1"/>
-                        </xs:sequence>
-                        <xs:sequence minOccurs="0" maxOccurs="1">
-                            <xs:element name="latest-changes" type="ListOf_ComponentsRecognized" minOccurs="0" maxOccurs="1"/>
-                            <xs:element name="latest-proposal" type="ListOf_ComponentsRecognized" minOccurs="1" maxOccurs="1"/>
-                        </xs:sequence>
-                    </xs:sequence>
+                    <xs:complexContent>
+                        <xs:extension base="ListOf_Components">
+                            <xs:attribute name="id" type="xs:string" use="required">
+                                <xs:annotation>
+                                    <xs:documentation>
+                                        Identifier of this version of `latest-proposal`. It MUST change if and only if
+                                        the latest proposal content changes. You can eg. normalize the latest-proposal
+                                        element using Exclusive XML Canonicalization and than calculate a hash.
+
+                                        It will be used in update request to identify the version being approved/commented.
+                                    </xs:documentation>
+                                </xs:annotation>
+                            </xs:attribute>
+                        </xs:extension>
+                    </xs:complexContent>
                 </xs:complexType>
             </xs:element>
             <xs:element name="learning-outcomes-url" minOccurs="0" maxOccurs="1" type="ewp:HTTP">
@@ -441,7 +386,7 @@
                         <xs:documentation>
                             This describes various credit types which the student is expected to achieve by
                             completing this component. Usually these SHOULD be ECTS credits, but there MAY
-                            be some exceptions (e.g. see footnotes in the attached EUC LA template).
+                            be some exceptions.
                         </xs:documentation>
                     </xs:annotation>
                     <xs:complexType>
@@ -491,7 +436,7 @@
                             <xs:annotation>
                                 <xs:documentation>
                                     This status means that the component has been inserted. Read description
-                                    of the "before-mobility" and "latest-approved" to see in reference to which list
+                                    of the `first-version` and `latest-approved` to see in reference to which list
                                     it has been inserted.
                                 </xs:documentation>
                             </xs:annotation>
@@ -500,8 +445,8 @@
                             <xs:annotation>
                                 <xs:documentation>
                                     This status means that the component has been deleted, so actually
-                                    it is no longer present in the LA. Read description of the "before-mobility"
-                                    and "latest-approved" to see in reference to which list it has been deleted.
+                                    it is no longer present in the LA. Read description of the `first-version`
+                                    and `latest-approved` to see in reference to which list it has been deleted.
                                 </xs:documentation>
                             </xs:annotation>
                         </xs:enumeration>
@@ -528,7 +473,7 @@
                         `components-studied` list only. This element MUST NOT be provided for
                         changes in `components-recognized`.
 
-                        Attached EUC LA template defines seven "Reasons for exceptional changes to
+                        EUC LA template defines seven "Reasons for exceptional changes to
                         study programme abroad", and assigns them numbers from 1 to 7. EUC does say
                         whether this assignment is backward-compatible or not, so we must assume it
                         isn't. Therefore, we introduce an enumeration of our own, which is intended to
@@ -621,33 +566,53 @@
             <xs:attribute name="reason-text" type="xs:string" use="optional">
                 <xs:annotation>
                     <xs:documentation>
-                        A human-readable description of the reason - preferrably in English. It will
-                        often be printed in PDF LA document (e.g. in the "Reason for change" column of
-                        A2 or B2 table - see attached EUC LA template).
+                        A human-readable description of the reason - preferably in English.
+
+                        This element corresponds to "Reason for change" column of A2 or B2 table (see EUC LA template).
                     </xs:documentation>
                 </xs:annotation>
             </xs:attribute>
         </xs:complexType>
     </xs:element>
 
-    <xs:complexType name="ListOf_ComponentsStudied">
+    <xs:complexType name="ListOf_Components">
         <xs:annotation>
             <xs:documentation>
-                Describes a list of studied components.
-
-                This is global, because it is used in external XSDs. It MUST stay this way, for
-                backward compatibility.
+                Describes a list of both studied components and recognized components, that together form an LA.
             </xs:documentation>
         </xs:annotation>
         <xs:sequence>
-            <xs:element ref="component" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element name="components-studied" minOccurs="1" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>
+                        List of components studied (or planned to be studied) at the receiving HEI.
+                    </xs:documentation>
+                </xs:annotation>
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element ref="component" minOccurs="0" maxOccurs="unbounded"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="components-recognized" minOccurs="1" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>
+                        List of components recognized (or planned to be recognized) at the sending HEI.
+                    </xs:documentation>
+                </xs:annotation>
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element ref="component" minOccurs="0" maxOccurs="unbounded"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
             <xs:element name="approval" minOccurs="0" maxOccurs="3">
                 <xs:annotation>
                     <xs:documentation>
                         Indicates which of the three approving parties (student, and two coordinators)
                         have already approved this snapshot.
 
-                        Both approved versions (`before-mobility` and `latest-approved`)
+                        Both approved versions (`first-version` and `latest-approved`)
                         MUST contain three `approval` elements. On the
                         other hand, the `latest-proposal` MUST be approved by zero, one or two
                         parties, it MUST NOT be approved by all three parties (because it wouldn't be
@@ -671,7 +636,7 @@
                                     Servers are NOT REQUIRED to store this information. For example, some HEIs
                                     might get their student approvals on paper (instead of allowing the students to
                                     approve them online). Such HEIs will put the "approved by the student" label on
-                                    the snapshot automatically, immediatelly after the snapshot gets approved by
+                                    the snapshot automatically, immediately after the snapshot gets approved by
                                     the sending coordinator (aka `sending-hei` party). In such cases, the actual
                                     date of student's approval is not stored in the system, but the HEI "vouches"
                                     that such approval took place.
@@ -715,20 +680,6 @@
                 </xs:documentation>
             </xs:annotation>
         </xs:attribute>
-    </xs:complexType>
-
-    <xs:complexType name="ListOf_ComponentsRecognized">
-        <xs:annotation>
-            <xs:documentation>
-                Describes a list of components recognized.
-
-                This is global, because it is used in external XSDs. It MUST stay this way, for
-                backward compatibility.
-            </xs:documentation>
-        </xs:annotation>
-        <xs:sequence>
-            <xs:element ref="component" minOccurs="0" maxOccurs="unbounded"/>
-        </xs:sequence>
     </xs:complexType>
 
     <xs:simpleType name="ApprovingParty">

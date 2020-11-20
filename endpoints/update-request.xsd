@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema
     xmlns:xs="http://www.w3.org/2001/XMLSchema"
-    xmlns:xml="http://www.w3.org/XML/1998/namespace"
     xmlns:ewp="https://github.com/erasmus-without-paper/ewp-specs-architecture/blob/stable-v1/common-types.xsd"
     xmlns:la="https://github.com/erasmus-without-paper/ewp-specs-api-omobility-las/blob/stable-v1/endpoints/get-response.xsd"
     elementFormDefault="qualified"
@@ -161,7 +160,7 @@
                         </xs:documentation>
                     </xs:annotation>
                 </xs:element>
-                <xs:element name="suggestion" minOccurs="0" maxOccurs="1" type="la:ListOf_ComponentsStudied">
+                <xs:element name="suggestion" minOccurs="0" maxOccurs="1">
                     <xs:annotation>
                         <xs:documentation>
                             This is the "target" version which the requester is aiming for.
@@ -170,6 +169,11 @@
                             You MUST provide a suggestion or a comment (or both).
                         </xs:documentation>
                     </xs:annotation>
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element ref="la:component" minOccurs="0" maxOccurs="unbounded"/>
+                        </xs:sequence>
+                    </xs:complexType>
                 </xs:element>
                 <xs:element name="comment" minOccurs="0" maxOccurs="1" type="xs:string">
                     <xs:annotation>
