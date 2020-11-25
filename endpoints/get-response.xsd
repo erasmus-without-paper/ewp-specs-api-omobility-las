@@ -250,7 +250,7 @@
                     </xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element name="latest-proposal" minOccurs="1" maxOccurs="1">
+            <xs:element name="latest-proposal" minOccurs="0" maxOccurs="1">
                 <xs:annotation>
                     <xs:documentation>
                         This element is required  to propose new version of the LA to be accepted by the partner.
