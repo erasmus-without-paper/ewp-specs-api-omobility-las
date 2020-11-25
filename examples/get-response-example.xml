@@ -128,8 +128,7 @@
         </latest-approved>
         <!--
         This API also allows exchanging unapproved versions of the LA components.
-        These two sections are not printed in the PDF version of the LA, but they can be reviewed
-        by the partner. After successful review, the `latest-proposal` section
+        After successful review, the `latest-proposal` section
         is copied into the "latest-approved" section.
         -->
         <latest-changes>

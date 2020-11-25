@@ -226,7 +226,7 @@
                         this element contains the same courses as the `first-version` does,
                         but this may change later in time.
 
-                        Note: If you want to compare this to the tables in the EUC LA PDF template,
+                        Note: If you want to compare this to the tables in the EUC LA template,
                         then this element describes what "Table A" would look like if all changes from "Table A2"
                         were added (not applied) to it.
                     </xs:documentation>
