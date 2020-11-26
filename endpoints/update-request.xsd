@@ -160,29 +160,10 @@
                         </xs:documentation>
                     </xs:annotation>
                 </xs:element>
-                <xs:element name="suggestion" minOccurs="0" maxOccurs="1">
+                <xs:element name="comment" minOccurs="1" maxOccurs="1" type="xs:string">
                     <xs:annotation>
                         <xs:documentation>
-                            This is the "target" version which the requester is aiming for.
-                            It is RECOMMENDED to provide reasons for changes.
-                            
-                            You MUST provide a suggestion or a comment (or both).
-                        </xs:documentation>
-                    </xs:annotation>
-                    <xs:complexType>
-                        <xs:sequence>
-                            <xs:element ref="la:component" minOccurs="0" maxOccurs="unbounded"/>
-                        </xs:sequence>
-                    </xs:complexType>
-                </xs:element>
-                <xs:element name="comment" minOccurs="0" maxOccurs="1" type="xs:string">
-                    <xs:annotation>
-                        <xs:documentation>
-                            In the comment you can describe why LA has not been accepted and what are
-                            the suggestions for changes. If the suggestion is possible to be expressed
-                            in a structured way, it is RECOMMENDED to send the "suggestion" element.
-                            
-                            You MUST provide a suggestion or a comment (or both).
+                            Field to describe why LA has not been accepted and what are the suggested changes.
                         </xs:documentation>
                     </xs:annotation>
                 </xs:element>
