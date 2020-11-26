@@ -368,7 +368,7 @@
                             The *name* of the academic term of the LOI at the component owner institution.
                             For components studied this field MAY be entered "by hand" (for example by the student),
                             especially if no `loi-id` is given. It might assist other users (and/or computer systems)
-                            when they're trying to identify the LOI, but it does not necessarilly need to match
+                            when they're trying to identify the LOI, but it does not necessarily need to match
                             the name of academic term exactly.
 
                             Note, that we do not require a full-fledged academic-term element here
