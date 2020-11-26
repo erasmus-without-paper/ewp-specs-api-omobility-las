@@ -213,8 +213,6 @@
                     <xs:documentation>
                         The snapshot of courses *planned* to be studied when the first version of the LA
                         is signed.
-
-                        Note: This element corresponds to "Table A" on the EUC LA template.
                     </xs:documentation>
                 </xs:annotation>
             </xs:element>
@@ -423,6 +421,16 @@
                         </xs:documentation>
                     </xs:annotation>
                 </xs:element>
+                <xs:element name="short-description" type="xs:string" minOccurs="0" maxOccurs="1">
+                    <xs:annotation>
+                        <xs:documentation>
+                            Short description of the virtual component.
+
+                            This field MUST be provided for all components in `virtual-component` and MUST NOT be
+                            provided for other components.
+                        </xs:documentation>
+                    </xs:annotation>
+                </xs:element>
             </xs:sequence>
             <xs:attribute name="status" use="optional">
                 <xs:annotation>
@@ -586,6 +594,8 @@
                 <xs:annotation>
                     <xs:documentation>
                         List of components studied (or planned to be studied) at the receiving HEI.
+
+                        Note: This element corresponds to "Table A" or "Table A2" on the EUC LA template.
                     </xs:documentation>
                 </xs:annotation>
                 <xs:complexType>
@@ -598,6 +608,22 @@
                 <xs:annotation>
                     <xs:documentation>
                         List of components recognized (or planned to be recognized) at the sending HEI.
+
+                        Note: This element corresponds to "Table B" or "Table B2" on the EUC LA template.
+                    </xs:documentation>
+                </xs:annotation>
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element ref="component" minOccurs="0" maxOccurs="unbounded"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="virtual-components" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>
+                        List of virtual components studied (or planned to be studied) at the receiving HEI.
+
+                        Note: This element corresponds to "Table C" or "Table C2" on the EUC LA template.
                     </xs:documentation>
                 </xs:annotation>
                 <xs:complexType>
