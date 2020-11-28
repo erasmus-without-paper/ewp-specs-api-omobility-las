@@ -376,6 +376,9 @@
                             sending HEI is NOT required to store start dates and end dates of
                             the receiving HEI's academic terms. If the clients want to fetch such
                             dates, then they can do this via the Courses API (each LOI element has them).
+
+                            This field is required in 'components-studied' and 'components-recognized' but optional
+                            in 'virtual-components'.
                         </xs:documentation>
                     </xs:annotation>
                 </xs:element>
