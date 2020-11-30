@@ -11,6 +11,8 @@ Summary
 This endpoint allows the receiving institution to access a list of all
 learning agreements it can read on the sending institution's server.
 
+Only learning agreements currently approved by the student and the sending HEI should be returned.
+
 
 Request method
 --------------
