@@ -642,10 +642,11 @@
                         have already approved this snapshot.
 
                         Both approved versions (`first-version` and `latest-approved`)
-                        MUST contain three `approval` elements. On the
-                        other hand, the `latest-proposal` MUST be approved by zero, one or two
-                        parties, it MUST NOT be approved by all three parties (because it wouldn't be
-                        a proposal anymore).
+                        MUST contain three `approval` elements. On the other hand, the `latest-proposal`
+                        MUST be approved by zero, one or two parties, it MUST NOT be approved by all three parties
+                        (because it wouldn't be a proposal anymore).
+
+                        Note: An approval should be removed after every change to the 'student' element.
                     </xs:documentation>
                 </xs:annotation>
                 <xs:complexType>
