@@ -230,24 +230,6 @@
                     </xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element name="latest-changes" type="ListOf_Components" minOccurs="0" maxOccurs="1">
-                <xs:annotation>
-                    <xs:documentation>
-                        This element allows server implementers to publish proposed changes to the latest
-                        approved version of LA.
-
-                        If the server doesn't store such proposals (or if it doesn't want to publish them),
-                        then this element will be empty. It is also empty when no LA
-                        has yet been approved or there are no proposals of change to the latest approved version.
-
-                        Although this element is not required by the template, it may be helpful to see
-                        the actual change proposal, especially if there are many changes during the mobility.
-
-                        Note, that the `latest-proposal` section contains changes compared to the `first-version`,
-                        and here we can see changes compared to the `last-approved`.
-                    </xs:documentation>
-                </xs:annotation>
-            </xs:element>
             <xs:element name="latest-proposal" minOccurs="0" maxOccurs="1">
                 <xs:annotation>
                     <xs:documentation>
@@ -635,67 +617,27 @@
                     </xs:sequence>
                 </xs:complexType>
             </xs:element>
-            <xs:element name="approval" minOccurs="0" maxOccurs="3">
+            <xs:element name="student-approval-timestamp" minOccurs="1" maxOccurs="1" type="xs:dateTime">
                 <xs:annotation>
                     <xs:documentation>
-                        Indicates which of the three approving parties (student, and two coordinators)
-                        have already approved this snapshot.
-
-                        Both approved versions (`first-version` and `latest-approved`)
-                        MUST contain three `approval` elements. On the other hand, the `latest-proposal`
-                        MUST be approved by zero, one or two parties, it MUST NOT be approved by all three parties
-                        (because it wouldn't be a proposal anymore).
-
-                        Note: An approval should be removed after every change to the 'student' element.
+                        The moment when the LA has been approved by the student.
                     </xs:documentation>
                 </xs:annotation>
-                <xs:complexType>
-                    <xs:sequence>
-                        <xs:element name="by-party" type="ApprovingParty" minOccurs="1" maxOccurs="1">
-                            <xs:annotation>
-                                <xs:documentation>
-                                    The approving party.
-                                </xs:documentation>
-                            </xs:annotation>
-                        </xs:element>
-                        <xs:element name="timestamp" minOccurs="0" maxOccurs="1" type="xs:dateTime">
-                            <xs:annotation>
-                                <xs:documentation>
-                                    The time when the LA has been approved by this party (if known).
-
-                                    Servers are NOT REQUIRED to store this information. For example, some HEIs
-                                    might get their student approvals on paper (instead of allowing the students to
-                                    approve them online). Such HEIs will put the "approved by the student" label on
-                                    the snapshot automatically, immediately after the snapshot gets approved by
-                                    the sending coordinator (aka `sending-hei` party). In such cases, the actual
-                                    date of student's approval is not stored in the system, but the HEI "vouches"
-                                    that such approval took place.
-                                </xs:documentation>
-                            </xs:annotation>
-                        </xs:element>
-                    </xs:sequence>
-                </xs:complexType>
             </xs:element>
-            <xs:element name="should-now-be-approved-by" minOccurs="0" maxOccurs="3" type="ApprovingParty">
+            <xs:element name="sending-approval-timestamp" minOccurs="1" maxOccurs="1" type="xs:dateTime">
                 <xs:annotation>
                     <xs:documentation>
-                        An optional indicator that the server is now waiting for this version to be
-                        approved by the parties provided here.
+                        The moment when the LA has been approved by the sending HEI.
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="receiving-approval-timestamp" minOccurs="0" maxOccurs="1" type="xs:dateTime">
+                <xs:annotation>
+                    <xs:documentation>
+                        The moment when the LA has been approved by the receiving HEI.
 
-                        There are numerous ways in which the sending HEIs might want the process of
-                        draft approval to proceed. This element allows these HEIs suggest the order of
-                        approvals they prefer. Some HEIs might even *reject* approvals unless a proper
-                        `should-now-be-approved-by` is in place. Please discuss here:
-                        https://github.com/erasmus-without-paper/ewp-specs-api-omobilities/issues/16
-
-                        The presence of this element MAY trigger some special behavior in the client
-                        UIs. For example, the mobilities waiting for user's approval can be highlighted
-                        for this user when he's browsing through the list of mobilities. Or, perhaps,
-                        the user might even receive an email notification.
-
-                        This element MUST NOT refer to parties which have already approved this
-                        snapshot (so, in effect, it can only be used in the `latest-proposal`
-                        element).
+                        Note: An approval should be removed after every change to the 'student' element.
+                        The receiving HEI needs to send an approval once again in such cases.
                     </xs:documentation>
                 </xs:annotation>
             </xs:element>

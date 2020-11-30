@@ -11,17 +11,9 @@
         <component>
             <title>Advanced Functional Programming</title>
         </component>
-        <approval>
-            <by-party>student</by-party>
-        </approval>
-        <approval>
-            <by-party>sending-hei</by-party>
-            <timestamp>2019-01-19T12:43:15+02:00</timestamp>
-        </approval>
-        <approval>
-            <by-party>receiving-hei</by-party>
-            <timestamp>2019-01-22T11:12:08+02:00</timestamp>
-        </approval>
+        <student-approval-timestamp>2019-01-19T12:43:15+02:00</student-approval-timestamp>
+        <sending-approval-timestamp>2019-01-19T12:43:15+02:00</sending-approval-timestamp>
+        <receiving-approval-timestamp>2019-01-22T11:12:08+02:00</receiving-approval-timestamp>
     </before-mobility>
     <latest-approved>
         <component>
@@ -33,16 +25,8 @@
         <component>
             <title>Advanced Functional Programming</title>
         </component>
-        <approval>
-            <by-party>student</by-party>
-        </approval>
-        <approval>
-            <by-party>sending-hei</by-party>
-            <timestamp>2019-01-19T12:43:15+02:00</timestamp>
-        </approval>
-        <approval>
-            <by-party>receiving-hei</by-party>
-            <timestamp>2019-01-22T11:12:08+02:00</timestamp>
-        </approval>
+        <student-approval-timestamp>2019-01-19T12:43:15+02:00</student-approval-timestamp>
+        <sending-approval-timestamp>2019-01-19T12:43:15+02:00</sending-approval-timestamp>
+        <receiving-approval-timestamp>2019-01-22T11:12:08+02:00</receiving-approval-timestamp>
     </latest-approved>
 </components-studied>

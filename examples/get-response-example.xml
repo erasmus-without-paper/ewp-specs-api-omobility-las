@@ -64,17 +64,9 @@
                     <loi-id>CRI/212419af-4326-3e21-30ba-c0b5041d89e2</loi-id>
                 </component>
             </components-recognized>
-            <approval>
-                <by-party>student</by-party>
-            </approval>
-            <approval>
-                <by-party>sending-hei</by-party>
-                <timestamp>2018-11-13T14:03:23+02:00</timestamp>
-            </approval>
-            <approval>
-                <by-party>receiving-hei</by-party>
-                <timestamp>2018-11-14T08:18:19+02:00</timestamp>
-            </approval>
+            <student-approval-timestamp>2018-11-13T14:03:23+02:00</student-approval-timestamp>
+            <sending-approval-timestamp>2018-11-13T14:03:23+02:00</sending-approval-timestamp>
+            <receiving-approval-timestamp>2018-11-14T08:18:19+02:00</receiving-approval-timestamp>
         </first-version>
         <!--
         Changes in this element describe the differences between `first-version`
@@ -114,50 +106,15 @@
                     <loi-id>CRI/mnj763c-83mf-7723-nvdp-03bdb64ja2mf3</loi-id>
                 </component>
             </components-recognized>
-            <approval>
-                <by-party>student</by-party>
-            </approval>
-            <approval>
-                <by-party>sending-hei</by-party>
-                <timestamp>2019-03-03T10:11:58+02:00</timestamp>
-            </approval>
-            <approval>
-                <by-party>receiving-hei</by-party>
-                <timestamp>2019-03-03T12:54:00+02:00</timestamp>
-            </approval>
+            <student-approval-timestamp>2019-03-03T10:11:58+02:00</student-approval-timestamp>
+            <sending-approval-timestamp>2019-03-03T10:11:58+02:00</sending-approval-timestamp>
+            <receiving-approval-timestamp>2019-03-03T12:54:00+02:00</receiving-approval-timestamp>
         </latest-approved>
         <!--
         This API also allows exchanging unapproved versions of the LA components.
         After successful review, the `latest-proposal` section
         is copied into the "latest-approved" section.
         -->
-        <latest-changes>
-            <components-studied>
-                <component status="deleted" reason-code="language-mismatch">
-                    <los-id>CR/f9c7677f-e3e3-4106-a865-1d1e8867830e</los-id>
-                    <los-code>KR502B</los-code>
-                    <title>Algebra</title>
-                    <loi-id>CRI/fbe7f54e-af18-4e3e-bc74-c3d3392131b3</loi-id>
-                    <academic-term-display-name>Autumn 2019/2020</academic-term-display-name>
-                    <credit>
-                        <scheme>ects</scheme>
-                        <value>6</value>
-                    </credit>
-                </component>
-                <component status="inserted" reason-code="substituting-deleted">
-                    <los-id>CR/dd5fa0b7-f036-4915-9898-8d683ded5738</los-id>
-                    <los-code>KR630</los-code>
-                    <title>Elementary Set Theory</title>
-                    <loi-id>CRI/76c42226-e89c-401f-ad1b-8ebffd909b50</loi-id>
-                    <academic-term-display-name>Autumn 2019/2020</academic-term-display-name>
-                    <credit>
-                        <scheme>ects</scheme>
-                        <value>6</value>
-                    </credit>
-                </component>
-            </components-studied>
-            <components-recognized/>
-        </latest-changes>
         <latest-proposal id="59B15BAF222F868493C167125FA32452E946">
             <components-studied>
                 <component>
@@ -181,6 +138,8 @@
                 </component>
             </components-studied>
             <components-recognized/>
+            <student-approval-timestamp>2019-03-14T09:31:48+02:00</student-approval-timestamp>
+            <sending-approval-timestamp>2019-03-14T09:31:48+02:00</sending-approval-timestamp>
         </latest-proposal>
     </la>
 </omobility-las-get-response>
