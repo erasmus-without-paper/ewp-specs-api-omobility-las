@@ -654,39 +654,6 @@
         </xs:attribute>
     </xs:complexType>
 
-    <xs:simpleType name="ApprovingParty">
-        <xs:annotation>
-            <xs:documentation>
-                There are three approving parties when it comes to Learning Agreements (and
-                possibly, other documents related to mobility). This type is an enumeration of
-                all these parties.
-            </xs:documentation>
-        </xs:annotation>
-        <xs:restriction base="xs:string">
-            <xs:enumeration value="student">
-                <xs:annotation>
-                    <xs:documentation>
-                        The student being sent for the mobility.
-                    </xs:documentation>
-                </xs:annotation>
-            </xs:enumeration>
-            <xs:enumeration value="sending-hei">
-                <xs:annotation>
-                    <xs:documentation>
-                        The sending HEI, usually represented by a "Sending Coordinator".
-                    </xs:documentation>
-                </xs:annotation>
-            </xs:enumeration>
-            <xs:enumeration value="receiving-hei">
-                <xs:annotation>
-                    <xs:documentation>
-                        The receiving HEI, usually represented by a "Receiving Coordinator".
-                    </xs:documentation>
-                </xs:annotation>
-            </xs:enumeration>
-        </xs:restriction>
-    </xs:simpleType>
-
     <xs:complexType name="MobilityInstitution">
         <xs:sequence>
             <xs:element name="hei-id" type="xs:string" minOccurs="1" maxOccurs="1">

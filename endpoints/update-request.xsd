@@ -83,23 +83,6 @@
                         </xs:documentation>
                     </xs:annotation>
                 </xs:element>
-                <xs:element name="approving-party" minOccurs="1" maxOccurs="1" type="la:ApprovingParty">
-                    <xs:annotation>
-                        <xs:documentation>
-                            The party which is approving. In almost all cases, this will be
-                            `receiving-hei`, but in some use cases it MAY also be `student` (if the
-                            student is allowed to use receiving HEI's UI to approve Learning
-                            Agreements).
-
-                            The server MUST verify this value (it MUST NOT assume that it always equals
-                            `receiving-hei`). If remote approval by this party is unsupported by this
-                            server, HTTP 400 response MUST be returned, with proper user-message (e.g.
-                            "University of Warsaw requires its students to approve their Learning
-                            Agreements via local USOSweb system. It is not allowed to approve them
-                            remotely.").
-                        </xs:documentation>
-                    </xs:annotation>
-                </xs:element>
                 <xs:element name="latest-proposal-id" minOccurs="1" maxOccurs="1" type="xs:string">
                     <xs:annotation>
                         <xs:documentation>
