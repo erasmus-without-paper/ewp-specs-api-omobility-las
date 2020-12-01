@@ -642,16 +642,6 @@
                 </xs:annotation>
             </xs:element>
         </xs:sequence>
-        <xs:attribute name="in-effect-since" type="xs:dateTime" use="optional">
-            <xs:annotation>
-                <xs:documentation>
-                    Indicates the date since which this version of LA is (or was) considered "in effect"
-                    by the sending HEI. In theory, this should match the latest of the three
-                    approval dates, but it doesn't have to. Servers are not required to provide
-                    this date, but it's RECOMMENDED to do so. It MAY be an approximate date.
-                </xs:documentation>
-            </xs:annotation>
-        </xs:attribute>
     </xs:complexType>
 
     <xs:complexType name="MobilityInstitution">
