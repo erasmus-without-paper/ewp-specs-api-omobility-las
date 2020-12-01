@@ -50,6 +50,9 @@ Server implementers provide their own chosen value of `<max-omobility-ids>` via
 their manifest entry (see [manifest-entry.xsd](manifest-entry.xsd)). Clients
 SHOULD parse this value (or assume it's equal to `1`).
 
+Note: Each outgoing mobility should have at most one learning agreement.
+Extensions to a learning agreement should be handled by its modification.
+
 
 Permissions
 -----------
