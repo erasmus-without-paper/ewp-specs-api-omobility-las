@@ -634,7 +634,8 @@
             <xs:element name="receiving-approval-timestamp" minOccurs="0" maxOccurs="1" type="xs:dateTime">
                 <xs:annotation>
                     <xs:documentation>
-                        The moment when the LA has been approved by the receiving HEI.
+                        The moment when the LA has been approved by the receiving HEI. This should be
+                        the time when the sending HEI received or acknowledged the approval request.
 
                         Note: An approval should be removed after every change to the 'student' element.
                         The receiving HEI needs to send an approval once again in such cases.
