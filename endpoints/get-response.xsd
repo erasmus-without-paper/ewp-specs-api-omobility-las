@@ -147,19 +147,39 @@
                     </xs:sequence>
                 </xs:complexType>
             </xs:element>
-            <xs:element name="planned-mobility-start" type="xs:gYearMonth" minOccurs="1" maxOccurs="1">
+            <xs:element name="planned-start-month" type="xs:gYearMonth" minOccurs="0" maxOccurs="1">
                 <xs:annotation>
                     <xs:documentation>
-                        Planned start date of the mobility (when the student is supposed to arrive).
-                        Only month and year.
+                        Planned start month of the mobility (when the student is supposed to arrive).
+
+                        Note: This field MUST be provided only for semester(s) type mobilities.
                     </xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element name="planned-mobility-end" type="xs:gYearMonth" minOccurs="1" maxOccurs="1">
+            <xs:element name="planned-end-month" type="xs:gYearMonth" minOccurs="0" maxOccurs="1">
                 <xs:annotation>
                     <xs:documentation>
-                        Planned end date of the mobility (when the student is supposed to leave).
-                        Only month and year.
+                        Planned end month of the mobility (when the student is supposed to leave).
+
+                        Note: This field MUST be provided only for semester(s) type mobilities.
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="planned-start-day" type="xs:date" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>
+                        Planned start day of the mobility (when the student is supposed to arrive).
+
+                        Note: This field MUST be provided only for blended and short-term doctoral mobilities.
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="planned-end-day" type="xs:date" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>
+                        Planned end day of the mobility (when the student is supposed to leave).
+
+                        Note: This field MUST be provided only for blended and short-term doctoral mobilities.
                     </xs:documentation>
                 </xs:annotation>
             </xs:element>
@@ -239,6 +259,9 @@
                         After acceptance it will be copied to the `latest-approved` section.
                         If there are no proposals of change to the latest approved version,
                         this element will not be present.
+
+                        Note: Blended mobilities with short-term physical mobility and short-term doctoral mobilities
+                        MUST NOT have any proposals after `first-version` of LA has been agreed.
                     </xs:documentation>
                 </xs:annotation>
                 <xs:complexType>
@@ -411,8 +434,11 @@
                         <xs:documentation>
                             Short description of the virtual component.
 
-                            This field MUST be provided for all components in `virtual-component` and MUST NOT be
-                            provided for other components.
+                            This field:
+                            * MUST be provided for all components in `virtual-components`,
+                            * MUST be provided for at least one component in `blended-mobility-components`,
+                            * MAY be provided for components in `short-term-doctoral-components`,
+                            * MUST NOT be provided for other components.
                         </xs:documentation>
                     </xs:annotation>
                 </xs:element>
@@ -575,12 +601,13 @@
             </xs:documentation>
         </xs:annotation>
         <xs:sequence>
-            <xs:element name="components-studied" minOccurs="1" maxOccurs="1">
+            <xs:element name="components-studied" minOccurs="0" maxOccurs="1">
                 <xs:annotation>
                     <xs:documentation>
                         List of components studied (or planned to be studied) at the receiving HEI.
 
-                        Note: This element corresponds to "Table A" or "Table A2" on the EUC LA template.
+                        Note: This element corresponds to "Table A" or "Table A2" on the EUC LA template
+                        and is required for semester(s) type mobilities.
                     </xs:documentation>
                 </xs:annotation>
                 <xs:complexType>
@@ -589,12 +616,13 @@
                     </xs:sequence>
                 </xs:complexType>
             </xs:element>
-            <xs:element name="components-recognized" minOccurs="1" maxOccurs="1">
+            <xs:element name="components-recognized" minOccurs="0" maxOccurs="1">
                 <xs:annotation>
                     <xs:documentation>
                         List of components recognized (or planned to be recognized) at the sending HEI.
 
-                        Note: This element corresponds to "Table B" or "Table B2" on the EUC LA template.
+                        Note: This element corresponds to "Table B" or "Table B2" on the EUC LA template
+                        and is required for semester(s) type mobilities.
                     </xs:documentation>
                 </xs:annotation>
                 <xs:complexType>
@@ -614,6 +642,34 @@
                 <xs:complexType>
                     <xs:sequence>
                         <xs:element ref="component" minOccurs="0" maxOccurs="unbounded"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="blended-mobility-components" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>
+                        List of components studied (or planned to be studied) at the receiving HEI.
+
+                        Note: This element is present only for blended mobilities with short-term physical mobility.
+                    </xs:documentation>
+                </xs:annotation>
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element ref="component" minOccurs="1" maxOccurs="unbounded"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="short-term-doctoral-components" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>
+                        List of components studied (or planned to be studied) at the receiving HEI.
+
+                        Note: This element is present only for short-term doctoral mobilities.
+                    </xs:documentation>
+                </xs:annotation>
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element ref="component" minOccurs="1" maxOccurs="unbounded"/>
                     </xs:sequence>
                 </xs:complexType>
             </xs:element>

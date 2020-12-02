@@ -38,8 +38,8 @@
             <gender>1</gender>
             <email>ivan@example.com</email>
         </student>
-        <planned-mobility-start>2019-02</planned-mobility-start>
-        <planned-mobility-end>2019-06</planned-mobility-end>
+        <planned-start-month>2019-02</planned-start-month>
+        <planned-end-month>2019-06</planned-end-month>
         <eqf-level-studied-at-departure>8</eqf-level-studied-at-departure>
         <student-isced-f-code>0541</student-isced-f-code>
         <student-language-skill>
