@@ -112,6 +112,17 @@ Servers MUST respond with a valid XML document described by the
 further information.
 
 
+Virtual components
+------------------
+
+For semester(s) and short-term doctoral mobilities the LA template requires to fill a "virtual component" flag.
+This flag MUST be checked only if:
+ * For semester(s) mobility there is a non-empty list of `virtual-components` with at least one component having `status`
+attribute other than `deleted`,
+ * For short-term doctoral mobility at least one component in `short-term-doctoral-components` has a non-empty
+`short-description`.
+
+
 [develhub]: http://developers.erasmuswithoutpaper.eu/
 [statuses]: https://github.com/erasmus-without-paper/ewp-specs-management#statuses
 [omobilities]: https://github.com/erasmus-without-paper/ewp-specs-api-omobilities
