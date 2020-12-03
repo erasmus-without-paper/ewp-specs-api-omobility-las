@@ -1,6 +1,5 @@
-<!-- For clarity, the examples contain only information about courses that the student wants to attend at the receiving HEI (`components-studied`). -->
+<!-- For clarity, the examples contain only information about components and approvals. -->
 <!-- Attached file *is not* a valid update request. -->
 <approve-components-studied-proposal-v1>
-    <approving-party>receiving-hei</approving-party>
     <latest-proposal-id>61266750D019063512516C7EE01968012</latest-proposal-id>
 </approve-components-studied-proposal-v1>

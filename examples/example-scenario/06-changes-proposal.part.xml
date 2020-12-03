@@ -27,12 +27,33 @@
 </first-version>
 <latest-approved>
     <components-studied>
-        <component status="deleted" reason="timetable-conflict">
+        <component>
             <title>Advanced Logics for Computer Scientists</title>
             <academic-term-display-name>Autumn 2021/2022</academic-term-display-name>
         </component>
-        <component status="inserted" reason="substituting-deleted">
-            <title>Computational Social Choice Theory</title>
+        <component>
+            <title>Big Data Mining and Processing</title>
+            <academic-term-display-name>Autumn 2021/2022</academic-term-display-name>
+        </component>
+        <component>
+            <title>Advanced Functional Programming</title>
+            <academic-term-display-name>Autumn 2021/2022</academic-term-display-name>
+        </component>
+    </components-studied>
+    <components-recognized>
+        <component>
+            <title>Analiza matematyczna II</title>
+            <academic-term-display-name>Autumn 2021/2022</academic-term-display-name>
+        </component>
+    </components-recognized>
+    <student-approval-timestamp>2020-01-19T12:43:15+02:00</student-approval-timestamp>
+    <sending-approval-timestamp>2020-01-19T12:43:15+02:00</sending-approval-timestamp>
+    <receiving-approval-timestamp>2020-01-22T11:12:08+02:00</receiving-approval-timestamp>
+</latest-approved>
+<latest-proposal id="7974C159B15BAF222F868493C167125FA324">
+    <components-studied>
+        <component>
+            <title>Advanced Logics for Computer Scientists</title>
             <academic-term-display-name>Autumn 2021/2022</academic-term-display-name>
         </component>
         <component>
@@ -44,7 +65,7 @@
             <academic-term-display-name>Autumn 2021/2022</academic-term-display-name>
         </component>
         <component status="inserted" reason="substituting-deleted">
-            <title>Artificial Intelligence and Expert Systems</title>
+            <title>Advanced Databases</title>
             <academic-term-display-name>Autumn 2021/2022</academic-term-display-name>
         </component>
     </components-studied>
@@ -60,6 +81,6 @@
             <short-description>Online course and online lectures. Students from different countries will present, discuss and compare real-life use cases.</short-description>
         </component>
     </virtual-components>
-    <student-approval-timestamp>2020-03-08T14:20:56+02:00</student-approval-timestamp>
-    <receiving-approval-timestamp>2020-03-08T15:27:23+02:00</receiving-approval-timestamp>
-</latest-approved>
+    <student-approval-timestamp>2020-03-02T12:43:15+02:00</student-approval-timestamp>
+    <sending-approval-timestamp>2020-03-02T12:43:15+02:00</sending-approval-timestamp>
+</latest-proposal>

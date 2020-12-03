@@ -1,4 +1,4 @@
-<!-- For clarity, the examples contain only information about courses that the student wants to attend at the receiving HEI (`components-studied`). -->
+<!-- For clarity, the examples contain only information about components and approvals. -->
 <!-- Attached file *is not* a valid update request. -->
 <update-components-studied-v1>
     <latest-proposal-id>BAF222F868493C167125FA32452E9460731C575</latest-proposal-id>
