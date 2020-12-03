@@ -147,39 +147,43 @@
                     </xs:sequence>
                 </xs:complexType>
             </xs:element>
-            <xs:element name="planned-start-month" type="xs:gYearMonth" minOccurs="0" maxOccurs="1">
+            <xs:element name="start-year-month" type="xs:gYearMonth" minOccurs="0" maxOccurs="1">
                 <xs:annotation>
                     <xs:documentation>
-                        Planned start month of the mobility (when the student is supposed to arrive).
+                        Planned start year and month of the mobility (when the student is supposed to arrive).
 
-                        Note: This field MUST be provided only for semester(s) type mobilities.
+                        Note: This field MUST be provided only for semester(s) type mobilities
+                        and MUST NOT be provided for other mobility types.
                     </xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element name="planned-end-month" type="xs:gYearMonth" minOccurs="0" maxOccurs="1">
+            <xs:element name="end-year-month" type="xs:gYearMonth" minOccurs="0" maxOccurs="1">
                 <xs:annotation>
                     <xs:documentation>
-                        Planned end month of the mobility (when the student is supposed to leave).
+                        Planned end year and month of the mobility (when the student is supposed to leave).
 
-                        Note: This field MUST be provided only for semester(s) type mobilities.
+                        Note: This field MUST be provided only for semester(s) type mobilities
+                        and MUST NOT be provided for other mobility types.
                     </xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element name="planned-start-day" type="xs:date" minOccurs="0" maxOccurs="1">
+            <xs:element name="start-date" type="xs:date" minOccurs="0" maxOccurs="1">
                 <xs:annotation>
                     <xs:documentation>
-                        Planned start day of the mobility (when the student is supposed to arrive).
+                        Planned start date of the mobility (when the student is supposed to arrive).
 
-                        Note: This field MUST be provided only for blended and short-term doctoral mobilities.
+                        Note: This field MUST be provided only for blended and short-term doctoral mobilities
+                        and MUST NOT be provided for other mobility types.
                     </xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element name="planned-end-day" type="xs:date" minOccurs="0" maxOccurs="1">
+            <xs:element name="end-date" type="xs:date" minOccurs="0" maxOccurs="1">
                 <xs:annotation>
                     <xs:documentation>
-                        Planned end day of the mobility (when the student is supposed to leave).
+                        Planned end date of the mobility (when the student is supposed to leave).
 
-                        Note: This field MUST be provided only for blended and short-term doctoral mobilities.
+                        Note: This field MUST be provided only for blended and short-term doctoral mobilities
+                        and MUST NOT be provided for other mobility types.
                     </xs:documentation>
                 </xs:annotation>
             </xs:element>
