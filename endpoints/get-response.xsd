@@ -599,7 +599,7 @@
     <xs:complexType name="ListOf_Components">
         <xs:annotation>
             <xs:documentation>
-                Describes a list of both studied components and recognized components, that together form an LA.
+                Describes a list of components that make up various tables in LA.
             </xs:documentation>
         </xs:annotation>
         <xs:sequence>
