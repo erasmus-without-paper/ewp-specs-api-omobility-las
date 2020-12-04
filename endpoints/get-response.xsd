@@ -200,7 +200,7 @@
                     <xs:documentation>
                         The student is sent to the mobility as part of one of his study programmes.
                         This field contains the ISCED-F field of education code that is closest to the
-                        subject this programme (or, as EUC put is, "closest to the degree to be awarded
+                        subject of this programme (or, as EUC put is, "closest to the degree to be awarded
                         to the student by the Sending Institution").
                     </xs:documentation>
                 </xs:annotation>
