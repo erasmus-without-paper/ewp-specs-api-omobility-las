@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema
     xmlns:xs="http://www.w3.org/2001/XMLSchema"
-    xmlns:xml="http://www.w3.org/XML/1998/namespace"
     xmlns:ewp="https://github.com/erasmus-without-paper/ewp-specs-architecture/blob/stable-v1/common-types.xsd"
     xmlns:sec="https://github.com/erasmus-without-paper/ewp-specs-sec-intro/tree/stable-v2"
     elementFormDefault="qualified"
@@ -114,8 +113,8 @@
                             </xs:annotation>
                             <xs:complexType>
                                 <xs:sequence>
-                                    <xs:element name="approve-components-studied-proposal-v1" minOccurs="0" maxOccurs="1" type="ewp:Empty"/>
-                                    <xs:element name="update-components-studied-v1" minOccurs="0" maxOccurs="1" type="ewp:Empty"/>
+                                    <xs:element name="approve-proposal-v1" minOccurs="0" maxOccurs="1" type="ewp:Empty"/>
+                                    <xs:element name="comment-proposal-v1" minOccurs="0" maxOccurs="1" type="ewp:Empty"/>
                                 </xs:sequence>
                             </xs:complexType>
                         </xs:element>

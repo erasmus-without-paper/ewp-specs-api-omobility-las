@@ -8,52 +8,19 @@ Outgoing Mobility Learning Agreements Update endpoint
 Summary
 -------
 
-This endpoint allows the receiving HEI to suggest updates to specific Learning
-Agreement fields, stored on the *sending* HEI's servers.
+This endpoint allows the receiving HEI to comment or approve a Learning
+Agreement proposal, stored on the *sending* HEI's servers.
 
 It is required to implement this endpoint, but servers are allowed to support
 only a subset of its update types (there are some updates types and more
 can be added in the future).
 
 
-Updates or suggestions?
------------------------
+Update request versioning
+-------------------------
 
-An "update request" can be looked at in two different ways. At first, we expect
-for EWP partners to perceive it as a set suggestions:
-
- - **The client** will sometimes send them, sometimes not. Some IRO staff will
-   still prefer to use "the old way", and send their data by emails.
-
- - **The server** will receive them, but it will treat them as suggestions
-   only. It will respond something like *"Thank you! We will review your
-   suggestion"*.
-
-However, if adoption of EWP goes well, then the users and developers will begin
-to get used to the new data flow, and the meaning of "update request" will
-shift:
-
- - **The client** will send them often. Sending these "suggestions" will
-   gradually become a **requirement** for the receiving institution. IRO staff
-   members will prefer to use this API than sending an email.
-
- - **The server** might begin to put more trust in both EWP and the partner. It
-   might consider saving updates *without* having a human review them. As this
-   continues, the server will begin responding with *"Your update has been
-   received and approved automatically"*.
-
-
-Why not separate APIs?
-----------------------
-
-Initially, the features of this endpoint were covered by multiple separate
-APIs (one API for each type of change). However, we quickly discovered **major
-similarities** between these APIs: similar request parameters, the same content
-of the response, etc. So we chose to merge them into the existing API,
-and allow servers to specify which updates they support.
-
-We also introduced a simple versioning on update types. As you see, each update
-type has the `-v1` suffix. If, in the future, we decide that some type of an
+We introduced a simple versioning on update types. As you see, each update
+type has the `-v1` suffix. If, in the future, we decide that some type of
 update should require more request parameters, then we will release `-v2` of
 this update type, while allowing the previous versions to work in a
 backward-compatible manner. This system is not as flexible as EWP's API
@@ -71,9 +38,9 @@ Request method and parameters
    contain a matching `Content-Type` header (such as `text/xml`).
 
    (This endpoint is **NOT** using the regular `application/x-www-form-urlencoded`
-   request format which most of other EWP endpoints do.)
+   request format which most other EWP endpoints do.)
 
- * The are various types of update requests described in the
+ * There are various types of update requests described in the
    [update-request.xsd](update-request.xsd) schema. The server is NOT REQUIRED
    to support all of them. Clients MUST check if the server supports certain
    type of update request before sending it.
@@ -87,7 +54,7 @@ Handling of invalid parameters
 
  * General [error handling rules][error-handling] apply.
 
- * If some of the required parameters (the ones with `minOccurs="1"`) are
+ * If some required parameters (the ones with `minOccurs="1"`) are
    missing, or are passed in an invalid format, then the server MUST respond
    with HTTP 400 error response.
 
@@ -119,8 +86,6 @@ sending HEI's servers. For example:
 
  - it tries to approve a version of the LA which is no longer the "latest
    draft" version,
- - or, it tries to delete a course from the list of the components, but the
-   course no longer exists on this list,
  - etc.
 
 Some edit conflicts MAY be automatically resolved be the server (the sending

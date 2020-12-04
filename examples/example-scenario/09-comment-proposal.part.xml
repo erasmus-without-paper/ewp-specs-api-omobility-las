@@ -1,8 +1,8 @@
 <!-- For clarity, the examples contain only information about components and approvals. -->
 <!-- Attached file *is not* a valid update request. -->
-<update-components-studied-v1>
+<comment-proposal-v1>
     <latest-proposal-id>AF521761C394868F222FAB51B951C47973</latest-proposal-id>
     <comment>The course "Distributed Systems" is not conducted in English. I suggest choosing the "Data Mining,
         Computational Social Choice Theory or Deep neural networks".
     </comment>
-</update-components-studied-v1>
+</comment-proposal-v1>

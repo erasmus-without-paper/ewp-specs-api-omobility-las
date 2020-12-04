@@ -426,7 +426,7 @@
                         <xs:documentation>
                             The conditions that have to be met to recognize this component by the sending HEI.
 
-                            This field MUST NOT be provided for components other than those in `components-recognized`.
+                            This field MUST NOT be provided for components in `components-studied`.
 
                             If this field is defined then it means that this component will not be automatically
                             recognized. This field SHOULD NOT be set otherwise.
