@@ -11,10 +11,6 @@ Summary
 This endpoint allows the receiving HEI to comment or approve a Learning
 Agreement proposal, stored on the *sending* HEI's servers.
 
-It is required to implement this endpoint, but servers are allowed to support
-only a subset of its update types (there are some updates types and more
-can be added in the future).
-
 
 Update request versioning
 -------------------------
@@ -39,14 +35,6 @@ Request method and parameters
 
    (This endpoint is **NOT** using the regular `application/x-www-form-urlencoded`
    request format which most other EWP endpoints do.)
-
- * There are various types of update requests described in the
-   [update-request.xsd](update-request.xsd) schema. The server is NOT REQUIRED
-   to support all of them. Clients MUST check if the server supports certain
-   type of update request before sending it.
-
- * The server is REQUIRED to publish the list of supported update requests in
-   its [manifest entry](../manifest-entry.xsd).
 
 
 Handling of invalid parameters
@@ -81,12 +69,8 @@ of bad requests. Such conflicts can always happen (they cannot be completely
 avoided), and both server and client implementers MUST be aware of them.
 
 In context of this particular API, edit conflicts occur when the receiving HEI
-attempts to change something, which has been concurrently changed on the
-sending HEI's servers. For example:
-
- - it tries to approve a version of the LA which is no longer the "latest
-   draft" version,
- - etc.
+attempts to change something, which has been concurrently changed on the sending HEI's servers.
+For example, it tries to approve a version of the LA which is no longer the latest proposal.
 
 Some edit conflicts MAY be automatically resolved be the server (the sending
 HEI), but most won't be. They must be detected though. For this reason:
