@@ -558,6 +558,15 @@
                                 </xs:documentation>
                             </xs:annotation>
                         </xs:enumeration>
+                        <xs:enumeration value="adding-virtual-component">
+                            <xs:annotation>
+                                <xs:documentation>
+                                    Defined by EUC with the following description: Adding a virtual component.
+
+                                    This reason MUST be used ONLY for "insert" changes.
+                                </xs:documentation>
+                            </xs:annotation>
+                        </xs:enumeration>
                         <xs:enumeration value="properties-update">
                             <xs:annotation>
                                 <xs:documentation>
