@@ -61,5 +61,6 @@
         </component>
     </virtual-components>
     <student-approval-timestamp>2020-03-08T14:20:56+02:00</student-approval-timestamp>
+    <sending-approval-timestamp>2020-03-08T14:20:56+02:00</sending-approval-timestamp>
     <receiving-approval-timestamp>2020-03-08T15:27:23+02:00</receiving-approval-timestamp>
 </latest-approved>
