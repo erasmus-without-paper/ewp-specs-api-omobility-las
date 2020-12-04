@@ -491,16 +491,6 @@
                         users (so that they can pick one when making the change). Users SHOULD be
                         allowed to specify their own custom reason for the change too (`reason-text`).
 
-                        Currently, the enumeration supports viable reasons for changing
-                        `components-studied` list only. This element MUST NOT be provided for
-                        changes in `components-recognized`.
-
-                        EUC LA template defines seven "Reasons for exceptional changes to
-                        study programme abroad", and assigns them numbers from 1 to 7. EUC does say
-                        whether this assignment is backward-compatible or not, so we must assume it
-                        isn't. Therefore, we introduce an enumeration of our own, which is intended to
-                        stay backward-compatible.
-
                         IMPORTANT: New values MAY be added to this enumeration in future releases of
                         this API, and such expansion is considered backward-compatible. Clients MUST be
                         aware of this fact - if you find an unknown value here, you MUST treat it the
