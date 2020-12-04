@@ -116,7 +116,7 @@ Virtual components
 ------------------
 
 For semester(s) and short-term doctoral mobilities the LA template requires to fill a "virtual component" flag.
-This flag MUST be checked only if:
+This flag is assumed to be checked only if:
  * For semester(s) mobility there is a non-empty list of `virtual-components` with at least one component having `status`
 attribute other than `deleted`,
  * For short-term doctoral mobility at least one component in `short-term-doctoral-components` has a non-empty
