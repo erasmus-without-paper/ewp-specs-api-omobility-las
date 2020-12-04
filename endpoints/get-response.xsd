@@ -256,7 +256,7 @@
             <xs:element name="latest-proposal" minOccurs="0" maxOccurs="1">
                 <xs:annotation>
                     <xs:documentation>
-                        This element is required  to propose new version of the LA to be accepted by the partner.
+                        This element is required to propose new version of the LA to be accepted by the partner.
                         It contains courses planned to be studied with changes compared to the `first-version`.
 
                         After acceptance it will be copied to the `latest-approved` section.
