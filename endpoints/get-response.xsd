@@ -113,39 +113,7 @@
                     </xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element name="student" minOccurs="1" maxOccurs="1">
-                <xs:annotation>
-                    <xs:documentation>
-                        The section describes the student who is being sent for this mobility.
-                    </xs:documentation>
-                </xs:annotation>
-                <xs:complexType>
-                    <xs:sequence>
-                        <xs:element name="given-names" type="xs:string" minOccurs="1" maxOccurs="1"/>
-                        <xs:element name="family-name" type="xs:string" minOccurs="1" maxOccurs="1"/>
-                        <xs:element name="global-id" type="xs:string" minOccurs="0" maxOccurs="1">
-                            <xs:annotation>
-                                <xs:documentation>
-                                    Global student identifier. Should follow the specification of the
-                                    European Student Identifier
-                                    (https://github.com/erasmus-without-paper/european-student-identifier).
-                                </xs:documentation>
-                            </xs:annotation>
-                        </xs:element>
-                        <xs:element name="birth-date" type="xs:date" minOccurs="1" maxOccurs="1"/>
-                        <xs:element name="citizenship" type="ewp:CountryCode" minOccurs="1" maxOccurs="1">
-                            <xs:annotation>
-                                <xs:documentation>
-                                    Code of the country to which the person belongs administratively and that
-                                    issues the ID card and/or passport.
-                                </xs:documentation>
-                            </xs:annotation>
-                        </xs:element>
-                        <xs:element name="gender" type="ewp:Gender" minOccurs="1" maxOccurs="1"/>
-                        <xs:element name="email" type="ewp:Email" minOccurs="1" maxOccurs="1"/>
-                    </xs:sequence>
-                </xs:complexType>
-            </xs:element>
+            <xs:element ref="student"/>
             <xs:element name="start-year-month" type="xs:gYearMonth" minOccurs="0" maxOccurs="1">
                 <xs:annotation>
                     <xs:documentation>
@@ -258,8 +226,9 @@
                     <xs:documentation>
                         This element is required to propose new version of the LA to be accepted by the partner.
                         It contains courses planned to be studied with changes compared to the `first-version`.
+                        It may also contain student's data that has changed after the last receiving HEI's approval.
 
-                        After acceptance it will be copied to the `latest-approved` section.
+                        After acceptance, the course list will be copied to the `latest-approved` section.
                         If there are no proposals of change to the latest approved version,
                         this element will not be present.
 
@@ -270,6 +239,21 @@
                 <xs:complexType>
                     <xs:complexContent>
                         <xs:extension base="ListOf_Components">
+                            <xs:sequence>
+                                <xs:element ref="student" minOccurs="0" maxOccurs="1">
+                                    <xs:annotation>
+                                        <xs:documentation>
+                                            This element represents the student's personal data that has changed after
+                                            the last receiving HEI's approval.
+
+                                            Note: Only those fields that have changed should be present here.
+                                            Changes to the following fields are considered as important and should be
+                                            mentioned here: `given-names`, `family-name`, `global-id`, `birth-date`.
+                                            Other fields may change without the need to issue a proposal.
+                                        </xs:documentation>
+                                    </xs:annotation>
+                                </xs:element>
+                            </xs:sequence>
                             <xs:attribute name="id" type="xs:string" use="required">
                                 <xs:annotation>
                                     <xs:documentation>
@@ -694,14 +678,47 @@
                     <xs:documentation>
                         The moment when the LA has been approved by the receiving HEI. This should be
                         the time when the sending HEI received or acknowledged the approval request.
-
-                        Note: An approval should be removed after every change to the 'student' element.
-                        The receiving HEI needs to send an approval once again in such cases.
                     </xs:documentation>
                 </xs:annotation>
             </xs:element>
         </xs:sequence>
     </xs:complexType>
+
+    <xs:element name="student">
+        <xs:annotation>
+            <xs:documentation>
+                The section describes the student who is being sent for this mobility.
+
+                Note: All fields are optional only inside `latest-proposal` element and required otherwise!
+            </xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="given-names" type="xs:string" minOccurs="0" maxOccurs="1"/>
+                <xs:element name="family-name" type="xs:string" minOccurs="0" maxOccurs="1"/>
+                <xs:element name="global-id" type="xs:string" minOccurs="0" maxOccurs="1">
+                    <xs:annotation>
+                        <xs:documentation>
+                            Global student identifier. Should follow the specification of the
+                            European Student Identifier
+                            (https://github.com/erasmus-without-paper/european-student-identifier).
+                        </xs:documentation>
+                    </xs:annotation>
+                </xs:element>
+                <xs:element name="birth-date" type="xs:date" minOccurs="0" maxOccurs="1"/>
+                <xs:element name="citizenship" type="ewp:CountryCode" minOccurs="0" maxOccurs="1">
+                    <xs:annotation>
+                        <xs:documentation>
+                            Code of the country to which the person belongs administratively and that
+                            issues the ID card and/or passport.
+                        </xs:documentation>
+                    </xs:annotation>
+                </xs:element>
+                <xs:element name="gender" type="ewp:Gender" minOccurs="0" maxOccurs="1"/>
+                <xs:element name="email" type="ewp:Email" minOccurs="0" maxOccurs="1"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
 
     <xs:complexType name="MobilityInstitution">
         <xs:sequence>
