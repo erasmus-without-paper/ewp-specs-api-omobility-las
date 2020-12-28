@@ -380,6 +380,8 @@
                             This describes various credit types which the student is expected to achieve by
                             completing this component. Usually these SHOULD be ECTS credits, but there MAY
                             be some exceptions.
+
+                            Note: If there are no credits, then credit evaluation is not applicable for that component.
                         </xs:documentation>
                     </xs:annotation>
                     <xs:complexType>
