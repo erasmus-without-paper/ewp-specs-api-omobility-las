@@ -9,6 +9,6 @@
     <req:sending-hei-id>uw.edu.pl</req:sending-hei-id>
     <req:approve-proposal-v1>
         <req:omobility-id>c442c289-5541-4cae-9edb-8ad83e133613</req:omobility-id>
-        <req:latest-proposal-id>AE61266750D019063512516C7EE01968012C81F25A89</req:latest-proposal-id>
+        <req:changes-proposal-id>AE61266750D019063512516C7EE01968012C81F25A89</req:changes-proposal-id>
     </req:approve-proposal-v1>
 </req:omobility-las-update-request>

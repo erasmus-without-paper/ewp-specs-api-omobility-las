@@ -1,6 +1,6 @@
 <!-- For clarity, the examples contain only information about components and approvals. -->
 <!-- Attached file *is not* a valid get response. -->
-<latest-proposal id="BAF222F868493C167125FA32452E9460731C575">
+<changes-proposal id="BAF222F868493C167125FA32452E9460731C575">
     <components-studied>
         <component>
             <title>Advanced Logics for Computer Scientists</title>
@@ -23,4 +23,4 @@
     </components-recognized>
     <student-approval-timestamp>2020-01-11T11:31:45+02:00</student-approval-timestamp>
     <sending-approval-timestamp>2020-01-13T14:03:23+02:00</sending-approval-timestamp>
-</latest-proposal>
+</changes-proposal>

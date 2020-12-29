@@ -25,7 +25,7 @@
     <sending-approval-timestamp>2020-01-19T12:43:15+02:00</sending-approval-timestamp>
     <receiving-approval-timestamp>2020-01-22T11:12:08+02:00</receiving-approval-timestamp>
 </first-version>
-<latest-approved>
+<approved-changes>
     <components-studied>
         <component status="deleted" reason="timetable-conflict">
             <title>Advanced Logics for Computer Scientists</title>
@@ -33,10 +33,6 @@
         </component>
         <component status="inserted" reason="substituting-deleted">
             <title>Computational Social Choice Theory</title>
-            <academic-term-display-name>Autumn 2021/2022</academic-term-display-name>
-        </component>
-        <component>
-            <title>Big Data Mining and Processing</title>
             <academic-term-display-name>Autumn 2021/2022</academic-term-display-name>
         </component>
         <component status="deleted" reason="language-mismatch">
@@ -48,12 +44,6 @@
             <academic-term-display-name>Autumn 2021/2022</academic-term-display-name>
         </component>
     </components-studied>
-    <components-recognized>
-        <component>
-            <title>Analiza matematyczna II</title>
-            <academic-term-display-name>Autumn 2021/2022</academic-term-display-name>
-        </component>
-    </components-recognized>
     <virtual-components>
         <component status="inserted" reason="adding-virtual-component">
             <title>Aspect oriented programming use cases</title>
@@ -63,4 +53,4 @@
     <student-approval-timestamp>2020-03-06T10:59:34+02:00</student-approval-timestamp>
     <sending-approval-timestamp>2020-03-08T14:20:56+02:00</sending-approval-timestamp>
     <receiving-approval-timestamp>2020-03-08T15:27:23+02:00</receiving-approval-timestamp>
-</latest-approved>
+</approved-changes>

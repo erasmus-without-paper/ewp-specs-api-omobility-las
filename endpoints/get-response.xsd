@@ -220,11 +220,8 @@
                 <xs:annotation>
                     <xs:documentation>
                         This element is required to propose changes to the LA to be accepted by the partner.
-                        It contains changes to the `first-version` of LA.
+                        It contains proposal of the `first-version` of LA or changes to it after it is approved.
                         It may also contain student's data that has changed after the last receiving HEI's approval.
-
-                        If there are no proposals of change to the latest approved version,
-                        this element will not be present.
 
                         Note: Blended mobilities with short-term physical mobility and short-term doctoral mobilities
                         MUST NOT have any proposals of changes after `first-version` of LA has been agreed.
@@ -251,8 +248,8 @@
                             <xs:attribute name="id" type="xs:string" use="required">
                                 <xs:annotation>
                                     <xs:documentation>
-                                        Identifier of this version of `latest-proposal`. It MUST change if and only if
-                                        the latest proposal content changes. You can eg. normalize the latest-proposal
+                                        Identifier of this version of `changes-proposal`. It MUST change if and only if
+                                        the changes proposal content changes. You can eg. normalize the changes-proposal
                                         element using Exclusive XML Canonicalization and than calculate a hash.
 
                                         It will be used in update request to identify the version being approved/commented.
@@ -437,18 +434,14 @@
                         <xs:enumeration value="inserted">
                             <xs:annotation>
                                 <xs:documentation>
-                                    This status means that the component has been inserted. Read description
-                                    of the `first-version` and `latest-approved` to see in reference to which list
-                                    it has been inserted.
+                                    This status means that the component has been added after the `first-version` of LA.
                                 </xs:documentation>
                             </xs:annotation>
                         </xs:enumeration>
                         <xs:enumeration value="deleted">
                             <xs:annotation>
                                 <xs:documentation>
-                                    This status means that the component has been deleted, so actually
-                                    it is no longer present in the LA. Read description of the `first-version`
-                                    and `latest-approved` to see in reference to which list it has been deleted.
+                                    This status means that the component has been deleted after the `first-version` of LA.
                                 </xs:documentation>
                             </xs:annotation>
                         </xs:enumeration>
@@ -685,7 +678,7 @@
             <xs:documentation>
                 The section describes the student who is being sent for this mobility.
 
-                Note: All fields are optional only inside `latest-proposal` element and required otherwise!
+                Note: All fields are optional only inside `changes-proposal` element and required otherwise!
             </xs:documentation>
         </xs:annotation>
         <xs:complexType>

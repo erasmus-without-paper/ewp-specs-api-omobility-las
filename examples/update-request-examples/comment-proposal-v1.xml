@@ -9,7 +9,7 @@
     <req:sending-hei-id>uw.edu.pl</req:sending-hei-id>
     <req:comment-proposal-v1>
         <req:omobility-id>c442c289-5541-4cae-9edb-8ad83e133613</req:omobility-id>
-        <req:latest-proposal-id>93C167125FA32452E9460731C57515E76B603EB1</req:latest-proposal-id>
+        <req:changes-proposal-id>93C167125FA32452E9460731C57515E76B603EB1</req:changes-proposal-id>
         <req:comment>"Introductory calculus" is no longer conducted. We suggest replacing it with "Calculus I".</req:comment>
     </req:comment-proposal-v1>
 </req:omobility-las-update-request>
