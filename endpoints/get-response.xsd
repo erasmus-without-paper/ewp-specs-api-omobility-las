@@ -207,33 +207,27 @@
                     </xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element name="latest-approved" type="ListOf_Components" minOccurs="0" maxOccurs="1">
+            <xs:element name="approved-changes" type="ListOf_Components" minOccurs="0" maxOccurs="1">
                 <xs:annotation>
                     <xs:documentation>
-                        The latest approved list of courses studied (or planned to be studied)
-                        with changes compared to the `first-version`. When LA is signed for the first time
-                        this element contains the same courses as the `first-version` does,
-                        but this may change later in time.
+                        The latest approved list of changes to the `first-version` of LA.
 
-                        Note: If you want to compare this to the tables in the EUC LA template,
-                        then this element describes what "Table A" would look like if all changes from "Table A2"
-                        were added (not applied) to it.
+                        Note: This element describes what Tables A2, B2, C2 of the LA template.
                     </xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element name="latest-proposal" minOccurs="0" maxOccurs="1">
+            <xs:element name="changes-proposal" minOccurs="0" maxOccurs="1">
                 <xs:annotation>
                     <xs:documentation>
-                        This element is required to propose new version of the LA to be accepted by the partner.
-                        It contains courses planned to be studied with changes compared to the `first-version`.
+                        This element is required to propose changes to the LA to be accepted by the partner.
+                        It contains changes to the `first-version` of LA.
                         It may also contain student's data that has changed after the last receiving HEI's approval.
 
-                        After acceptance, the course list will be copied to the `latest-approved` section.
                         If there are no proposals of change to the latest approved version,
                         this element will not be present.
 
                         Note: Blended mobilities with short-term physical mobility and short-term doctoral mobilities
-                        MUST NOT have any proposals after `first-version` of LA has been agreed.
+                        MUST NOT have any proposals of changes after `first-version` of LA has been agreed.
                     </xs:documentation>
                 </xs:annotation>
                 <xs:complexType>

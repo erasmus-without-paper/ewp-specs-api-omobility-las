@@ -47,6 +47,7 @@
             <language>en</language>
             <cefr-level>B2</cefr-level>
         </student-language-skill>
+        <!-- First approved version of the LA (tables A, B, C of LA template). -->
         <first-version>
             <components-studied>
                 <component>
@@ -69,11 +70,8 @@
             <sending-approval-timestamp>2018-11-13T14:03:23+02:00</sending-approval-timestamp>
             <receiving-approval-timestamp>2018-11-14T08:18:19+02:00</receiving-approval-timestamp>
         </first-version>
-        <!--
-        Changes in this element describe the differences between `first-version`
-        and `latest-approved`.
-        -->
-        <latest-approved>
+        <!-- Approved changes to the first version of LA (tables A2, B2, C2 of LA template). -->
+        <approved-changes>
             <components-studied>
                 <component>
                     <title>Introductory calculus</title>
@@ -110,13 +108,9 @@
             <student-approval-timestamp>2019-03-02T12:31:38+02:00</student-approval-timestamp>
             <sending-approval-timestamp>2019-03-03T10:11:58+02:00</sending-approval-timestamp>
             <receiving-approval-timestamp>2019-03-03T12:54:00+02:00</receiving-approval-timestamp>
-        </latest-approved>
-        <!--
-        This API also allows exchanging unapproved versions of the LA components.
-        After successful review, the `latest-proposal` section
-        is copied into the "latest-approved" section.
-        -->
-        <latest-proposal id="59B15BAF222F868493C167125FA32452E946">
+        </approved-changes>
+        <!-- Proposal of changes to the first version of LA - still unapproved. -->
+        <changes-proposal id="59B15BAF222F868493C167125FA32452E946">
             <components-studied>
                 <component>
                     <title>Introductory calculus</title>
@@ -144,6 +138,6 @@
             <student>
                 <family-name>Bardal</family-name>
             </student>
-        </latest-proposal>
+        </changes-proposal>
     </la>
 </omobility-las-get-response>
