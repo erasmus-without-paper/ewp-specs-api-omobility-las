@@ -21,7 +21,7 @@
             <academic-term-display-name>Autumn 2021/2022</academic-term-display-name>
         </component>
     </components-recognized>
-    <student-approval-timestamp>2020-01-19T12:43:15+02:00</student-approval-timestamp>
+    <student-approval-timestamp>2020-01-18T14:51:21+02:00</student-approval-timestamp>
     <sending-approval-timestamp>2020-01-19T12:43:15+02:00</sending-approval-timestamp>
     <receiving-approval-timestamp>2020-01-22T11:12:08+02:00</receiving-approval-timestamp>
 </first-version>
@@ -46,7 +46,7 @@
             <academic-term-display-name>Autumn 2021/2022</academic-term-display-name>
         </component>
     </components-recognized>
-    <student-approval-timestamp>2020-01-19T12:43:15+02:00</student-approval-timestamp>
+    <student-approval-timestamp>2020-01-18T14:51:21+02:00</student-approval-timestamp>
     <sending-approval-timestamp>2020-01-19T12:43:15+02:00</sending-approval-timestamp>
     <receiving-approval-timestamp>2020-01-22T11:12:08+02:00</receiving-approval-timestamp>
 </latest-approved>
@@ -81,6 +81,6 @@
             <short-description>Online course and online lectures. Students from different countries will present, discuss and compare real-life use cases.</short-description>
         </component>
     </virtual-components>
-    <student-approval-timestamp>2020-03-02T12:43:15+02:00</student-approval-timestamp>
+    <student-approval-timestamp>2020-03-01T11:12:34+02:00</student-approval-timestamp>
     <sending-approval-timestamp>2020-03-02T12:43:15+02:00</sending-approval-timestamp>
 </latest-proposal>
