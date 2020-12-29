@@ -33,6 +33,7 @@
         <student>
             <given-names>Ivan Petrovich</given-names>
             <family-name>Sidorov</family-name>
+            <global-id>urn:schac:personalUniqueCode:int:esi:uio.no:1234567890</global-id>
             <birth-date>1997-05-05</birth-date>
             <citizenship>NO</citizenship>
             <gender>1</gender>
