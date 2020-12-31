@@ -697,7 +697,7 @@
                         <xs:documentation>
                             Global student identifier. Should follow the specification of the
                             European Student Identifier
-                            (https://github.com/erasmus-without-paper/european-student-identifier).
+                            (https://wiki.geant.org/display/SM/European+Student+Identifier).
                         </xs:documentation>
                     </xs:annotation>
                 </xs:element>
