@@ -3,4 +3,11 @@
 <comment-proposal-v1>
     <changes-proposal-id>BAF222F868493C167125FA32452E9460731C575</changes-proposal-id>
     <comment>"Big data processing and cluster computing" is not available. Please replace it with "Big Data Mining and Processing".</comment>
+    <signature>
+        <signer-name>Anders Bardal</signer-name>
+        <signer-position>Erasmus senior coordinator</signer-position>
+        <signer-email>anders.bardal@example.com</signer-email>
+        <timestamp>2020-01-16T13:12:28+02:00</timestamp>
+        <signer-app>Dashboard</signer-app>
+    </signature>
 </comment-proposal-v1>

@@ -2,6 +2,7 @@
 <xs:schema
     xmlns:xs="http://www.w3.org/2001/XMLSchema"
     xmlns:ewp="https://github.com/erasmus-without-paper/ewp-specs-architecture/blob/stable-v1/common-types.xsd"
+    xmlns:la="https://github.com/erasmus-without-paper/ewp-specs-api-omobility-las/blob/stable-v1/endpoints/get-response.xsd"
     elementFormDefault="qualified"
 
     targetNamespace="https://github.com/erasmus-without-paper/ewp-specs-api-omobility-las/blob/stable-v1/endpoints/update-request.xsd"
@@ -78,7 +79,7 @@
                         </xs:documentation>
                     </xs:annotation>
                 </xs:element>
-                <xs:element name="changes-proposal-id" minOccurs="1" maxOccurs="1" type="xs:string">
+                <xs:element name="changes-proposal-id" type="xs:string" minOccurs="1" maxOccurs="1">
                     <xs:annotation>
                         <xs:documentation>
                             Identifier of the current state of the `changes-proposal`, which is also the state which
@@ -100,6 +101,7 @@
                         </xs:documentation>
                     </xs:annotation>
                 </xs:element>
+                <xs:element name="signature" type="la:Signature" minOccurs="1" maxOccurs="1"/>
             </xs:sequence>
         </xs:complexType>
     </xs:element>
@@ -129,13 +131,14 @@
                         </xs:documentation>
                     </xs:annotation>
                 </xs:element>
-                <xs:element name="comment" minOccurs="1" maxOccurs="1" type="xs:string">
+                <xs:element name="comment" type="xs:string" minOccurs="1" maxOccurs="1">
                     <xs:annotation>
                         <xs:documentation>
                             Field to describe why LA has not been accepted and what are the suggested changes.
                         </xs:documentation>
                     </xs:annotation>
                 </xs:element>
+                <xs:element name="signature" type="la:Signature" minOccurs="1" maxOccurs="1"/>
             </xs:sequence>
         </xs:complexType>
     </xs:element>

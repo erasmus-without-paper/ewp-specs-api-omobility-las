@@ -2,4 +2,11 @@
 <!-- Attached file *is not* a valid update request. -->
 <approve-proposal-v1>
     <changes-proposal-id>4C159B15BAF222F868493C167125FA32452</changes-proposal-id>
+    <signature>
+        <signer-name>Anders Bardal</signer-name>
+        <signer-position>Erasmus senior coordinator</signer-position>
+        <signer-email>anders.bardal@example.com</signer-email>
+        <timestamp>2020-01-22T11:12:08+02:00</timestamp>
+        <signer-app>Dashboard</signer-app>
+    </signature>
 </approve-proposal-v1>
