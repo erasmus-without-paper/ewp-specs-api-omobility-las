@@ -655,28 +655,9 @@
                     </xs:sequence>
                 </xs:complexType>
             </xs:element>
-            <xs:element name="student-approval-timestamp" minOccurs="1" maxOccurs="1" type="xs:dateTime">
-                <xs:annotation>
-                    <xs:documentation>
-                        The moment when the LA has been approved by the student.
-                    </xs:documentation>
-                </xs:annotation>
-            </xs:element>
-            <xs:element name="sending-approval-timestamp" minOccurs="1" maxOccurs="1" type="xs:dateTime">
-                <xs:annotation>
-                    <xs:documentation>
-                        The moment when the LA has been approved by the sending HEI.
-                    </xs:documentation>
-                </xs:annotation>
-            </xs:element>
-            <xs:element name="receiving-approval-timestamp" minOccurs="0" maxOccurs="1" type="xs:dateTime">
-                <xs:annotation>
-                    <xs:documentation>
-                        The moment when the LA has been approved by the receiving HEI. This should be
-                        the time when the sending HEI received or acknowledged the approval request.
-                    </xs:documentation>
-                </xs:annotation>
-            </xs:element>
+            <xs:element name="student-signature" minOccurs="1" maxOccurs="1" type="Signature"/>
+            <xs:element name="sending-hei-signature" minOccurs="1" maxOccurs="1" type="Signature"/>
+            <xs:element name="receiving-hei-signature" minOccurs="0" maxOccurs="1" type="Signature"/>
         </xs:sequence>
     </xs:complexType>
 
@@ -763,6 +744,52 @@
                         <xs:element ref="p:phone-number" minOccurs="0" maxOccurs="1"/>
                     </xs:sequence>
                 </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="Signature">
+        <xs:sequence>
+            <xs:element name="signer-name" type="xs:string" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>
+                        Full name of the person signing.
+
+                        Note: this field SHOULD NOT be set for `student-signature` element.
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="signer-position" type="xs:string" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>
+                        Position held by the signing person.
+
+                        Note: this field SHOULD NOT be set for `student-signature` element.
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="signer-email" type="xs:string" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>
+                        E-mail of the signing person.
+
+                        Note: this field SHOULD NOT be set for `student-signature` element.
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="timestamp" type="xs:dateTime" minOccurs="1" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>
+                        Date and time when the signature took place.
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="signer-app" type="xs:string" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>
+                        Name of the application where the signature has been created.
+                    </xs:documentation>
+                </xs:annotation>
             </xs:element>
         </xs:sequence>
     </xs:complexType>

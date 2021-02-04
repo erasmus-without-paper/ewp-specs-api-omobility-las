@@ -67,9 +67,24 @@
                     <loi-id>CRI/212419af-4326-3e21-30ba-c0b5041d89e2</loi-id>
                 </component>
             </components-recognized>
-            <student-approval-timestamp>2018-11-12T13:13:45+02:00</student-approval-timestamp>
-            <sending-approval-timestamp>2018-11-13T14:03:23+02:00</sending-approval-timestamp>
-            <receiving-approval-timestamp>2018-11-14T08:18:19+02:00</receiving-approval-timestamp>
+            <student-signature>
+                <timestamp>2018-11-12T13:13:45+02:00</timestamp>
+                <signer-app>Dashboard</signer-app>
+            </student-signature>
+            <sending-hei-signature>
+                <signer-name>Anders Bardal</signer-name>
+                <signer-position>Erasmus senior coordinator</signer-position>
+                <signer-email>anders.bardal@example.com</signer-email>
+                <timestamp>2018-11-13T14:03:23+02:00</timestamp>
+                <signer-app>Dashboard</signer-app>
+            </sending-hei-signature>
+            <receiving-hei-signature>
+                <signer-name>Paweł Tomasz Kowalski</signer-name>
+                <signer-position>Mobility coordinator</signer-position>
+                <signer-email>pawel.kowalski@example.com</signer-email>
+                <timestamp>2018-11-14T08:18:19+02:00</timestamp>
+                <signer-app>USOS</signer-app>
+            </receiving-hei-signature>
         </first-version>
         <!-- Approved changes to the first version of LA (tables A2, B2, C2 of LA template). -->
         <approved-changes>
@@ -106,9 +121,24 @@
                     <loi-id>CRI/mnj763c-83mf-7723-nvdp-03bdb64ja2mf3</loi-id>
                 </component>
             </components-recognized>
-            <student-approval-timestamp>2019-03-02T12:31:38+02:00</student-approval-timestamp>
-            <sending-approval-timestamp>2019-03-03T10:11:58+02:00</sending-approval-timestamp>
-            <receiving-approval-timestamp>2019-03-03T12:54:00+02:00</receiving-approval-timestamp>
+            <student-signature>
+                <timestamp>2019-03-02T12:31:38+02:00</timestamp>
+                <signer-app>Dashboard</signer-app>
+            </student-signature>
+            <sending-hei-signature>
+                <signer-name>Anders Bardal</signer-name>
+                <signer-position>Erasmus senior coordinator</signer-position>
+                <signer-email>anders.bardal@example.com</signer-email>
+                <timestamp>2019-03-03T10:11:58+02:00</timestamp>
+                <signer-app>Dashboard</signer-app>
+            </sending-hei-signature>
+            <receiving-hei-signature>
+                <signer-name>Paweł Tomasz Kowalski</signer-name>
+                <signer-position>Mobility coordinator</signer-position>
+                <signer-email>pawel.kowalski@example.com</signer-email>
+                <timestamp>2019-03-03T12:54:00+02:00</timestamp>
+                <signer-app>USOS</signer-app>
+            </receiving-hei-signature>
         </approved-changes>
         <!-- Proposal of changes to the first version of LA - still unapproved. -->
         <changes-proposal id="59B15BAF222F868493C167125FA32452E946">
@@ -134,8 +164,17 @@
                 </component>
             </components-studied>
             <components-recognized/>
-            <student-approval-timestamp>2019-03-12T13:41:58+02:00</student-approval-timestamp>
-            <sending-approval-timestamp>2019-03-14T09:31:48+02:00</sending-approval-timestamp>
+            <student-signature>
+                <timestamp>2019-03-12T13:41:58+02:00</timestamp>
+                <signer-app>Dashboard</signer-app>
+            </student-signature>
+            <sending-hei-signature>
+                <signer-name>Anders Bardal</signer-name>
+                <signer-position>Erasmus senior coordinator</signer-position>
+                <signer-email>anders.bardal@example.com</signer-email>
+                <timestamp>2019-03-14T09:31:48+02:00</timestamp>
+                <signer-app>Dashboard</signer-app>
+            </sending-hei-signature>
             <student>
                 <family-name>Karamazov</family-name>
             </student>

@@ -21,6 +21,15 @@
             <academic-term-display-name>Autumn 2021/2022</academic-term-display-name>
         </component>
     </components-recognized>
-    <student-approval-timestamp>2020-01-11T11:31:45+02:00</student-approval-timestamp>
-    <sending-approval-timestamp>2020-01-13T14:03:23+02:00</sending-approval-timestamp>
+    <student-signature>
+        <timestamp>2020-01-11T11:31:45+02:00</timestamp>
+        <signer-app>USOS</signer-app>
+    </student-signature>
+    <sending-hei-signature>
+        <signer-name>Paweł Tomasz Kowalski</signer-name>
+        <signer-position>Mobility coordinator</signer-position>
+        <signer-email>pawel.kowalski@example.com</signer-email>
+        <timestamp>2020-01-13T14:03:23+02:00</timestamp>
+        <signer-app>USOS</signer-app>
+    </sending-hei-signature>
 </changes-proposal>
