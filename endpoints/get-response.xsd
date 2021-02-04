@@ -657,7 +657,13 @@
             </xs:element>
             <xs:element name="student-signature" minOccurs="1" maxOccurs="1" type="Signature"/>
             <xs:element name="sending-hei-signature" minOccurs="1" maxOccurs="1" type="Signature"/>
-            <xs:element name="receiving-hei-signature" minOccurs="0" maxOccurs="1" type="Signature"/>
+            <xs:element name="receiving-hei-signature" minOccurs="0" maxOccurs="1" type="Signature">
+                <xs:annotation>
+                    <xs:documentation>
+                        This field is optional only inside `changes-proposal` element and required otherwise.
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
         </xs:sequence>
     </xs:complexType>
 
