@@ -47,8 +47,6 @@
                         <xs:documentation>
                             One request contains exactly one update element. But there are many possible
                             types of this update element.
-
-                            Servers publish the list of supported update in their manifest entry.
                         </xs:documentation>
                     </xs:annotation>
                     <xs:element ref="approve-proposal-v1"/>
