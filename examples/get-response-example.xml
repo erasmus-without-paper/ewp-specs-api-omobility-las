@@ -1,6 +1,7 @@
 <omobility-las-get-response
     xmlns="https://github.com/erasmus-without-paper/ewp-specs-api-omobility-las/blob/stable-v1/endpoints/get-response.xsd"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:trm="https://github.com/erasmus-without-paper/ewp-specs-types-academic-term/tree/stable-v2"
     xsi:schemaLocation="
         https://github.com/erasmus-without-paper/ewp-specs-api-omobility-las/blob/stable-v1/endpoints/get-response.xsd
         https://raw.githubusercontent.com/erasmus-without-paper/ewp-specs-api-omobility-las/master/endpoints/get-response.xsd
@@ -53,7 +54,10 @@
             <components-studied>
                 <component>
                     <title>Introductory calculus</title>
-                    <academic-term-display-name>Spring</academic-term-display-name>
+                    <term-id>
+                        <trm:term-number>2</trm:term-number>
+                        <trm:total-terms>2</trm:total-terms>
+                    </term-id>
                     <credit>
                         <scheme>ects</scheme>
                         <value>6</value>
@@ -91,7 +95,10 @@
             <components-studied>
                 <component>
                     <title>Introductory calculus</title>
-                    <academic-term-display-name>Spring</academic-term-display-name>
+                    <term-id>
+                        <trm:term-number>2</trm:term-number>
+                        <trm:total-terms>2</trm:total-terms>
+                    </term-id>
                     <credit>
                         <scheme>ects</scheme>
                         <value>6</value>
@@ -102,7 +109,10 @@
                     <los-code>KR502B</los-code>
                     <title>Algebra</title>
                     <loi-id>CRI/fbe7f54e-af18-4e3e-bc74-c3d3392131b3</loi-id>
-                    <academic-term-display-name>Autumn 2019/2020</academic-term-display-name>
+                    <term-id>
+                        <trm:term-number>1</trm:term-number>
+                        <trm:total-terms>2</trm:total-terms>
+                    </term-id>
                     <credit>
                         <scheme>ects</scheme>
                         <value>6</value>
@@ -145,7 +155,10 @@
             <components-studied>
                 <component>
                     <title>Introductory calculus</title>
-                    <academic-term-display-name>Spring</academic-term-display-name>
+                    <term-id>
+                        <trm:term-number>2</trm:term-number>
+                        <trm:total-terms>2</trm:total-terms>
+                    </term-id>
                     <credit>
                         <scheme>ects</scheme>
                         <value>6</value>
@@ -156,7 +169,10 @@
                     <los-code>KR630</los-code>
                     <title>Elementary Set Theory</title>
                     <loi-id>CRI/76c42226-e89c-401f-ad1b-8ebffd909b50</loi-id>
-                    <academic-term-display-name>Autumn 2019/2020</academic-term-display-name>
+                    <term-id>
+                        <trm:term-number>1</trm:term-number>
+                        <trm:total-terms>2</trm:total-terms>
+                    </term-id>
                     <credit>
                         <scheme>ects</scheme>
                         <value>6</value>

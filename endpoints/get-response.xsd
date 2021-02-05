@@ -3,7 +3,7 @@
     xmlns:xs="http://www.w3.org/2001/XMLSchema"
     xmlns:p="https://github.com/erasmus-without-paper/ewp-specs-types-phonenumber/tree/stable-v1"
     xmlns:course="https://github.com/erasmus-without-paper/ewp-specs-api-courses/tree/stable-v1"
-    xmlns:trm="https://github.com/erasmus-without-paper/ewp-specs-types-academic-term/tree/stable-v1"
+    xmlns:trm="https://github.com/erasmus-without-paper/ewp-specs-types-academic-term/tree/stable-v2"
     xmlns:xml="http://www.w3.org/XML/1998/namespace"
     xmlns:ewp="https://github.com/erasmus-without-paper/ewp-specs-architecture/blob/stable-v1/common-types.xsd"
     elementFormDefault="qualified"
@@ -28,8 +28,8 @@
     />
 
     <xs:import
-        schemaLocation="https://raw.githubusercontent.com/erasmus-without-paper/ewp-specs-types-academic-term/stable-v1/schema.xsd"
-        namespace="https://github.com/erasmus-without-paper/ewp-specs-types-academic-term/tree/stable-v1"
+        schemaLocation="https://raw.githubusercontent.com/erasmus-without-paper/ewp-specs-types-academic-term/stable-v2/schema.xsd"
+        namespace="https://github.com/erasmus-without-paper/ewp-specs-types-academic-term/tree/stable-v2"
     />
 
     <xs:annotation>
@@ -352,20 +352,10 @@
                         </xs:documentation>
                     </xs:annotation>
                 </xs:element>
-                <xs:element name="academic-term-display-name" type="xs:string" minOccurs="0" maxOccurs="1">
+                <xs:element name="term-id" type="trm:TermId" minOccurs="0" maxOccurs="1">
                     <xs:annotation>
                         <xs:documentation>
-                            The *name* of the academic term of the LOI at the component owner institution.
-                            For components studied this field MAY be entered "by hand" (for example by the student),
-                            especially if no `loi-id` is given. It might assist other users (and/or computer systems)
-                            when they're trying to identify the LOI, but it does not necessarily need to match
-                            the name of academic term exactly.
-
-                            Note, that we do not require a full-fledged academic-term element here
-                            (https://github.com/erasmus-without-paper/ewp-specs-types-academic-term). The
-                            sending HEI is NOT required to store start dates and end dates of
-                            the receiving HEI's academic terms. If the clients want to fetch such
-                            dates, then they can do this via the Courses API (each LOI element has them).
+                            Academic term of the LOI at the component owner institution.
 
                             This field is required in 'components-studied' and 'components-recognized' but optional
                             in 'virtual-components'.

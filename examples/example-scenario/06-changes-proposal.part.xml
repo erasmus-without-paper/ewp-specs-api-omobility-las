@@ -4,21 +4,33 @@
     <components-studied>
         <component>
             <title>Advanced Logics for Computer Scientists</title>
-            <academic-term-display-name>Autumn 2021/2022</academic-term-display-name>
+            <term-id>
+                <term-number>1</term-number>
+                <total-terms>2</total-terms>
+            </term-id>
         </component>
         <component>
             <title>Big Data Mining and Processing</title>
-            <academic-term-display-name>Autumn 2021/2022</academic-term-display-name>
+            <term-id>
+                <term-number>1</term-number>
+                <total-terms>2</total-terms>
+            </term-id>
         </component>
         <component>
             <title>Advanced Functional Programming</title>
-            <academic-term-display-name>Autumn 2021/2022</academic-term-display-name>
+            <term-id>
+                <term-number>1</term-number>
+                <total-terms>2</total-terms>
+            </term-id>
         </component>
     </components-studied>
     <components-recognized>
         <component>
             <title>Analiza matematyczna II</title>
-            <academic-term-display-name>Autumn 2021/2022</academic-term-display-name>
+            <term-id>
+                <term-number>1</term-number>
+                <total-terms>2</total-terms>
+            </term-id>
         </component>
     </components-recognized>
     <student-signature>
@@ -44,11 +56,17 @@
     <components-studied>
         <component status="deleted" reason="language-mismatch">
             <title>Advanced Functional Programming</title>
-            <academic-term-display-name>Autumn 2021/2022</academic-term-display-name>
+            <term-id>
+                <term-number>1</term-number>
+                <total-terms>2</total-terms>
+            </term-id>
         </component>
         <component status="inserted" reason="substituting-deleted">
             <title>Advanced Databases</title>
-            <academic-term-display-name>Autumn 2021/2022</academic-term-display-name>
+            <term-id>
+                <term-number>1</term-number>
+                <total-terms>2</total-terms>
+            </term-id>
         </component>
     </components-studied>
     <virtual-components>
