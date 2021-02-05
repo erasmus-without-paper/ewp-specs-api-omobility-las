@@ -60,6 +60,19 @@ document. If given, then the server MUST return learning agreements for only suc
 which have taken place (or are planned to take place) during this single academic year.
 
 
+### `global_id` (optional)
+
+Global student identifier. Should follow the specification of the
+[European Student Identifier](https://wiki.geant.org/display/SM/European+Student+Identifier).
+If given, then the server MUST return learning agreements belonging to the specified student.
+
+
+### `mobility_type` (optional)
+
+One of the following mobility types: `blended`, `doctoral`, `semester`.
+If given, then the server MUST return learning agreements only of the specified type.
+
+
 ### `modified_since` (optional)
 
 A datetime string in the [`xs:dateTime` format][xs-datetime], e.g.
