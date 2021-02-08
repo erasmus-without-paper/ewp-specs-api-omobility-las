@@ -51,8 +51,8 @@ implementers to decide which methods are "secure enough". These recommendations
 MAY change in the future.
 
 
-Endpoints to be implemented
----------------------------
+Endpoints and functionality to be implemented
+---------------------------------------------
 
 Server implementers MUST:
 
@@ -65,6 +65,9 @@ Server implementers MUST:
 The details on each of these endpoints are described on separate pages of this
 API specification (use the links above).
 
+Implementers also MUST implement a Notification Sender for Learning Agreement objects.
+That means that an EWP host will *try* to deliver notifications to all Outgoing Mobility Learning Agreement CNR APIs
+implemented throughout the EWP Network whenever related mobility objects are updated.
 
 Outgoing Mobility Learning Agreements API vs. Outgoing Mobilities API
 ---------------------------------------------------------------------

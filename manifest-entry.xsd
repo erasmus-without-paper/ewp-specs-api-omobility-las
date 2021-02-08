@@ -84,21 +84,6 @@
                                 </xs:documentation>
                             </xs:annotation>
                         </xs:element>
-                        <xs:element name="sends-notifications" type="ewp:Empty" minOccurs="0" maxOccurs="1">
-                            <xs:annotation>
-                                <xs:documentation>
-                                    If this element is present, then the EWP Host states, that it has implemented a
-                                    Notification Sender for Learning Agreement objects - it will *try* to deliver
-                                    notifications to all Outgoing Mobility Learning Agreement CNR APIs
-                                    implemented throughout the EWP Network whenever related mobility objects are updated.
-
-                                    It is HIGHLY RECOMMENDED for all EWP Hosts to implement this feature. If it is
-                                    not implemented, then receiving institutions will need to resolve into pulling
-                                    fresh data from your Outgoing Mobility Learning Agreements API quite often - this method
-                                    will increase both latency and the load on both servers.
-                                </xs:documentation>
-                            </xs:annotation>
-                        </xs:element>
                     </xs:sequence>
                 </xs:extension>
             </xs:complexContent>
