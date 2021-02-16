@@ -573,7 +573,7 @@
             </xs:documentation>
         </xs:annotation>
         <xs:sequence>
-            <xs:element name="components-studied" minOccurs="0" maxOccurs="1">
+            <xs:element name="components-studied" type="ComponentList" minOccurs="0" maxOccurs="1">
                 <xs:annotation>
                     <xs:documentation>
                         List of components studied (or planned to be studied) at the receiving HEI.
@@ -582,13 +582,8 @@
                         and is required for semester(s) type mobilities.
                     </xs:documentation>
                 </xs:annotation>
-                <xs:complexType>
-                    <xs:sequence>
-                        <xs:element ref="component" minOccurs="0" maxOccurs="unbounded"/>
-                    </xs:sequence>
-                </xs:complexType>
             </xs:element>
-            <xs:element name="components-recognized" minOccurs="0" maxOccurs="1">
+            <xs:element name="components-recognized" type="ComponentList" minOccurs="0" maxOccurs="1">
                 <xs:annotation>
                     <xs:documentation>
                         List of components recognized (or planned to be recognized) at the sending HEI.
@@ -597,13 +592,8 @@
                         and is required for semester(s) type mobilities.
                     </xs:documentation>
                 </xs:annotation>
-                <xs:complexType>
-                    <xs:sequence>
-                        <xs:element ref="component" minOccurs="0" maxOccurs="unbounded"/>
-                    </xs:sequence>
-                </xs:complexType>
             </xs:element>
-            <xs:element name="virtual-components" minOccurs="0" maxOccurs="1">
+            <xs:element name="virtual-components" type="ComponentList" minOccurs="0" maxOccurs="1">
                 <xs:annotation>
                     <xs:documentation>
                         List of virtual components studied (or planned to be studied) at the receiving HEI.
@@ -611,39 +601,26 @@
                         Note: This element corresponds to "Table C" or "Table C2" on the EUC LA template.
                     </xs:documentation>
                 </xs:annotation>
-                <xs:complexType>
-                    <xs:sequence>
-                        <xs:element ref="component" minOccurs="0" maxOccurs="unbounded"/>
-                    </xs:sequence>
-                </xs:complexType>
             </xs:element>
-            <xs:element name="blended-mobility-components" minOccurs="0" maxOccurs="1">
+            <xs:element name="blended-mobility-components" type="ComponentList" minOccurs="0" maxOccurs="1">
                 <xs:annotation>
                     <xs:documentation>
                         List of components studied (or planned to be studied) at the receiving HEI.
 
                         Note: This element is present only for blended mobilities with short-term physical mobility.
+                        If present it MUST contain at least one component.
                     </xs:documentation>
                 </xs:annotation>
-                <xs:complexType>
-                    <xs:sequence>
-                        <xs:element ref="component" minOccurs="1" maxOccurs="unbounded"/>
-                    </xs:sequence>
-                </xs:complexType>
             </xs:element>
-            <xs:element name="short-term-doctoral-components" minOccurs="0" maxOccurs="1">
+            <xs:element name="short-term-doctoral-components" type="ComponentList" minOccurs="0" maxOccurs="1">
                 <xs:annotation>
                     <xs:documentation>
                         List of components studied (or planned to be studied) at the receiving HEI.
 
                         Note: This element is present only for short-term doctoral mobilities.
+                        If present it MUST contain at least one component.
                     </xs:documentation>
                 </xs:annotation>
-                <xs:complexType>
-                    <xs:sequence>
-                        <xs:element ref="component" minOccurs="1" maxOccurs="unbounded"/>
-                    </xs:sequence>
-                </xs:complexType>
             </xs:element>
             <xs:element name="student-signature" minOccurs="1" maxOccurs="1" type="Signature"/>
             <xs:element name="sending-hei-signature" minOccurs="1" maxOccurs="1" type="Signature"/>
@@ -654,6 +631,12 @@
                     </xs:documentation>
                 </xs:annotation>
             </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="ComponentList">
+        <xs:sequence>
+            <xs:element ref="component" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
     </xs:complexType>
 
