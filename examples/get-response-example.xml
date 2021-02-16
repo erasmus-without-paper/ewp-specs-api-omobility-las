@@ -69,6 +69,27 @@
                     <los-id>CR/8f0d7dad-2bb6-d401-48c3-c7e0baf03efb</los-id>
                     <title>Calculus</title>
                     <loi-id>CRI/212419af-4326-3e21-30ba-c0b5041d89e2</loi-id>
+                    <term-id>
+                        <trm:term-number>2</trm:term-number>
+                        <trm:total-terms>2</trm:total-terms>
+                    </term-id>
+                    <credit>
+                        <scheme>ects</scheme>
+                        <value>5</value>
+                    </credit>
+                </component>
+                <component>
+                    <los-id>CR/7fdg347d-h45g-h445-02md-mdkd02kch2h5</los-id>
+                    <title>Algebra with Geometry</title>
+                    <loi-id>CRI/mnj763c-83mf-7723-nvdp-03bdb64ja2mf3</loi-id>
+                    <term-id>
+                        <trm:term-number>2</trm:term-number>
+                        <trm:total-terms>2</trm:total-terms>
+                    </term-id>
+                    <credit>
+                        <scheme>ects</scheme>
+                        <value>4</value>
+                    </credit>
                 </component>
             </components-recognized>
             <student-signature>
@@ -93,8 +114,11 @@
         <!-- Approved changes to the first version of LA (tables A2, B2, C2 of LA template). -->
         <approved-changes>
             <components-studied>
-                <component>
-                    <title>Introductory calculus</title>
+                <component status="inserted" reason-code="extending-mobility">
+                    <los-id>CR/f9c7677f-e3e3-4106-a865-1d1e8867830e</los-id>
+                    <los-code>KR502B</los-code>
+                    <title>Algebra</title>
+                    <loi-id>CRI/fbe7f54e-af18-4e3e-bc74-c3d3392131b3</loi-id>
                     <term-id>
                         <trm:term-number>2</trm:term-number>
                         <trm:total-terms>2</trm:total-terms>
@@ -104,33 +128,7 @@
                         <value>6</value>
                     </credit>
                 </component>
-                <component status="inserted" reason-code="extending-mobility">
-                    <los-id>CR/f9c7677f-e3e3-4106-a865-1d1e8867830e</los-id>
-                    <los-code>KR502B</los-code>
-                    <title>Algebra</title>
-                    <loi-id>CRI/fbe7f54e-af18-4e3e-bc74-c3d3392131b3</loi-id>
-                    <term-id>
-                        <trm:term-number>1</trm:term-number>
-                        <trm:total-terms>2</trm:total-terms>
-                    </term-id>
-                    <credit>
-                        <scheme>ects</scheme>
-                        <value>6</value>
-                    </credit>
-                </component>
             </components-studied>
-            <components-recognized>
-                <component>
-                    <los-id>CR/8f0d7dad-2bb6-d401-48c3-c7e0baf03efb</los-id>
-                    <title>Calculus</title>
-                    <loi-id>CRI/212419af-4326-3e21-30ba-c0b5041d89e2</loi-id>
-                </component>
-                <component>
-                    <los-id>CR/7fdg347d-h45g-h445-02md-mdkd02kch2h5</los-id>
-                    <title>Algebra with Geometry</title>
-                    <loi-id>CRI/mnj763c-83mf-7723-nvdp-03bdb64ja2mf3</loi-id>
-                </component>
-            </components-recognized>
             <student-signature>
                 <timestamp>2019-03-02T12:31:38+02:00</timestamp>
                 <signer-app>Dashboard</signer-app>
@@ -153,8 +151,11 @@
         <!-- Proposal of changes to the first version of LA - still unapproved. -->
         <changes-proposal id="59B15BAF222F868493C167125FA32452E946">
             <components-studied>
-                <component>
-                    <title>Introductory calculus</title>
+                <component status="inserted" reason-code="substituting-deleted">
+                    <los-id>CR/dd5fa0b7-f036-4915-9898-8d683ded5738</los-id>
+                    <los-code>KR630</los-code>
+                    <title>Elementary Set Theory</title>
+                    <loi-id>CRI/76c42226-e89c-401f-ad1b-8ebffd909b50</loi-id>
                     <term-id>
                         <trm:term-number>2</trm:term-number>
                         <trm:total-terms>2</trm:total-terms>
@@ -164,13 +165,10 @@
                         <value>6</value>
                     </credit>
                 </component>
-                <component status="inserted" reason-code="substituting-deleted">
-                    <los-id>CR/dd5fa0b7-f036-4915-9898-8d683ded5738</los-id>
-                    <los-code>KR630</los-code>
-                    <title>Elementary Set Theory</title>
-                    <loi-id>CRI/76c42226-e89c-401f-ad1b-8ebffd909b50</loi-id>
+                <component status="deleted">
+                    <title>Introductory calculus</title>
                     <term-id>
-                        <trm:term-number>1</trm:term-number>
+                        <trm:term-number>2</trm:term-number>
                         <trm:total-terms>2</trm:total-terms>
                     </term-id>
                     <credit>
