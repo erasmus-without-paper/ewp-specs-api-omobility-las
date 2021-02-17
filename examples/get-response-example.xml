@@ -60,7 +60,7 @@
                     </term-id>
                     <credit>
                         <scheme>ects</scheme>
-                        <value>6</value>
+                        <value>9</value>
                     </credit>
                 </component>
             </components-studied>
@@ -165,7 +165,7 @@
                         <value>6</value>
                     </credit>
                 </component>
-                <component status="deleted">
+                <component status="deleted" reason-code="language-mismatch">
                     <title>Introductory calculus</title>
                     <term-id>
                         <trm:term-number>2</trm:term-number>
@@ -173,7 +173,7 @@
                     </term-id>
                     <credit>
                         <scheme>ects</scheme>
-                        <value>6</value>
+                        <value>9</value>
                     </credit>
                 </component>
             </components-studied>
