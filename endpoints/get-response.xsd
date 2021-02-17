@@ -527,30 +527,6 @@
                                 </xs:documentation>
                             </xs:annotation>
                         </xs:enumeration>
-                        <xs:enumeration value="properties-update">
-                            <xs:annotation>
-                                <xs:documentation>
-                                    This one is NOT defined by EUC, but it seemed reasonable to add it here. It can
-                                    be used with both "delete" and "insert" changes, and it indicates an update in
-                                    the component properties - like a change in the component's name (e.g. a
-                                    spelling error), or the number of awarded ECTS points. The exact reason for the
-                                    change SHOULD be specified in the `display-text` element.
-
-                                    This reason MUST NOT be provided if the component is *actually* being removed
-                                    or added. It is used *only* when an *existing* component is *updated* (which is
-                                    represented as two changes - a "delete" and an "insert" - preferably in this
-                                    order, next to each other).
-
-                                    It's worth noting that some servers MAY also choose to "rewrite history"
-                                    in case of unimportant mistakes, like obvious spelling errors in component name.
-                                    Such "rewrite" will cause a component to instantly change its name in all
-                                    snapshots (even those snapshots which have been approved a long time ago).
-
-                                    You can discuss this code here:
-                                    https://github.com/erasmus-without-paper/ewp-specs-api-omobilities/issues/15#issuecomment-283988998
-                                </xs:documentation>
-                            </xs:annotation>
-                        </xs:enumeration>
                     </xs:restriction>
                 </xs:simpleType>
             </xs:attribute>
