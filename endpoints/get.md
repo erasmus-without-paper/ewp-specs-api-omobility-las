@@ -50,6 +50,9 @@ Server implementers provide their own chosen value of `<max-omobility-ids>` via
 their manifest entry (see [manifest-entry.xsd](manifest-entry.xsd)). Clients
 SHOULD parse this value (or assume it's equal to `1`).
 
+Note: Each outgoing mobility should have at most one learning agreement.
+Extensions to a learning agreement should be handled by its modification.
+
 
 Permissions
 -----------
@@ -107,6 +110,17 @@ Response
 Servers MUST respond with a valid XML document described by the
 [get-response.xsd](get-response.xsd) schema. See the schema annotations for
 further information.
+
+
+Virtual components
+------------------
+
+For semester(s) and short-term doctoral mobilities the LA template requires to fill a "virtual component" flag.
+This flag is assumed to be checked only if:
+ * For semester(s) mobility there is a non-empty list of `virtual-components` with at least one component having `status`
+attribute other than `deleted`,
+ * For short-term doctoral mobility at least one component in `short-term-doctoral-components` has a non-empty
+`short-description`.
 
 
 [develhub]: http://developers.erasmuswithoutpaper.eu/

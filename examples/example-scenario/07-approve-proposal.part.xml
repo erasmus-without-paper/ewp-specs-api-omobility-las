@@ -1,0 +1,12 @@
+<!-- For clarity, the examples contain only information about components and approvals. -->
+<!-- Attached file *is not* a valid update request. -->
+<approve-proposal-v1>
+    <changes-proposal-id>7974C159B15BAF222F868493C167125FA324</changes-proposal-id>
+    <signature>
+        <signer-name>Anders Bardal</signer-name>
+        <signer-position>Erasmus senior coordinator</signer-position>
+        <signer-email>anders.bardal@example.com</signer-email>
+        <timestamp>2020-03-04T09:17:43+02:00</timestamp>
+        <signer-app>Dashboard</signer-app>
+    </signature>
+</approve-proposal-v1>

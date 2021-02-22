@@ -54,6 +54,48 @@
 </first-version>
 <approved-changes>
     <components-studied>
+        <component status="deleted" reason="language-mismatch">
+            <title>Advanced Functional Programming</title>
+            <term-id>
+                <term-number>1</term-number>
+                <total-terms>2</total-terms>
+            </term-id>
+        </component>
+        <component status="inserted" reason="substituting-deleted">
+            <title>Advanced Databases</title>
+            <term-id>
+                <term-number>1</term-number>
+                <total-terms>2</total-terms>
+            </term-id>
+        </component>
+    </components-studied>
+    <virtual-components>
+        <component status="inserted" reason="adding-virtual-component">
+            <title>Aspect oriented programming use cases</title>
+            <short-description>Online course and online lectures. Students from different countries will present, discuss and compare real-life use cases.</short-description>
+        </component>
+    </virtual-components>
+    <student-signature>
+        <timestamp>2020-03-01T11:12:34+02:00</timestamp>
+        <signer-app>USOS</signer-app>
+    </student-signature>
+    <sending-hei-signature>
+        <signer-name>Paweł Tomasz Kowalski</signer-name>
+        <signer-position>Mobility coordinator</signer-position>
+        <signer-email>pawel.kowalski@example.com</signer-email>
+        <timestamp>2020-03-02T12:43:15+02:00</timestamp>
+        <signer-app>USOS</signer-app>
+    </sending-hei-signature>
+    <receiving-hei-signature>
+        <signer-name>Anders Bardal</signer-name>
+        <signer-position>Erasmus senior coordinator</signer-position>
+        <signer-email>anders.bardal@example.com</signer-email>
+        <timestamp>2020-03-04T09:17:43+02:00</timestamp>
+        <signer-app>Dashboard</signer-app>
+    </receiving-hei-signature>
+    </approved-changes>
+<changes-proposal id="61266750D019063512516C7EE01968012">
+    <components-studied>
         <component status="deleted" reason="timetable-conflict">
             <title>Advanced Logics for Computer Scientists</title>
             <term-id>
@@ -100,11 +142,4 @@
         <timestamp>2020-03-08T14:20:56+02:00</timestamp>
         <signer-app>USOS</signer-app>
     </sending-hei-signature>
-    <receiving-hei-signature>
-        <signer-name>Anders Bardal</signer-name>
-        <signer-position>Erasmus senior coordinator</signer-position>
-        <signer-email>anders.bardal@example.com</signer-email>
-        <timestamp>2020-03-08T15:27:23+02:00</timestamp>
-        <signer-app>Dashboard</signer-app>
-    </receiving-hei-signature>
-</approved-changes>
+</changes-proposal>

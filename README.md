@@ -8,14 +8,13 @@ Outgoing Mobility Learning Agreements API
 Summary
 -------
 
-**NOTE: This API is being updated in order to ensure compatibility with the OLA.
-Until a stable version is available, developers are advised to not implement
-the current API version.**
-
 This document describes the **Outgoing Mobility Learning Agreements API**.
 This API is implemented by the sending institution. It allows the receiving HEI
 to read and accept Learning Agreements stored on the sending HEI's servers
 and propose changes to them.
+
+This API is based on the new LA template. The most recent version is available
+on the [EUF Wiki][new-la-template].
 
 
 Reminder on vocabulary
@@ -48,8 +47,8 @@ implementers to decide which methods are "secure enough". These recommendations
 MAY change in the future.
 
 
-Endpoints to be implemented
----------------------------
+Endpoints and functionality to be implemented
+---------------------------------------------
 
 Server implementers MUST:
 
@@ -62,6 +61,9 @@ Server implementers MUST:
 The details on each of these endpoints are described on separate pages of this
 API specification (use the links above).
 
+Implementers also MUST implement a Notification Sender for Learning Agreement objects.
+That means that an EWP host will *try* to deliver notifications to all Outgoing Mobility Learning Agreement CNR APIs
+implemented throughout the EWP Network whenever related mobility objects are updated.
 
 Outgoing Mobility Learning Agreements API vs. Outgoing Mobilities API
 ---------------------------------------------------------------------
@@ -92,3 +94,4 @@ Data model entities involved in the response
 [statuses]: https://github.com/erasmus-without-paper/ewp-specs-management#statuses
 [discovery-api]: https://github.com/erasmus-without-paper/ewp-specs-api-discovery
 [sec-v2]: https://github.com/erasmus-without-paper/ewp-specs-sec-intro/tree/stable-v2
+[new-la-template]: https://wiki.uni-foundation.eu/display/EWP/New+LA+template

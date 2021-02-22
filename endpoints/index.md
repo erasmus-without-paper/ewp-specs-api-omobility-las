@@ -11,6 +11,8 @@ Summary
 This endpoint allows the receiving institution to access a list of all
 learning agreements it can read on the sending institution's server.
 
+Only learning agreements currently approved by the student and the sending HEI should be returned.
+
 
 Request method
 --------------
@@ -58,6 +60,19 @@ document. If given, then the server MUST return learning agreements for only suc
 which have taken place (or are planned to take place) during this single academic year.
 
 
+### `global_id` (optional)
+
+Global student identifier. Should follow the specification of the
+[European Student Identifier](https://wiki.geant.org/display/SM/European+Student+Identifier).
+If given, then the server MUST return learning agreements belonging to the specified student.
+
+
+### `mobility_type` (optional)
+
+One of the following mobility types: `blended`, `doctoral`, `semester`.
+If given, then the server MUST return learning agreements only of the specified type.
+
+
 ### `modified_since` (optional)
 
 A datetime string in the [`xs:dateTime` format][xs-datetime], e.g.
@@ -72,7 +87,7 @@ for which the learning agreement has been either created or modified after the g
 
  * As we previously explained [here][index-pulling], clients MAY use the
    `index` and `get` endpoints as a pull-based method of synchronization,
-   alternative (or rather complementary) to CNRs. It is RECOMMENDED for the
+   complementary to CNRs. It is RECOMMENDED for the
    servers to support this parameter, to avoid unnecessary network traffic.
 
 

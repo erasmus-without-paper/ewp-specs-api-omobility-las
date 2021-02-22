@@ -1,0 +1,47 @@
+<!-- For clarity, the examples contain only information about components and approvals. -->
+<!-- Attached file *is not* a valid get response. -->
+<changes-proposal id="4C159B15BAF222F868493C167125FA32452">
+    <components-studied>
+        <component>
+            <title>Advanced Logics for Computer Scientists</title>
+            <term-id>
+                <term-number>1</term-number>
+                <total-terms>2</total-terms>
+            </term-id>
+        </component>
+        <component>
+            <title>Big Data Mining and Processing</title>
+            <term-id>
+                <term-number>1</term-number>
+                <total-terms>2</total-terms>
+            </term-id>
+        </component>
+        <component>
+            <title>Advanced Functional Programming</title>
+            <term-id>
+                <term-number>1</term-number>
+                <total-terms>2</total-terms>
+            </term-id>
+        </component>
+    </components-studied>
+    <components-recognized>
+        <component>
+            <title>Analiza matematyczna II</title>
+            <term-id>
+                <term-number>1</term-number>
+                <total-terms>2</total-terms>
+            </term-id>
+        </component>
+    </components-recognized>
+    <student-signature>
+        <timestamp>2020-01-18T14:51:21+02:00</timestamp>
+        <signer-app>USOS</signer-app>
+    </student-signature>
+    <sending-hei-signature>
+        <signer-name>Paweł Tomasz Kowalski</signer-name>
+        <signer-position>Mobility coordinator</signer-position>
+        <signer-email>pawel.kowalski@example.com</signer-email>
+        <timestamp>2020-01-19T12:43:15+02:00</timestamp>
+        <signer-app>USOS</signer-app>
+    </sending-hei-signature>
+</changes-proposal>

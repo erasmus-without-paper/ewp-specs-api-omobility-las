@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema
     xmlns:xs="http://www.w3.org/2001/XMLSchema"
-    xmlns:xml="http://www.w3.org/XML/1998/namespace"
     xmlns:ewp="https://github.com/erasmus-without-paper/ewp-specs-architecture/blob/stable-v1/common-types.xsd"
     xmlns:la="https://github.com/erasmus-without-paper/ewp-specs-api-omobility-las/blob/stable-v1/endpoints/get-response.xsd"
     elementFormDefault="qualified"
@@ -49,12 +48,10 @@
                         <xs:documentation>
                             One request contains exactly one update element. But there are many possible
                             types of this update element.
-
-                            Servers publish the list of supported update in their manifest entry.
                         </xs:documentation>
                     </xs:annotation>
-                    <xs:element ref="approve-components-studied-proposal-v1"/>
-                    <xs:element ref="update-components-studied-v1"/>
+                    <xs:element ref="approve-proposal-v1"/>
+                    <xs:element ref="comment-proposal-v1"/>
                     <!--
                     Note for future XSD designers: When adding new types here, remember to add them
                     in the manifest-entry.xsd file too.
@@ -64,12 +61,11 @@
         </xs:complexType>
     </xs:element>
 
-    <xs:element name="approve-components-studied-proposal-v1">
+    <xs:element name="approve-proposal-v1">
         <xs:annotation>
             <xs:documentation>
-                This request is sent by the receiving HEI when it wants to approve the
-                `latest-proposal` version of components-studied. For many HEIs, this
-                approval has the same meaning as "signing" this section of the LA.
+                This request is sent by the receiving HEI when it wants to approve the `changes-proposal`.
+                This approval has the same meaning as "signing" the LA.
             </xs:documentation>
         </xs:annotation>
         <xs:complexType>
@@ -79,109 +75,70 @@
                         <xs:documentation>
                             ID of the mobility/learning agreement which this update request is about.
 
-                            The sending partner of this mobility MUST match the partner provided in
-                            `sending-hei-id`.
+                            The sending partner of this mobility MUST match the partner provided in `sending-hei-id`.
                         </xs:documentation>
                     </xs:annotation>
                 </xs:element>
-                <xs:element name="approving-party" minOccurs="1" maxOccurs="1" type="la:ApprovingParty">
+                <xs:element name="changes-proposal-id" type="xs:string" minOccurs="1" maxOccurs="1">
                     <xs:annotation>
                         <xs:documentation>
-                            The party which is approving. In almost all cases, this will be
-                            `receiving-hei`, but in some use cases it MAY also be `student` (if the
-                            student is allowed to use receiving HEI's UI to approve Learning
-                            Agreements).
-
-                            The server MUST verify this value (it MUST NOT assume that it always equals
-                            `receiving-hei`). If remote approval by this party is unsupported by this
-                            server, HTTP 400 response MUST be returned, with proper user-message (e.g.
-                            "University of Warsaw requires its students to approve their Learning
-                            Agreements via local USOSweb system. It is not allowed to approve them
-                            remotely.").
-                        </xs:documentation>
-                    </xs:annotation>
-                </xs:element>
-                <xs:element name="latest-proposal-id" minOccurs="1" maxOccurs="1" type="xs:string">
-                    <xs:annotation>
-                        <xs:documentation>
-                            Identifier of the current state of the `latest-proposal`, which is also the state which
-                            is being approved. This element is required here to prevent edit conflicts.
-                            The server MUST verify it, in similar way as it's described in `update-components-studied-v1`.
-                        </xs:documentation>
-                    </xs:annotation>
-                </xs:element>
-            </xs:sequence>
-        </xs:complexType>
-    </xs:element>
-
-    <xs:element name="update-components-studied-v1">
-        <xs:annotation>
-            <xs:documentation>
-                This request is sent by the receiving HEI when it want to suggest changes in
-                the `components-studied` section of the learning agreement object.
-
-                The sending HEI, on whose servers the learning agreement object is stored, MAY allow for
-                the receiving HEI to change `components-studied` freely, but it also MAY keep
-                these changes "on the side", and require a human to review them (e.g. a Sending
-                Coordinator, or a student).
-            </xs:documentation>
-        </xs:annotation>
-        <xs:complexType>
-            <xs:sequence>
-                <xs:element name="omobility-id" type="ewp:AsciiPrintableIdentifier" minOccurs="1" maxOccurs="1">
-                    <xs:annotation>
-                        <xs:documentation>
-                            ID of the mobility/learning agreement which this update request is about.
-
-                            The sending partner of this mobility MUST match the partner provided in
-                            `sending-hei-id`.
-                        </xs:documentation>
-                    </xs:annotation>
-                </xs:element>
-                <xs:element name="latest-proposal-id" type="xs:string" minOccurs="1" maxOccurs="1">
-                    <xs:annotation>
-                        <xs:documentation>
-                            Identifier of the current state of the `latest-proposal`, which is
-                            the *base for the suggested changes*. It is required here to prevent edit conflicts:
+                            Identifier of the current state of the `changes-proposal`, which is also the state which
+                            is being approved. This element is required here to prevent edit conflicts:
 
                             https://en.wikipedia.org/wiki/Edit_conflict
 
-                            The client - the receiving HEI - extracts this element from the response of the
+                            The client - the receiving HEI - extracts this identifier from the response of the
                             Outgoing Mobility Learning Agreements API's `get` endpoint served at the sending HEI.
 
-                            If the content of `latest-proposal-id` does not match the current
+                            If the content of `changes-proposal-id` does not match the current
                             values as kept in the server's database, then the server MUST respond with
                             HTTP 409 error response.
                             https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.10
 
                             Error response SHOULD include the `user-message` element with a brief
-                            explanation (e.g. "Your copy of the Learning Agreement is not up-to-date. We
-                            are unable to process your suggestions because we lack a common base for
-                            comparison. Please refresh your copy from our servers and repeat your request.").
+                            explanation (e.g. "Your copy of the Learning Agreement is not up-to-date.
+                            Please refresh your copy from our servers and repeat your request.").
                         </xs:documentation>
                     </xs:annotation>
                 </xs:element>
-                <xs:element name="suggestion" minOccurs="0" maxOccurs="1" type="la:ListOf_ComponentsStudied">
+                <xs:element name="signature" type="la:Signature" minOccurs="1" maxOccurs="1"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="comment-proposal-v1">
+        <xs:annotation>
+            <xs:documentation>
+                This request is sent by the receiving HEI when it want to comment on a `changes-proposal`.
+            </xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="omobility-id" type="ewp:AsciiPrintableIdentifier" minOccurs="1" maxOccurs="1">
                     <xs:annotation>
                         <xs:documentation>
-                            This is the "target" version which the requester is aiming for.
-                            It is RECOMMENDED to provide reasons for changes.
-                            
-                            You MUST provide a suggestion or a comment (or both).
+                            ID of the mobility/learning agreement which this update request is about.
+
+                            The sending partner of this mobility MUST match the partner provided in `sending-hei-id`.
                         </xs:documentation>
                     </xs:annotation>
                 </xs:element>
-                <xs:element name="comment" minOccurs="0" maxOccurs="1" type="xs:string">
+                <xs:element name="changes-proposal-id" type="xs:string" minOccurs="1" maxOccurs="1">
                     <xs:annotation>
                         <xs:documentation>
-                            In the comment you can describe why LA has not been accepted and what are
-                            the suggestions for changes. If the suggestion is possible to be expressed
-                            in a structured way, it is RECOMMENDED to send the "suggestion" element.
-                            
-                            You MUST provide a suggestion or a comment (or both).
+                            Identifier of the current state of the `changes-proposal`, which is being commented.
+                            This element is required here to prevent edit conflicts as in `approve-proposal-v1`.
                         </xs:documentation>
                     </xs:annotation>
                 </xs:element>
+                <xs:element name="comment" type="xs:string" minOccurs="1" maxOccurs="1">
+                    <xs:annotation>
+                        <xs:documentation>
+                            Field to describe why LA has not been accepted and what are the suggested changes.
+                        </xs:documentation>
+                    </xs:annotation>
+                </xs:element>
+                <xs:element name="signature" type="la:Signature" minOccurs="1" maxOccurs="1"/>
             </xs:sequence>
         </xs:complexType>
     </xs:element>
