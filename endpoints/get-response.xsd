@@ -193,6 +193,8 @@
                     <xs:documentation>
                         The snapshot of courses *planned* to be studied when the first version of the LA
                         is signed.
+
+                        Note: If this element is not provided than you MUST provide `changes-proposal`.
                     </xs:documentation>
                 </xs:annotation>
             </xs:element>
