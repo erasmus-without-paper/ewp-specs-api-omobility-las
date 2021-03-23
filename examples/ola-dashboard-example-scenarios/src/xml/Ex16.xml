@@ -1,0 +1,50 @@
+<!-- The current LA result is a proposal to be tested during implementation. -->
+<la>
+    <omobility-id>c442c289-5541-4cae-9edb-8ad83e133</omobility-id>
+
+    <sending-hei>
+        <hei-id>example_b.edu</hei-id>
+        <ounit-name>Department of Mathematics</ounit-name>
+        <ounit-id>5653486D98511E16E0530B501E0A4594</ounit-id>
+        <contact-person>
+            <given-names>Clark</given-names>
+            <family-name>Davis</family-name>
+            <email>clark.davis@example_b.edu</email>
+        </contact-person>
+    </sending-hei>
+
+    <receiving-hei>
+        <hei-id>example_a.edu</hei-id>
+        <ounit-name>Department of Mathematics</ounit-name>
+        <ounit-id>1234</ounit-id>
+        <contact-person>
+            <given-names>Adams</given-names>
+            <family-name>Baker</family-name>
+            <email>adams@example_a.edu</email>
+        </contact-person>
+    </receiving-hei>
+
+    <receiving-academic-year-id>2020/2021</receiving-academic-year-id>
+
+    <student>
+        <given-names>Nalty</given-names>
+        <family-name>Patel</family-name>
+        <global-id>urn:schac:personalUniqueCode:int:esi:example_b.edu:85525839</global-id>
+        <birth-date>1997-05-05</birth-date>
+        <citizenship>GR</citizenship>
+        <gender>2</gender>
+        <email>nalty@example_b.edu</email>
+    </student>
+
+
+    <eqf-level-studied-at-departure>6</eqf-level-studied-at-departure>
+
+    <isced-f-code>0541</isced-f-code>
+    <isced-clarification>just a clarification of the isced</isced-clarification>
+
+    <student-language-skill>
+        <language>en</language>
+        <cefr-level>B2</cefr-level>
+    </student-language-skill>
+
+</la>
