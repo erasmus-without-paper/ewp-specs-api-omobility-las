@@ -16,7 +16,7 @@ The two PDF files share the same content, one of them being in a printable form 
 ## Source Files
 Inside the /src folder one can find:
 * the editable MS Word (.docx) file, inside /src/doc
-* the edistable MS Visio (.vsdx and .vsd) files, inside /src/vsd
+* the editable MS Visio (.vsdx and .vsd) files, inside /src/vsd
 * the 20 XML example files mentioned in the document, inside /src/xml
 
 Each team that wishes to edit this template to write their own scenarios can choose the format of their preference.
