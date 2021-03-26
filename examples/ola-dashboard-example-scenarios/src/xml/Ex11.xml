@@ -1,0 +1,137 @@
+<la>
+    <omobility-id>c442c289-5541-4cae-9edb-8ad83e133</omobility-id>
+
+    <sending-hei>
+        <hei-id>example_b.edu</hei-id>
+        <ounit-name>Department of Mathematics</ounit-name>
+        <ounit-id>5653486D98511E16E0530B501E0A4594</ounit-id>
+        <contact-person>
+            <given-names>Clark</given-names>
+            <family-name>Davis</family-name>
+            <email>clark.davis@example_b.edu</email>
+        </contact-person>
+    </sending-hei>
+
+    <receiving-hei>
+        <hei-id>example_a.edu</hei-id>
+        <ounit-name>Department of Mathematics</ounit-name>
+        <ounit-id>1234</ounit-id>
+        <contact-person>
+            <given-names>Adams</given-names>
+            <family-name>Baker</family-name>
+            <email>adams@example_a.edu</email>
+        </contact-person>
+    </receiving-hei>
+
+    <receiving-academic-year-id>2020/2021</receiving-academic-year-id>
+
+    <student>
+        <given-names>Nalty</given-names>
+        <family-name>Patel</family-name>
+        <global-id>urn:schac:personalUniqueCode:int:esi:example_b.edu:85525839</global-id>
+        <birth-date>1997-05-05</birth-date>
+        <citizenship>GR</citizenship>
+        <gender>2</gender>
+        <email>nalty@example_b.edu</email>
+    </student>
+
+    <start-year-month>2021-02</start-year-month>
+    <end-year-month>2021-07</end-year-month>
+
+    <eqf-level-studied-at-departure>6</eqf-level-studied-at-departure>
+
+    <isced-f-code>0541</isced-f-code>
+    <isced-clarification>just a clarification of the isced</isced-clarification>
+
+    <student-language-skill>
+        <language>en</language>
+        <cefr-level>B2</cefr-level>
+    </student-language-skill>
+
+    <changes-proposal id="4C159B15BAF222F868493C167125FA324-1">
+        <components-studied> <!-- Table A -->
+            <component>
+                <los-code>123-ABC</los-code>
+                <title>Advanced Logics for Computer Scientists</title>
+                <term-id>
+                    <term-number>2</term-number>
+                    <total-terms>2</total-terms>
+                </term-id>
+                <credit>
+                    <scheme>ects</scheme>
+                    <value>3</value>
+                </credit>
+            </component>
+            <component>
+                <los-code>456-EFG</los-code>
+                <title>Big Data Mining and Processing</title>
+                <term-id>
+                    <term-number>2</term-number>
+                    <total-terms>2</total-terms>
+                </term-id>
+                <credit>
+                    <scheme>ects</scheme>
+                    <value>4</value>
+                </credit>
+            </component>
+        </components-studied>
+
+        <components-recognized> <!-- Table B -->
+            <component>
+                <los-code>843-XYZ</los-code>
+                <title>Advanced Logic</title>
+                <term-id>
+                    <term-number>2</term-number>
+                    <total-terms>2</total-terms>
+                </term-id>
+                <credit>
+                    <scheme>ects</scheme>
+                    <value>3</value>
+                </credit>
+            </component>
+            <component>
+                <los-code>542-KML</los-code>
+                <title>Big Data</title>
+                <term-id>
+                    <term-number>2</term-number>
+                    <total-terms>2</total-terms>
+                </term-id>
+                <credit>
+                    <scheme>ects</scheme>
+                    <value>5</value>
+                </credit>
+            </component>
+        </components-recognized>
+
+        <virtual-components> <!-- Table C -->
+            <component>
+                <los-code>789HIJ</los-code>
+                <title>Introduction to Matlab (lab)</title>
+                <credit>
+                    <scheme>ects</scheme>
+                    <value>1</value>
+                </credit>
+                <short-description>A short description about the matlab laboratory course</short-description>
+            </component>
+        </virtual-components>
+
+        <!-- Commitments -->
+        <student-signature>
+            <timestamp>2020-12-19T10:43:16+02:00</timestamp>
+            <signer-app>Dashboard-OLA</signer-app>
+        </student-signature>
+
+        <sending-hei-signature>
+            <signer-name>Frank White</signer-name>
+            <signer-position>Professor</signer-position>
+            <signer-email>frank@system.b.edy</signer-email>
+            <timestamp>2020-12-20T12:16:15+02:00</timestamp>
+            <signer-app>Dashboard-OLA</signer-app>
+        </sending-hei-signature>
+
+    </changes-proposal>
+
+    <learning-outcomes-url>https://www.math.system.b.edu/learning_outcomes_url</learning-outcomes-url>
+    <provisions-url>https://www.math.system.a.edu/provisions_url</provisions-url>
+
+</la>

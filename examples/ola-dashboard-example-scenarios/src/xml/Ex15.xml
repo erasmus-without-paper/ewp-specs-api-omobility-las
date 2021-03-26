@@ -1,0 +1,15 @@
+<omobility-las-update-request>
+    <sending-hei-id>example_a.edu</sending-hei-id>
+    <comment-proposal-v1>
+        <omobility-id>c442c289-5541-4cae-9edb-8ad83e133</omobility-id>
+        <changes-proposal-id>4C159B15BAF222F868493C167125FA324-1</changes-proposal-id>
+        <comment>Some comment why reject</comment>
+        <signature>
+            <signer-name>Ochoa Patel</signer-name>
+            <signer-position>Lecturer</signer-position>
+            <signer-email>patel@example_a.edu</signer-email>
+            <timestamp>2020-12-25T10:16:10+01:00</timestamp>
+            <signer-app>System A</signer-app>
+        </signature>
+    </comment-proposal-v1>
+</omobility-las-update-request>
