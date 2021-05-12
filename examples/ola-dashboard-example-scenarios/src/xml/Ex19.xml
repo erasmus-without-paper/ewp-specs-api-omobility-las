@@ -48,7 +48,7 @@
         <cefr-level>B2</cefr-level>
     </student-language-skill>
 
-    <first-version id="4C159B15BAF222F868493C167125FA324-1">
+    <first-version>
         <components-studied> <!-- Table A -->
             <component>
                 <los-code>123-ABC</los-code>
@@ -139,7 +139,7 @@
 
     </first-version>
 
-    <approved-changes id="4C159B15BAF222F868493C167125FA324-4">
+    <approved-changes>
 
         <components-studied> <!-- Table A2 -->
             <component status="deleted" reason-code="language-mismatch">
