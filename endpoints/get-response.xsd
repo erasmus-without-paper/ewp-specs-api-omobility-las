@@ -694,7 +694,7 @@
                     <xs:documentation>
                         Full name of the person signing.
 
-                        Note: this field SHOULD NOT be set for `student-signature` element.
+                        Note: this field SHOULD NOT be set for `student-signature` element and MUST be set otherwise.
                     </xs:documentation>
                 </xs:annotation>
             </xs:element>
@@ -703,7 +703,7 @@
                     <xs:documentation>
                         Position held by the signing person.
 
-                        Note: this field SHOULD NOT be set for `student-signature` element.
+                        Note: this field SHOULD NOT be set for `student-signature` element and MUST be set otherwise.
                     </xs:documentation>
                 </xs:annotation>
             </xs:element>
@@ -712,7 +712,7 @@
                     <xs:documentation>
                         E-mail of the signing person.
 
-                        Note: this field SHOULD NOT be set for `student-signature` element.
+                        Note: this field SHOULD NOT be set for `student-signature` element and MUST be set otherwise.
                     </xs:documentation>
                 </xs:annotation>
             </xs:element>
