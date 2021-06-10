@@ -433,7 +433,7 @@
             <xs:attribute name="reason-code" use="optional">
                 <xs:annotation>
                     <xs:documentation>
-                        An optional reason for the change. Applies only to components studied.
+                        An optional reason for the change.
 
                         If the element represents the change (the "status" attribute is not empty),
                         than the reason of the change (code or text, or both) SHOULD be provided.
