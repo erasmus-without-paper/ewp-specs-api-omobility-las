@@ -407,7 +407,8 @@
             <xs:attribute name="status" use="optional">
                 <xs:annotation>
                     <xs:documentation>
-                        Status of the component. Should be used if the component represents a change.
+                        Status of the component. MUST be provided if the component represents a change and MUST NOT be
+                        provided otherwise.
                     </xs:documentation>
                 </xs:annotation>
                 <xs:simpleType>
