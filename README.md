@@ -14,7 +14,7 @@ to read and accept Learning Agreements stored on the sending HEI's servers
 and propose changes to them.
 
 This API is based on the new LA template. The most recent version is available
-on the [EUF Wiki][new-la-template].
+[here][new-la-template].
 
 
 Reminder on vocabulary
@@ -94,4 +94,4 @@ Data model entities involved in the response
 [statuses]: https://github.com/erasmus-without-paper/ewp-specs-management#statuses
 [discovery-api]: https://github.com/erasmus-without-paper/ewp-specs-api-discovery
 [sec-v2]: https://github.com/erasmus-without-paper/ewp-specs-sec-intro/tree/stable-v2
-[new-la-template]: https://wiki.uni-foundation.eu/display/EWP/New+LA+template
+[new-la-template]: https://erasmus-plus.ec.europa.eu/resources-and-tools/learning-agreement
