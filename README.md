@@ -13,7 +13,7 @@ This API is implemented by the sending institution. It allows the receiving HEI
 to read and accept Learning Agreements stored on the sending HEI's servers
 and propose changes to them.
 
-This API is based on the new LA template. The most recent version is available
+This API is based on the official LA template. The most recent version is available
 [here][new-la-template].
 
 
