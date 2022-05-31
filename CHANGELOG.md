@@ -5,6 +5,31 @@ This document describes all the changes made to the *Outgoing Mobility Learning 
 starting from its first beta draft version.
 
 
+1.0.1
+-----
+
+* Updated branch name in XSD schema locations to reflect recent release.
+* OLA Dashboard Scenarios source files and README added (#22).
+
+
+1.0.0
+-----
+
+Added OLA dashboard scenarios.
+
+
+0.5.0
+-----
+
+Added note that at least one component list must be provided.
+
+
+0.4.0
+-----
+
+Updated LA to the newest template. 
+
+
 0.3.0
 -----
 
