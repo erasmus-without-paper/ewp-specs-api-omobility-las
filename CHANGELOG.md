@@ -5,6 +5,19 @@ This document describes all the changes made to the *Outgoing Mobility Learning 
 starting from its first beta draft version.
 
 
+1.1.0
+-----
+
+* Added note that signer name, position and email must be set non-student signatures.
+* Deleted ids and modified scenario 2 (#29).
+* Modified Ex6 as empty response (#30).
+* Emphasized when status field has to be provided.
+* Fixed reason-code field description.
+* Changed sending-hei-id in XML examples (#32).
+* Updated link to the new LA template.
+* Changed wording for the LA template.
+
+
 1.0.1
 -----
 
