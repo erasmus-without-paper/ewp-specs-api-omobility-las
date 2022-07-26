@@ -1,0 +1,30 @@
+<las-outgoing-stats-response
+    xmlns="https://github.com/erasmus-without-paper/ewp-specs-api-omobility-las/blob/stable-v1/endpoints/stats-response.xsd"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+        https://github.com/erasmus-without-paper/ewp-specs-api-omobility-las/blob/stable-v1/endpoints/stats-response.xsd
+        https://raw.githubusercontent.com/erasmus-without-paper/ewp-specs-api-omobility-las/blob/stable-v1/endpoints/stats-response.xsd
+    "
+>
+
+   <academic-year-la-stats>
+        <year>2020</year>
+        <la-sum>0</la-sum>
+        <la-single-version-approved>0</la-single-version-approved>
+        <la-at-least-one-approved>0</la-at-least-one-approved>
+        <la-latest-approved>0</la-latest-approved>
+        <la-latest-rejected>0</la-latest-rejected>
+        <la-latest-awaiting>0</la-latest-awaiting>
+    </academic-year-la-stats>
+
+        <academic-year-la-stats>
+        <year>2021</year>
+        <la-sum>0</la-sum>
+        <la-single-version-approved>0</la-single-version-approved>
+        <la-at-least-one-approved>0</la-at-least-one-approved>
+        <la-latest-approved>0</la-latest-approved>
+        <la-latest-rejected>0</la-latest-rejected>
+        <la-latest-awaiting>0</la-latest-awaiting>
+    </academic-year-la-stats>
+
+</las-outgoing-stats-response>
