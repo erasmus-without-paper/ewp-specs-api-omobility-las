@@ -37,7 +37,5 @@ further information.
 
 [develhub]: http://developers.erasmuswithoutpaper.eu/
 [statuses]: https://github.com/erasmus-without-paper/ewp-specs-management#statuses
-[iias-api]: https://github.com/erasmus-without-paper/ewp-specs-api-iias
-[echo]: https://github.com/erasmus-without-paper/ewp-specs-api-echo
 [error-handling]: https://github.com/erasmus-without-paper/ewp-specs-architecture#error-handling
 [ewp-architecture]: https://github.com/erasmus-without-paper/ewp-specs-architecture

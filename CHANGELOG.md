@@ -7,10 +7,7 @@ starting from its first beta draft version.
 1.2.0
 -----
 
-* Added stats endpoint URL to manifest
-* Added stats endpoint response schema
-* Added stats endpoint response example
-* Added stats endpoint README
+* Added outgoing LAs stats endpoint.
 
 
 1.1.0
