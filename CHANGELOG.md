@@ -4,6 +4,11 @@ Release notes
 This document describes all the changes made to the *Outgoing Mobility Learning Agreements API*,
 starting from its first beta draft version.
 
+1.2.0
+-----
+
+* Added outgoing LAs stats endpoint.
+
 
 1.1.0
 -----
