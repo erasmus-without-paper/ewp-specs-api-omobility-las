@@ -66,6 +66,7 @@ Implementers also MUST implement a Notification Sender for Learning Agreement ob
 That means that an EWP host will *try* to deliver notifications to all Outgoing Mobility Learning Agreement CNR APIs
 implemented throughout the EWP Network whenever related mobility objects are updated.
 
+
 Outgoing Mobility Learning Agreements API vs. Outgoing Mobilities API
 ---------------------------------------------------------------------
 
@@ -75,6 +76,15 @@ However, the learning agreement object is still identified by the mobility ident
 If the HEI implements both the Outgoing Mobilities API and the Outgoing Mobility Learning Agreements
 (which we encourage), then it must ensure that every learning agreement object will have
 the same identifier as the corresponding outgoing mobility objects served by the Outgoing Mobilities API.
+
+
+Business requirements and processes
+-----------------------------------
+
+[Business requirements and processes](resources/mandatory_business_requirements_LA.pdf)
+document clarifies the requirements for the technical solutions
+developed under EWP and in the local implementation that should adequately support
+the business processes related to the LAs at Higher Education Institutions.
 
 
 Data model entities involved in the response
