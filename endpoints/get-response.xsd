@@ -520,7 +520,7 @@
                     <xs:documentation>
                         A human-readable description of the reason - preferably in English.
 
-                        This element corresponds to "Reason for change" column of A2 or B2 table (see EUC LA template).
+                        This element corresponds to "Reason for change" column of A2, B2 or C2 table.
                     </xs:documentation>
                 </xs:annotation>
             </xs:attribute>
