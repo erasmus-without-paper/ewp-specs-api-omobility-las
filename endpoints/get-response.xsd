@@ -436,7 +436,7 @@
                         An optional reason for the change.
 
                         If the element represents the change (the "status" attribute is not empty),
-                        than the reason of the change (code or text, or both) SHOULD be provided.
+                        then the reason of the change (code or text, or both) SHOULD be provided.
 
                         If the reason matches one of the reasons provided in the enumeration below,
                         than it is RECOMMENDED to provide the code. Otherwise the code MUST NOT be provided
