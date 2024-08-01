@@ -39,7 +39,7 @@ server covers only a single institution.
 ### `omobility_id` (repeatable, required)
 
 A list of identifiers (no more than `<max-omobility-ids>` items) of mobilities
-for which the client wants to retrieve learning agrrements. All of these mobilities
+for which the client wants to retrieve learning agreements. All of these mobilities
 should be the outgoing mobilities of the sending HEI provided in the
 `sending_hei_id` parameter (otherwise, they will be ignored).
 
