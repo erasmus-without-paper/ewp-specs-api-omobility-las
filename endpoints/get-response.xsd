@@ -204,6 +204,10 @@
                         The latest approved list of changes to the `first-version` of LA.
 
                         Note: This element describes what Tables A2, B2, C2 of the LA template.
+
+                        Note: This is a snapshot, not an accumulating log. Once a `changes-proposal`
+                        is approved, this element is replaced in its entirety by the content of
+                        that proposal.
                     </xs:documentation>
                 </xs:annotation>
             </xs:element>
@@ -213,6 +217,13 @@
                         This element is required to propose changes to the LA to be accepted by the partner.
                         It contains proposal of the `first-version` of LA or changes to it after it is approved.
                         It may also contain student's data that has changed after the last receiving HEI's approval.
+
+                        Note: This element MUST represent the complete, cumulative set of changes to the
+                        `first-version` of the LA, and not only the changes introduced in the current round.
+                        It MUST carry forward all entries currently present in `approved-changes` (including
+                        those which have not been modified in the current round) together with any new changes
+                        being proposed now. Once this proposal is approved, its content replaces
+                        `approved-changes` in its entirety.
 
                         Note: Blended mobilities with short-term physical mobility and short-term doctoral mobilities
                         MUST NOT have any proposals of changes after `first-version` of LA has been agreed.

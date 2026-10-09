@@ -4,6 +4,13 @@ Release notes
 This document describes all the changes made to the *Outgoing Mobility Learning Agreements API*,
 starting from its first beta draft version.
 
+1.2.1
+-----
+
+* Clarified that `changes-proposal` is a complete, cumulative set of changes to
+  `first-version`, and that `approved-changes` is replaced in its entirety when a
+  proposal is approved.
+
 1.2.0
 -----
 
